@@ -6,3 +6,7 @@
 .navbar-toggler{
   --bs-navbar-toggler-border-color: none;
 }
+
+.col-sm-3{
+  text-align: center;
+}
