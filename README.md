@@ -6,7 +6,7 @@ This browser based web application to ...
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
-* Hi, My name is Jasper, I'm excited about this projec! we can do it!
+* Hi, My name is Jasper, I'm excited about this project! we can do it!
 * Hi my name is Angela, I am also very excited about this project! :)
 * Hi my name is Ruby, i too very excited about this project!
 	
