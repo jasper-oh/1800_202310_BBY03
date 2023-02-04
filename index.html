@@ -1,91 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>My BCIT Project</title>
-    <meta name="comp1800 template" content="My 1800 App">
+    <meta name="comp1800 template" content="My 1800 App" />
 
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap Library CSS CDN go here -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
     <!-- Boostrap Library JS CDN  go here -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+      integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+      crossorigin="anonymous"
+    ></script>
     <!-- Other libraries go here -->
 
-    <script src="https://kit.fontawesome.com/2be0a511a1.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/2be0a511a1.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- Link to styles of your own -->
-    <link rel="stylesheet" href="./styles/style.css">
-    
-</head>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
 
-<body>
-
+  <body>
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
     <!-- THIS IS ANGELA's PART -->
-    <nav class="navbar navbar-expand-lg bg-success">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Howdy Weather</a>
-            <div class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa-regular fa-bell"></i>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                
-            </div>
+    <nav class="navbar navbar-expand-lg " style="background-color: #AACDBE;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Howdy Weather</a>
+        <div
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-regular fa-bell" style="color: #EA907A;"></i>
         </div>
+        <div class="collapse navbar-collapse" id="navbarNav"></div>
+      </div>
     </nav>
 
     <!-- THIS IS RUBY's PART -->
     <div class="p-5 mb-4 bg-light rounded-3 col-sm-3">
-        <div class="container-fluid py-5">
-          <h1 class="display-5 fw-bold">Howdy Weather!</h1>
-          <p class="col-md-8 fs-4">Share your weather information!</p>
-          <p class="col-md-8 fs-4">And Check Howdy Scores!</p>
-        </div>
-        <div class="container-fluid py-5">
-          <button onclick="window.location.href='login.html'" class="btn btn-primary btn-lg bg-warning" type="button">Login/Signup</button>
-        </div>
-        <div class="container-fluid py-5">
-            <span><p class="fs-6"><a href="">About</a> / <a href="">Privacy</a></p></span>   
-        </div>
-        <div class="container-fluid py-5">
-            
-        </div>
+      <div class="container-fluid py-5">
+        <img class="w-75 h-75 " src="/images/teamlogo.png" />
+        <h1 class="display-5 fw-bold">Howdy Weather!</h1>
+        <p class="col-md-8 fs-4">Share your weather information!</p>
+        <p class="col-md-8 fs-4">And Check Howdy Scores!</p>
+      </div>
+      <div class="container-fluid py-5">
+        <button
+          onclick="window.location.href='login.html'"
+          class="btn btn-primary btn-lg" style="background-color: #FBC687;"
+          type="button"
+        >
+          Login/Signup
+        </button>
+      </div>
+      <div class="container-fluid py-5">
+        <span
+          ><p class="fs-6">
+            <a href="">About</a> / <a href="">Privacy</a>
+          </p></span
+        >
+      </div>
+      <div class="container-fluid py-5"></div>
     </div>
 
     <!-- THIS IS JASPER's PART -->
-    <nav class="z-0 navbar fixed-bottom navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <div class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa-sharp fa-solid fa-house"></i>
-          </div>
-          <div class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="z-0 navbar fixed-bottom navbar-expand-lg " style="background-color: #AACDBE;">
+      <div class="container-fluid">
+        <div
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-sharp fa-solid fa-house"></i>
+        </div>
+        <div
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <i class="fa-solid fa-magnifying-glass"></i>
-          </div>
-          <div class="z-1 navbar-toggler w-25 h-50" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <div class="circle-button">
-              <img class="w-75 h-75" src="/images/teamlogo.png"/>
-              <span>Share</span>
-            </div>
         </div>
-          <div class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa-solid fa-ranking-star"></i>
-          </div>
-          <div class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa-solid fa-user"></i>
+        <div
+          class="z-1 navbar-toggler w-25 h-50"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <div class="circle-button">
+            <img class="w-75 h-75" src="/images/teamlogo.png" />
+            <span>Share</span>
           </div>
         </div>
+        <div
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-solid fa-ranking-star"></i>
+        </div>
+        <div
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-solid fa-user"></i>
+        </div>
+      </div>
     </nav>
-    
-        
-
-
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
@@ -93,7 +161,5 @@
 
     <!-- Link to scripts of your own -->
     <!-- <script src="./scripts/script.js"></script> -->
-
-</body>
-
+  </body>
 </html>
