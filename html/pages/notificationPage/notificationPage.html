@@ -19,60 +19,59 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"
   ></script>
-  <!-- Boostrap Library JS CDN  go here -->
+
+  <!--Link to styles of your own-->
   <link rel="stylesheet" href="../../../styles/notificationPage/notificationPage.css" />
-  <title>Document</title>
+  <title>Notification</title>
 </head>
 
 <body>
-    <!--Nav bar here-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-info">
-      <div class="container-fluid">
-        <!--Link to main page-->
-        <a class="navbar-brand fs-4" href="../pages/mainPage/mainPage.html">
-          <!--logo-->
-          <img src="/images/mainLogo.png" height="50" />
-          Howdy Weather</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-  
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-  
-            <!--Search bar, link to search page-->
-            <form class="d-flex">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <a class="btn btn-outline-success" href="../pages/searchPage/searchPage.html" role="button">Search</a>
-  
-              </button>
-            </form>
-          </ul>
-  
-          <!--Link to notification Page-->
-          <a class="nav-notification" href="../pages/notificationPage/notificationPage.html">
-            <img src="/images/notification.png" height="40" />
-          </a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <div class="container-fluid">
+      <!--Link to main page-->
+      <a class="navbar-brand fs-4" href="/html/pages/mainPage/mainPage.html">
+        <!--logo-->
+        <img src="/images/mainLogo.png" height="50" />
+        Howdy Weather</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+          <!--Search bar, link to search page-->
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <a class="btn btn-outline-success" href="/html/pages/searchPage/searchPage.html" role="submit">Search</a>
+
+            </button>
+          </form>
+        </ul>
+
+        <!--Link to notification Page-->
+        <a class="nav-notification" href="/html/pages/notificationPage/notificationPage.html">
+          <img src="/images/notification.png" height="40" />
+        </a>
       </div>
-    </nav>
+    </div>
+  </nav>    
     
-    <!--Notification page here-->
+    <!--Notification page content here-->
     <div class="notification m-5">
       <div class="my-3 col-lg-2 text-wrap">
         <label for="today-notification" class="form-label-1 ">Today</label>
@@ -93,20 +92,20 @@
 
     <!--Footer here-->
     <footer
-    class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
-  >
-    <!--Link to home page-->
-    <a class="footer-home my-" href="../pages/homePage/homePage.html">
-      <img src="/images/home.png" height="40" />
-    </a>
-    <button onclick="window.location.href='login.html'" type="button" class="btn btn-info btn-outline-warning mx-auto btn-lg fs-4">Upload Your Score</button>
+      class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+    >
+      <!--Link to home page-->
+      <a class="footer-home ms-3" href="/html/pages/homePage/homePage.html">
+        <img src="/images/home.png" height="40" />
+      </a>
+      <button onclick="window.location.href='/html/pages/loginPage/loginPage.html'" type="button" class="btn btn-success btn-outline-warning mx-auto btn-lg fs-4">Upload Your Score</button>
 
-    <!--Link to profile page-->
-    <a class="footer-profile me-3" href="../pages/profilePage/profilePage.html">
-      <img src="/images/profile.png" height="40" />
-    </a>
+      <!--Link to profile page-->
+      <a class="footer-profile me-3" href="/html/pages/profilePage/profilePage.html">
+        <img src="/images/profile.png" height="40" />
+      </a>
 
-  </footer>
+    </footer>
 
 </body>
 </html>
