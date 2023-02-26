@@ -4,10 +4,109 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" src="../../../styles/notificationPage/notificationPage.css" />
+
+  <!-- Bootstrap Library CSS CDN go here -->
+  <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+  crossorigin="anonymous"
+/>
+
+  <!-- Boostrap Library JS CDN  go here -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Boostrap Library JS CDN  go here -->
+  <link rel="stylesheet" href="../../../styles/notificationPage/notificationPage.css" />
   <title>Document</title>
 </head>
+
 <body>
+    <!--Nav bar here-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+      <div class="container-fluid">
+        <!--Link to main page-->
+        <a class="navbar-brand fs-4" href="../pages/mainPage/mainPage.html">
+          <!--logo-->
+          <img src="/images/mainLogo.png" height="50" />
+          Howdy Weather</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
   
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+  
+            <!--Search bar, link to search page-->
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <a class="btn btn-outline-success" href="../pages/searchPage/searchPage.html" role="button">Search</a>
+  
+              </button>
+            </form>
+          </ul>
+  
+          <!--Link to notification Page-->
+          <a class="nav-notification" href="../pages/notificationPage/notificationPage.html">
+            <img src="/images/notification.png" height="40" />
+          </a>
+
+        </div>
+      </div>
+    </nav>
+    
+    <!--Notification page here-->
+    <div class="notification m-5">
+      <div class="my-3 col-lg-2 text-wrap">
+        <label for="today-notification" class="form-label-1 ">Today</label>
+        <textarea class="form-control" rows="3" readonly>Six hours of snow ahead</textarea>
+      </div>
+
+      <div class="my-3 col-lg-2 text-wrap">
+        <label for="current-week-notification" class="form-label-2 ">This Week</label>
+        <textarea class="form-control" rows="3" readonly>25mm percipataions in Stanley Park and test the text wrap</textarea>
+      </div>
+
+      <div class="my-3 col-lg-2 text-wrap">
+        <label for="today-notification" class="form-label-3 ">Previous Weeks</label>
+        <textarea class="form-control" rows="3" readonly>Sunny</textarea>
+      </div>
+
+    </div>
+
+    <!--Footer here-->
+    <footer
+    class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+  >
+    <!--Link to home page-->
+    <a class="footer-home my-" href="../pages/homePage/homePage.html">
+      <img src="/images/home.png" height="40" />
+    </a>
+    <button onclick="window.location.href='login.html'" type="button" class="btn btn-info btn-outline-warning mx-auto btn-lg fs-4">Upload Your Score</button>
+
+    <!--Link to profile page-->
+    <a class="footer-profile me-3" href="../pages/profilePage/profilePage.html">
+      <img src="/images/profile.png" height="40" />
+    </a>
+
+  </footer>
+
 </body>
 </html>
