@@ -1,9 +1,17 @@
+.bg-info {
+    background-color: #AACDBE !important;
+}
+
+.btn-success {
+    background-color: #F4F7C5;
+    color:black;
+}
+.nav-notification {
+    background-color: #AACDBE;
+}
+
 
 footer {
     background-color: #AACDBE;  
 }
 
-.btn-success {
-    background-color: #FBC687;
-    color: white;
-}
