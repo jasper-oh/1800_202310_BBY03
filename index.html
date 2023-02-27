@@ -21,9 +21,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Link to styles of your own -->
-  <link rel="stylesheet" href="./styles/style.css" />
+
   <link rel="stylesheet" href="/styles/component/footer.css" />
   <link rel="stylesheet" href="/styles/component/header.css" />
+  <link rel="stylesheet" href="./styles/indexStyle.css" />
+
+
 </head>
 
 <body>
@@ -32,9 +35,35 @@
   <!------------------------------>
   <div class="wrapper">
   <!-- nav bar -->
+
     <nav id="navbarPlaceholder"></nav>
     <div class="container">
-        <!-- Angela !!!!! PUT YOUR CODE IN HERE PLEASE %%%%%%%-->
+  
+
+  <!--feature to welcome the user-->
+
+
+  <div class="p-5 mb-4  rounded-3 ">
+    <div class="container-fluid py-5">
+      <img height="200" src="/images/logoWhite.png" />
+      <h1 class="display-5 fw-bold">Howdy Weather!</h1>
+
+    </div>
+    <div class="container-fluid py-5">
+      <button onclick="window.location.href='/loginPage/loginPage.html'" class="btn btn-primary btn-lg"
+        style="background-color: #FBC687;" type="button">
+        Login/Signup
+      </button>
+    </div>
+    <div class="container-fluid py-5">
+      <span>
+        <p class="fs-6">
+          <a href="">About</a> / <a href="">Privacy</a>
+        </p>
+      </span>
+    </div>
+    <div class="container-fluid py-5"></div>
+  </div>
 
         <!-- THIS IS RUBY's PART -->
         <!-- <div class="p-5 mb-4 bg-light rounded-3 col-sm-3">
@@ -70,7 +99,7 @@
   <!-- Your own JavaScript functions go here    -->
   <!---------------------------------------------->
 
-  <!-- Link to scripts of your own -->
+  <!-- Link to skeleton.js -->
   <script src="./scripts/skeleton.js"></script>
 </body>
 
