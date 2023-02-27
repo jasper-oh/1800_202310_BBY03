@@ -20,92 +20,44 @@
     crossorigin="anonymous"
   ></script>
 
+  <!-- Other libraries go here -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   <!--Link to styles of your own-->
-  <link rel="stylesheet" href="../../../styles/notificationPage/notificationPage.css" />
+  <link rel="stylesheet" href="/styles/notificationPage/notificationPage.css" />
+  <link rel="stylesheet" href="/styles/component/footer.css" />
+  <link rel="stylesheet" href="/styles/component/header.css" />
+
   <title>Notification</title>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-info">
-    <div class="container-fluid">
-      <!--Link to main page-->
-      <a class="navbar-brand fs-4" href="/html/pages/mainPage/mainPage.html">
-        <!--logo-->
-        <img src="/images/mainLogo.png" height="50" />
-        Howdy Weather</a
-      >
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <div class="wrapper">
+    <nav id="navbarPlaceholder"></nav>
+      <!--Notification page content here-->
+      <div class="container">
+        <div class="notification m-5">
+          <div class="my-3 col-lg-2 text-wrap">
+            <label for="today-notification" class="form-label-1 ">Today</label>
+            <textarea class="form-control" rows="3" readonly>Six hours of snow ahead</textarea>
+          </div>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <div class="my-3 col-lg-2 text-wrap">
+            <label for="current-week-notification" class="form-label-2 ">This Week</label>
+            <textarea class="form-control" rows="3" readonly>25mm percipataions in Stanley Park and test the text wrap</textarea>
+          </div>
 
-          <!--Search bar, link to search page-->
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <a class="btn btn-outline-success" href="/html/pages/searchPage/searchPage.html" role="submit">Search</a>
+          <div class="my-3 col-lg-2 text-wrap">
+            <label for="today-notification" class="form-label-3 ">Previous Weeks</label>
+            <textarea class="form-control" rows="3" readonly>Sunny</textarea>
+          </div>
 
-            </button>
-          </form>
-        </ul>
-
-        <!--Link to notification Page-->
-        <a class="nav-notification" href="/html/pages/notificationPage/notificationPage.html">
-          <img src="/images/notification.png" height="40" />
-        </a>
-      </div>
+        </div>
     </div>
-  </nav>    
-    
-    <!--Notification page content here-->
-    <div class="notification m-5">
-      <div class="my-3 col-lg-2 text-wrap">
-        <label for="today-notification" class="form-label-1 ">Today</label>
-        <textarea class="form-control" rows="3" readonly>Six hours of snow ahead</textarea>
-      </div>
-
-      <div class="my-3 col-lg-2 text-wrap">
-        <label for="current-week-notification" class="form-label-2 ">This Week</label>
-        <textarea class="form-control" rows="3" readonly>25mm percipataions in Stanley Park and test the text wrap</textarea>
-      </div>
-
-      <div class="my-3 col-lg-2 text-wrap">
-        <label for="today-notification" class="form-label-3 ">Previous Weeks</label>
-        <textarea class="form-control" rows="3" readonly>Sunny</textarea>
-      </div>
-
-    </div>
-
-    <!--Footer here-->
-    <footer
-      class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
-    >
-      <!--Link to home page-->
-      <a class="footer-home ms-3" href="/html/pages/homePage/homePage.html">
-        <img src="/images/home.png" height="40" />
-      </a>
-      <button onclick="window.location.href='/html/pages/loginPage/loginPage.html'" type="button" class="btn btn-success btn-outline-warning mx-auto btn-lg fs-4">Upload Your Score</button>
-
-      <!--Link to profile page-->
-      <a class="footer-profile me-3" href="/html/pages/profilePage/profilePage.html">
-        <img src="/images/profile.png" height="40" />
-      </a>
-
-    </footer>
-
+      <!--Footer here-->
+    <nav id="footerPlaceholder"></nav>
+  </div>
+    <!-- Link to scripts of your own -->
+    <script src="/scripts/skeleton.js"></script>
 </body>
 </html>

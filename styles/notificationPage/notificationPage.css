@@ -1,23 +1,10 @@
-.bg-info {
-    background-color: #AACDBE !important;
-}
-
-.btn-info {
-    background-color: #FBC687;
-    color: white;
-}
-
-.btn-success {
-    background-color: #FBC687;
-    color: white;
-}
-
-.nav-notification {
-    background-color: #AACDBE;
-}
-
-
-footer {
-    background-color: #AACDBE;  
-}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .container{
+    flex: 1;
+  }
 

@@ -1,5 +1,5 @@
 .bg-info {
-    background-color: #AACDBE !important;
+    background-color: #AACDBE;
 }
 
 .btn-success {
@@ -12,6 +12,10 @@
 
 
 footer {
+    display: flex;
     background-color: #AACDBE;  
+    height: 8vh;
+    align-items: center;
+    min-width: 390px;
 }
 

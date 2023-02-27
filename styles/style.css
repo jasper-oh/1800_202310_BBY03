@@ -1,5 +1,14 @@
+.wrapper{
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.container{
+  flex: 1;
+}
+
 .circle-button{
-  /* background-color: brown; */
   height: 80px;
 }
 

@@ -1,0 +1,15 @@
+.navbar-custom{
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  background-color: #AACDBE;
+  padding: 8px;
+  flex-wrap: nowrap;
+  min-width: 390px;
+}
+
+@media only screen and (max-width: 550px) {
+  #com-logo{
+    display: none;
+  }
+}

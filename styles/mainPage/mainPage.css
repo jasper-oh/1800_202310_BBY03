@@ -1,15 +1,20 @@
+.wrapper{
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
 #container {
     display: grid;
-    height: 77vh;
     grid-template-columns: 10vw 40vw 40vw 10vw ;
     grid-template-rows: 30vh 45vh;
+    flex: 1;
+    min-width: 390px;
 }
 
 #welcome {
     text-align: center;
     grid-row: 1/ span 1;
     grid-column: 1/ span 4;
-    /* background-color: rgb(204, 205, 239); */
     padding-top: 30px;
 }
 
@@ -34,7 +39,6 @@
 }
 
 #content1 {
-    /* background-color:rgb(246, 238, 228); */
     text-align: center;
     grid-row: 2/ span 1;
     grid-column: 1/ span 2;
@@ -49,15 +53,9 @@
 }
 
 #content2{
-    /* background-color: rgb(215, 247, 236); */
     text-align: center;
     grid-row: 2/ span 1;
     grid-column: 3/ span 2;
 }
 
-#footer{
-    grid-column: 1/span 4;
-    grid-row: 5/ span 1;
-    background-color: #AACDBE;
-}
 

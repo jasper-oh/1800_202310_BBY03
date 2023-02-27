@@ -20,49 +20,51 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Link to styles of your own -->
+  <link rel="stylesheet" href="/styles/component/header.css"/>
+  <link rel="stylesheet" href="/styles/component/footer.css" />
   <link rel="stylesheet" href="/styles/mainPage/mainPage.css" />
 
 </head>
 
 <body>
-  <!-- nav bar -->
-  <nav id="navbarPlaceholder"></nav>
+  <div class="wrapper">
+    <!-- nav bar -->
+    <nav id="navbarPlaceholder"></nav>
+    <div id="container">
+      <!-- welcome message div-->
+      <div id="welcome">
+        <h1 id="welcomeText1"> Howdy, "user"!</h1>
+        <p class="welcomeText2"> Check out the Howdy Score!</p>
+        <img src="../../../images/pin.png" alt="pin icon">
+        <p class="welcomeText2"> "Location" </p>
+      </div>
 
-  <div id="container">
-    <!-- welcome message div-->
-    <div id="welcome">
-      <h1 id="welcomeText1"> Howdy, "user"!</h1>
-      <p class="welcomeText2"> Check out the Howdy Score!</p>
-      <img src="../../../images/pin.png" alt="pin icon">
-      <p class="welcomeText2"> "Location" </p>
+      <!-- forecast info div-->
+      <div id="content1">
+        <h1 class="divTitle"> Forecast </h1> <br/><br/>
+        <h2> Temperature</h2>
+        <p> °C </p> <br />
+        <h2> Precipitation </h2>
+        <p> mm </p> <br />
+        <h2> Wind</h2>
+        <p> km/hr </p>
+      </div>
+
+      <!-- howdy score info div-->
+      <div id="content2">
+        <h1 class="divTitle">Howdy Score</h1> <br/><br/>
+        <h2>Temperature</h2>
+        <p>%</p> <br />
+        <h2>Precipitation</h2>
+        <p>%</p> <br />
+        <h2>Wind</h2>
+        <p>%</p>
+      </div>
     </div>
 
-    <!-- forecast info div-->
-    <div id="content1">
-      <h1 class="divTitle"> Forecast </h1> <br/><br/>
-      <h2> Temperature</h2>
-      <p> °C </p> <br />
-      <h2> Precipitation </h2>
-      <p> mm </p> <br />
-      <h2> Wind</h2>
-      <p> km/hr </p>
-    </div>
-
-    <!-- howdy score info div-->
-    <div id="content2">
-      <h1 class="divTitle">Howdy Score</h1> <br/><br/>
-      <h2>Temperature</h2>
-      <p>%</p> <br />
-      <h2>Precipitation</h2>
-      <p>%</p> <br />
-      <h2>Wind</h2>
-      <p>%</p>
-    </div>
+    <!-- footer -->
+    <nav id="footerPlaceholder"></nav>
   </div>
-
-  <!-- footer -->
-  <nav id="footerPlaceholder"></nav>
-
   <!-- Link to scripts of your own -->
   <script src="/scripts/skeleton.js"></script>
 </body>
