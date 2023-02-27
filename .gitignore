@@ -2,3 +2,4 @@
 *.logs
 node_modules/
 .vscode/
+scripts/apiKey.js
