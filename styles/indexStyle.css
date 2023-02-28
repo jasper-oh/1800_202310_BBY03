@@ -1,35 +1,42 @@
-#container{
-    display:grid;
+#container {
+    display: grid;
     grid-template-columns: 40vw 60vw;
-    grid-template-rows: 30vh 30vh 20vh;
+    grid-template-rows: 45vh 15vh 20vh;
 }
 
 #largeText {
-    background-color: rgb(209, 239, 239);
+    /* background-color: rgb(209, 239, 239); */
     grid-row: 1 / span 1;
     grid-column: 1 / span 1;
-   text-align: center;
-    
+    text-align: center;
+    padding-top: 25%;
+
 }
 
 #appName {
-    font-size:25pt;
+    font-size: 50pt;
 }
 
 #explain {
-    background-color: rgb(245, 223, 194);
-   grid-row: 2 / span 1;
-   grid-column: 1 / span 1;
+    /* background-color: rgb(245, 223, 194); */
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+    display: flex;
+    justify-content: center;
 }
 
 #links {
-    background-color: rgb(207, 221, 246);
+    /* background-color: rgb(207, 221, 246); */
     grid-row: 3 / span 1;
     grid-column: 1/ span 1;
+    display: flex;
+    justify-content: center;
 }
 
-#bigImg{
+#bigImg {
     grid-row: 1/ span 3;
     grid-column: 2/ span 1;
-    background-color: blanchedalmond;
+    display: flex;
+    justify-content: center;
+
 }
