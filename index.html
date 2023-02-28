@@ -33,74 +33,49 @@
   <!------------------------------>
   <!-- Your HTML Layout go here -->
   <!------------------------------>
-  <div class="wrapper">
+
   <!-- nav bar -->
+  <nav id="navbarPlaceholder"></nav>
 
-    <nav id="navbarPlaceholder"></nav>
-    <div class="container">
-  
+  <!--body content-->
+  <div id="container">
 
-  <!--feature to welcome the user-->
-
-
-  <div class="p-5 mb-4  rounded-3 ">
-    <div class="container-fluid py-5">
-      <img height="200" src="/images/logoWhite.png" />
-      <h1 class="display-5 fw-bold">Howdy Weather!</h1>
-
+    <!--feature to welcome the user-->
+    <div id="largeText">
+      <!--insert large graphic-->
+      <h2 id="welcomeText"> Welcome to </h1>
+      <h1 id="appName">Howdy Weather </h1>
+    
     </div>
-    <div class="container-fluid py-5">
-      <button onclick="window.location.href='/loginPage/loginPage.html'" class="btn btn-primary btn-lg"
-        style="background-color: #FBC687;" type="button">
-        Login/Signup
-      </button>
-    </div>
-    <div class="container-fluid py-5">
-      <span>
-        <p class="fs-6">
-          <a href="">About</a> / <a href="">Privacy</a>
-        </p>
-      </span>
-    </div>
-    <div class="container-fluid py-5"></div>
-  </div>
 
-        <!-- THIS IS RUBY's PART -->
-        <!-- <div class="p-5 mb-4 bg-light rounded-3 col-sm-3">
-            <div class="container-fluid py-5">
-              <img class="w-75 h-75 " src="/images/teamlogo.png" />
-              <h1 class="display-5 fw-bold">Howdy Weather!</h1>
-              <p class="col-md-8 fs-4">Share your weather information!</p>
-              <p class="col-md-8 fs-4">And Check Howdy Scores!</p>
-            </div>
-            <div class="container-fluid py-5">
-              <button
-                onclick="window.location.href='login.html'"
-                class="btn btn-primary btn-lg" style="background-color: #FBC687;"
-                type="button"
-              >
-                Login/Signup
-              </button>
-            </div>
-            <div class="container-fluid py-5">
-              <span
-                ><p class="fs-6">
-                  <a href="">About</a> / <a href="">Privacy</a>
-                </p></span
-              >
-            </div>
-            <div class="container-fluid py-5"></div>
-          </div> -->
+    <div id="explain">
+      <p> Our app ... (describe purpose).... (functions) </p>
     </div>
-  <!-- footer -->
-    <nav id="footerPlaceholder"></nav>
-  </div>
-  <!---------------------------------------------->
-  <!-- Your own JavaScript functions go here    -->
-  <!---------------------------------------------->
 
-  <!-- Link to skeleton.js -->
-  <script src="./scripts/skeleton.js"></script>
+    <div id="links">
+      <div id="signUpBtnclass=" container-fluid py-5>
+        <button onclick="window.location.href='/loginPage/loginPage.html'" class="btn btn-primary btn-lg"
+          style="background-color: #FBC687;" type="button">
+          Login/Signup
+        </button>
+
+        <a href="">About</a> / <a href="">Privacy</a>
+      </div>
+    </div>
+
+    <div id="bigImg"> 
+      
+    </div>
+
+    <!-- footer -->
+    <!-- <nav id="footerPlaceholder"></nav> -->
+
+    <!---------------------------------------------->
+    <!-- Your own JavaScript functions go here    -->
+    <!---------------------------------------------->
+
+    <!-- Link to skeleton.js -->
+    <script src="./scripts/skeleton.js"></script>
 </body>
 
 </html>
