@@ -5,7 +5,7 @@
 }
 #container {
     display: grid;
-    grid-template-columns: 10vw 40vw 40vw 10vw ;
+    grid-template-columns:30vw 20vw 20vw 30vw ;
     grid-template-rows: 30vh 45vh;
     flex: 1;
     min-width: 390px;
@@ -14,8 +14,8 @@
 #welcome {
     text-align: center;
     grid-row: 1/ span 1;
-    grid-column: 1/ span 4;
-    padding-top: 30px;
+    grid-column: 1/span 4;
+    padding-top: 50px;
 }
 
 #welcomeText1{
@@ -39,9 +39,11 @@
 }
 
 #content1 {
+    /* background-color: blueviolet; */
     text-align: center;
     grid-row: 2/ span 1;
-    grid-column: 1/ span 2;
+    grid-column: 2/ span 1;
+    padding-top: 20%;
 }
 
 #content2 h2{
@@ -53,9 +55,11 @@
 }
 
 #content2{
+    /* background-color: brown; */
     text-align: center;
     grid-row: 2/ span 1;
-    grid-column: 3/ span 2;
+    grid-column: 3/ span 1;
+    padding-top: 20%;
 }
 
 
