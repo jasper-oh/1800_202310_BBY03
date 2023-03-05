@@ -1,0 +1,84 @@
+#container {
+    display: grid;
+    grid-template-columns: 35vw 50vw;
+    grid-template-rows: 40vh 15vh 6vh 20vh;
+    
+}
+
+#largeText {
+    /* background-color: rgb(209, 239, 239); */
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+    text-align: left;
+    padding-top: 20%;
+    padding-left: 10%;
+
+}
+#largeText > h2 {
+    font-size: 30pt;
+    
+}
+
+#appName {
+    font-size: 60pt;
+   
+}
+
+#links {
+    /* background-color: rgb(22, 51, 102); */
+    padding-top: 5%;
+    grid-row: 3 / span 1;
+    grid-column: 1/ span 1;
+    display: flex;
+    justify-content: left;
+    padding-left: 10%;
+    
+}
+
+.button1 {
+  appearance: none;
+  background-color: #fbc687;
+  border: 2px solid rgb(201, 215, 235) ; 
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.button1:hover {
+  color: white;
+  background-color: #aacdbe;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+
+#explain {
+    /* background-color: rgb(245, 223, 194); */
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+    display: flex;
+    justify-content: left;
+    padding-left: 10%;
+}
+
+#bigImg {
+    /* background-color: blue; */
+    grid-row: 1/ span 1;
+    grid-column: 2/ span 1;
+    display: flex;
+    justify-content: center;
+
+}

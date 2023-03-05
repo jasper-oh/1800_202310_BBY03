@@ -1,11 +1,21 @@
-.bg-info {
-    background-color: #AACDBE;
-}
+
 
 .btn-success {
-    background-color: #F4F7C5;
-    color:black;
+    background-color: #FBC687;
+    border: 1px solid #F4F7C5 ; 
+    border-radius: 15px;
+    color: white;
+    box-sizing: border-box;
 }
+
+.btn-success:hover {
+    color: white;
+    border: 1px solid white;
+    background-color: #EA907A;
+    transform: translateY(-2px);
+
+  }
+
 .nav-notification {
     background-color: #AACDBE;
 }

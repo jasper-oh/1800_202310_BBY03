@@ -22,9 +22,9 @@
 
   <!-- Link to styles of your own -->
 
-  <link rel="stylesheet" href="/styles/component/footer.css" />
+
   <link rel="stylesheet" href="/styles/component/header.css" />
-  <link rel="stylesheet" href="/styles/indexStyle.css" />
+  <link rel="stylesheet" href="/styles/homePage/homePage.css" />
 
 
 </head>
@@ -35,7 +35,15 @@
   <!------------------------------>
 
   <!-- nav bar -->
-  <nav id="navbarPlaceholder"></nav>
+  <nav id="navbarPlaceholder">
+    <div class="navbar navbar-light navbar-custom">
+      <!--Link to main page-->
+      <a class="navbar-brand fs-4" href="/html/pages/mainPage/mainPage.html">
+          <!--logo-->
+          <img src="/images/mainLogo.png" height="50" />
+          <span id="com-logo">Howdy Weather</span></a>
+    </div>
+  </nav>
 
   <!--body content-->
   <div id="container">
@@ -60,15 +68,7 @@
 
   </div>
 
-  <!-- footer -->
-  <!-- <nav id="footerPlaceholder"></nav> -->
 
-  <!---------------------------------------------->
-  <!-- Your own JavaScript functions go here    -->
-  <!---------------------------------------------->
-
-  <!-- Link to skeleton.js -->
-  <script src="/scripts/skeleton.js"></script>
 </body>
 
 </html>
