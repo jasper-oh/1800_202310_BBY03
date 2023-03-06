@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/styles/component/header.css" />
   <link rel="stylesheet" href="/styles/uploadPage/uploadPage.css"/>
   
-  <title>Document</title>
+  <title>Rating Page</title>
 </head>
 <body>
   <div class="wrapper">
@@ -36,22 +36,28 @@
       <form action="/html/pages/scoreListPage/scoreListPage.html">
         <div class="information-section">
           <p><b>Rate Your Howdy Score!</b></p>
-          <p>Location :  <span> Location </span></p>
+          <p>Location :  <span id="coords"> Location </span></p>
         </div>
         <div class="information-wrapper">
-        <div class="information-temperature info">
+        <div class="information-temperature info" >
           <span>Temperature</span>
-          <span> 3.5 </span>
+          <span id="curTemp"> 3.5 </span>
           <input type="range" min="1" max="5" value="1" class="temperatureSlider" id="howdyTemperature">
         </div>
 
         <div class="information-precipitation info">
           <span>precipitation</span>
-          <span> 2 </span>
+          <span id="curHumidity"> 2 </span>
           <input type="range" min="1" max="5" value="1" class="precipitationSlider" id="howdyPrecipitation">
         </div>
+
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label fs-4">Leave your tips or comments:</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+        </div>
+
       </div>
-        <input type="submit" onclick=""/>
+        <input type="submit" id="submit-btn" onclick=""/>
 
       </form>
 
@@ -61,5 +67,6 @@
   </div>
   <script src="/scripts/skeleton.js"></script>
   <script src="/scripts/login.js"></script>
+  <script src="/scripts/uploadPage.js"></script>
 </body>
 </html>

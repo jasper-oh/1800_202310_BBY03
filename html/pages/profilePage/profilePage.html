@@ -20,6 +20,15 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
     <!-- Other libraries go here -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -45,7 +54,7 @@
             src="../../../images/logoWhite.png"
             alt="user-photo"
           />
-          <span class="user-name fs-1 border-bottom border-2">User Name</span>
+          <span class="user-name fs-1 border-bottom border-2" id="Name-goes-here">User Name</span>
           <div class="streak fs-3">Achievements</div>
         </div>
 
@@ -106,6 +115,7 @@
 
 
     <!-- Link to scripts of your own -->
+    <script src="/scripts/firebase_API_TEAM03.js"></script>
     <script src="/scripts/skeleton.js"></script>
     <script src="/scripts/profilePage.js"></script>
   </body>

@@ -4,3 +4,4 @@ node_modules/
 .vscode/
 scripts/apiKey.js
 scripts/firebaseAPI.js
+firebaseAPI_TEAM03.js
