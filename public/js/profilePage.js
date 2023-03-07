@@ -54,11 +54,16 @@ function insertNameFromFirestore(){
              var userName= userDoc.data().name;
 
              //get The user prefer Temp
-            //  var userPreferHumid.data().preferHumid;
+             var userPreferTemp = userDoc.data().preferTemp;
+             var userPreferHumid = userDoc.data().preferHumid;
 
              console.log(userName);
              //$("#name-goes-here").text(userName); //jquery
              document.getElementById("name-goes-here").innerText = userName;
+             document.getElementById("slider2").setAttribute("value", userPreferTemp);
+             document.getElementById("slider1").setAttribute("value", userPreferHumid);
+             document.getElementById('sliderValueLabel2').innerText = userPreferHumid;
+             document.getElementById('sliderValueLabel1').innerText = userPreferTemp;
          })    
      }    
   })
