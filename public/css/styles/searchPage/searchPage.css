@@ -55,3 +55,7 @@ th, td{
   align-items: center;
   
 }
+
+#invisible{
+  display: none;
+}

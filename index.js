@@ -23,34 +23,38 @@ app.get("/", function (req, res) {
 });
 
 app.get("/login" , (req, res) => {
+  console.log("a");
   let doc = fs.readFileSync("./app/html/loginPage.html", "utf8");
   res.send(doc);
 })
 
 app.get("/main" , (req, res) => {
+  console.log("b");
   let doc = fs.readFileSync("./app/html/mainPage.html", "utf8");
   res.send(doc);
 })
 app.get("/search" , (req, res) => {
-
+  console.log("c");
   
-  res.setHeader("Content-Type", "text/html");
   let doc = fs.readFileSync("./app/html/searchPage.html", "utf8");
-  
   res.send(doc);
 })
 
 app.get("/getScoreList" , (req,res)=> {
-  
-  res.send(fs.readFileSync("./app/component/scoreListPage.html" , "utf8"));
+  console.log("d");
+
+  let doc = fs.readFileSync("./app/component/scoreListPage.html", "utf8");
+  res.send(doc);
 })
 
 app.get("/notification" , (req, res) => {
+  console.log("e");
   let doc = fs.readFileSync("./app/html/notificationPage.html", "utf8");
   res.send(doc);
 })
 
 app.get("/upload" , (req, res) => {
+  console.log("f");
   let doc = fs.readFileSync("./app/html/uploadPage.html", "utf8");
   res.send(doc);
 })

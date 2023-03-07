@@ -36,12 +36,24 @@
     <div class="container-1">
       <!-- Code will be here -->
       <div class="map-container">
-        <input type="text" id="location-search" placeholder="Search the Location!" />
+        <form action="/changeListPage" method="get">
+          <input type="text" id="location-search" placeholder="Search the Location!" />
+          <input type="hidden" id="location-lat"/>
+          <input type="hidden" id="location-long"/>
+          <input type="button" id="location-search-btn" value="search"/>
+        </form>
         <div id="map">
         </div>
       </div>
-      <div id="searchpage-comment-list">
 
+      <div class="scoreList-container">
+        <div class="information-section">
+          <p>Location :  <span id="scoreList-location"> Location </span></p>
+        </div>
+        <div id="searchpage-comment-list">
+          
+
+        </div>
       </div>
     </div>
     <!-- footer -->

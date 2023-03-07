@@ -33,9 +33,23 @@ window.initMap = function(){
       console.log("Returned place contains no geometry");
       return;
     }
+    
     // Need to send a location and automatically refresh the list in here.
     // Ajax is necessary!
-    // location.href = "/getScoreList?location="+place.geometry.location;
+    let long = place.geometry.viewport.Ka.lo;
+    
+    let lat = place.geometry.viewport.Va.lo;
+    
+    // let coords11 = coords1.replace("(","");
+    // let coords2 = coords11.replace("," , " ")
+    // let coords3 = coords2.replace(")", "")
+
+    
+    document.querySelector("#location-lat").setAttribute("value" , lat);
+    document.querySelector("#location-long").setAttribute("value" , long);
+    
+    document.querySelector("#scoreList-location").innerHTML = place.name;
+
     if (place.geometry.viewport) {
       map.fitBounds(place.geometry.viewport);
     } else {
