@@ -3,7 +3,8 @@
 const submitBtn = document.getElementById('submit-btn');
 
 // add event listener to the submit button
-submitBtn.addEventListener('click', function() {
+
+function submitBtnClicked() {
     //Get the data from user input
     const cold = document.getElementById("cold").value;
     const coords = document.getElementById("coords").value;
@@ -13,6 +14,7 @@ submitBtn.addEventListener('click', function() {
     const hot = document.getElementById("hot").value;
     const superDry = document.getElementById("superDry").value;
     const superHumid = document.getElementById("superHumid").value;
+    console.error('Element value got.');
 
   // get the current user
   const user = firebase.auth().currentUser;
@@ -20,7 +22,7 @@ submitBtn.addEventListener('click', function() {
   // check if user is signed in
   if (user) {
     // write the user input to the Firestore database
-    db.collection('users').doc(user.uid).update({
+    db.collection('ratings').add({
         cold: cold,
         coords: coords,
         curHumidity: curHumidity,
@@ -41,4 +43,4 @@ submitBtn.addEventListener('click', function() {
   } else {
     console.error('User not signed in.');
   }
-});
+};
