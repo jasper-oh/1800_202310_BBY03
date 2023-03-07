@@ -1,0 +1,22 @@
+{
+  "name": "1800_202310_bby03",
+  "version": "1.0.0",
+  "description": "## 1. Project Description State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.   This browser based web application to ...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasper-oh/1800_202310_BBY03.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasper-oh/1800_202310_BBY03/issues"
+  },
+  "homepage": "https://github.com/jasper-oh/1800_202310_BBY03#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
