@@ -30,7 +30,7 @@ var uiConfig = {
             console.log("New user added to firestore");
             console.log(user.displayName);
             // localStorage.setItem("name" , user.displayName);
-            redirectUrl = "/main" //re-direct to main.html after signup
+            redirectUrl = "/profile" //re-direct to profile.html after signup to check the preference Temp
           })
           .catch(function (error) {
             console.log("Error adding new user: " + error);

@@ -2,6 +2,6 @@
 *.logs
 node_modules/
 .vscode/
-scripts/apiKey.js
-scripts/firebaseAPI.js
-firebaseAPI_TEAM03.js
+public/js/apiKey.js
+public/js/firebaseAPI.js
+public/js/firebase_API_TEAM03.js
