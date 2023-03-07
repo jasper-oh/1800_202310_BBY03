@@ -4,11 +4,54 @@
   height: 100vh;
 }
 
-.container{
+.container-1{
   flex: 1;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  width: 100vw;
+  padding: 10px;
+}
+
+
+
+.map-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+#location-search{
+  width: 50%;
 }
 
 #map{
   margin-top: 50pt;
-  height: 500px;
+  height: 80%;
+}
+#searchpage-comment-list{
+  width: 50%;
+}
+
+.information-section{
+  font-size: 25pt;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+table{
+  border-collapse: collapse;
+  border-spacing: 0 50px;
+  border: 1px solid black;
+  width: 100%; 
+}
+
+th, td{
+  border-bottom: 1px solid black;
+  align-items: center;
+  
 }

@@ -28,7 +28,7 @@ function insertNameFromFirestore(){
              var userName= userDoc.data().name;
              console.log(userName);
              //$("#name-goes-here").text(userName); //jquery
-             document.getElementById("name-goes-here").innerText=userName;
+             document.getElementById("name-goes-here").innerText = userName;
          })    
      }    
   })
