@@ -19,8 +19,10 @@
   <!-- Other libraries go here -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+
+
   <!-- Link to styles of your own -->
-  <link rel="stylesheet" href="./css/styles/component/header.css"/>
+  <link rel="stylesheet" href="./css/styles/component/header.css" />
   <link rel="stylesheet" href="./css/styles/component/footer.css" />
   <link rel="stylesheet" href="./css/styles/mainPage/mainPage.css" />
 
@@ -34,14 +36,16 @@
       <!-- welcome message div-->
       <div id="welcome">
         <h1 id="welcomeText1"> Howdy, "user"!</h1>
-        <p class="welcomeText2"> Check out user's Howdy Score ratings for this area and see how it compares to the forecast. </p>
+        <p class="welcomeText2"> Check out user's Howdy Score ratings for this area and see how it compares to the
+          forecast. </p>
         <img src="../../../images/pin.png" alt="pin icon">
-        <p class="welcomeText2"> "You are currently at: Location" </p>
+        <p>Your city: <span id="city"></span></p>
+
       </div>
 
       <!-- forecast info div-->
       <div id="content1">
-        <h1 class="divTitle"> Forecast </h1> <br/><br/>
+        <h1 class="divTitle"> Forecast </h1> <br /><br />
         <h2> Temperature</h2>
         <p> °C </p> <br />
         <h2> Humidity </h2>
@@ -50,7 +54,7 @@
 
       <!-- howdy score info div-->
       <div id="content2">
-        <h1 class="divTitle">Howdy Score</h1> <br/><br/>
+        <h1 class="divTitle">Howdy Score</h1> <br /><br />
         <h2>Temperature</h2>
         <p>%</p> <br />
         <h2>Humidity</h2>
@@ -62,9 +66,11 @@
     <nav id="footerPlaceholder"></nav>
   </div>
 
-<!-- Link to scripts of your own -->
+  <!-- Link to scripts of your own -->
+  <script src="./js/apiKey.js"></script>
   <script src="./js/mainPage.js"></script>
   <script src="./js/skeleton.js"></script>
+  <script src="./js/weather.js"></script>
 </body>
 
 </html>
