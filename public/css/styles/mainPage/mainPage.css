@@ -22,8 +22,13 @@
     font-size: 33pt;
 }
 
+
 .welcomeText2 {
     font-size: 15pt;
+}
+
+#locationText{
+    font-size: 20pt;
 }
 
 .divTitle {

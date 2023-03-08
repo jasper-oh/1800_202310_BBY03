@@ -39,7 +39,7 @@
         <p class="welcomeText2"> Check out user's Howdy Score ratings for this area and see how it compares to the
           forecast. </p>
         <img src="../../../images/pin.png" alt="pin icon">
-        <p>Your city: <span id="city"></span></p>
+        <p id="locationText">Your current location: <span id="city"></span></p>
 
       </div>
 
@@ -47,18 +47,18 @@
       <div id="content1">
         <h1 class="divTitle"> Forecast </h1> <br /><br />
         <h2> Temperature</h2>
-        <p> °C </p> <br />
+        <span id="forecastTemp"> °C </span> <br />
         <h2> Humidity </h2>
-        <p> unit </p>
+        <span id="forecastHumidity"> % </span>
       </div>
 
       <!-- howdy score info div-->
       <div id="content2">
         <h1 class="divTitle">Howdy Score</h1> <br /><br />
         <h2>Temperature</h2>
-        <p>%</p> <br />
+        <span>%</span> <br />
         <h2>Humidity</h2>
-        <p>%</p> <br />
+        <span>%</span> <br />
       </div>
     </div>
 
@@ -70,7 +70,7 @@
   <script src="./js/apiKey.js"></script>
   <script src="./js/mainPage.js"></script>
   <script src="./js/skeleton.js"></script>
-  <script src="./js/weather.js"></script>
+  <!-- <script src="./js/weather.js"></script> -->
 </body>
 
 </html>
