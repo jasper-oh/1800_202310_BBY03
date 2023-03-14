@@ -65,12 +65,32 @@ window.initMap = function(){
             )
           }
         })
-        console.log(realDataSet[0])
         
-        for(let j = 0 ; j < Object.keys(realDataSet[0]).length ; j++){
+        for(let j = 0 ; j < realDataSet.length ; j++){
           generateData(realDataSet[j].userImg , realDataSet[j].curTemp , realDataSet[j].curHumidity , realDataSet[j].userScore )
         }
-        setPin()
+        let commentsList = [];
+
+        for ( let i = 0 ; i < realDataSet.length ; i ++){
+          commentsList.push({
+            label : i + "",
+            name : realDataSet[i].userEmail,
+            lat : parseFloat(realDataSet[i].lat),
+            lng : parseFloat(realDataSet[i].long),
+          })
+        }
+        
+        console.log(commentsList)
+    
+        //Will make a for loop with this function.
+        commentsList.forEach(({label, name, lat, lng}) => {
+          const marker = new google.maps.Marker({
+            position: {lat, lng},
+            name,
+            label,
+            map,
+          });
+        });
       })
     }
     
@@ -104,32 +124,7 @@ window.initMap = function(){
     }
   })
 
-  function setPin(){
-    let commentsList = [];
-
-    for ( let i = 0 ; i < Object.keys(realDataSet[0]).length ; i ++){
-      commentsList.push({
-        label : i,
-        name : realDataSet[i].userEmail,
-        lat : realDataSet[i].lat,
-        long : realDataSet[i].long,
-      })
-    }
-
-    console.log(commentsList)
-
-    //Will make a for loop with this function.
-    commentsList.forEach(({label, name, lat, lng}) => {
-      const marker = new google.maps.Marker({
-        position: {lat, lng},
-        name,
-        label,
-        map,
-      });
-    });
-
   
-  }
 };
 
 function degreesToRadians(degrees) {
