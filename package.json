@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jasper-oh/1800_202310_BBY03#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "geofire-common": "^6.0.0"
   }
 }

@@ -1,4 +1,5 @@
 // REQUIRES
+const { time } = require("console");
 const express = require("express");
 const app = express();
 app.use(express.json());
@@ -11,6 +12,8 @@ const fs = require("fs");
 app.use("/js", express.static("./public/js"));
 app.use("/css", express.static("./public/css"));
 app.use("/images", express.static("./public/images"));
+app.use("/model" , express.static("./public/model"));
+
 // Fixed Header and Footer
 app.use("/header", express.static("./app/component/header.html"));
 app.use("/footer", express.static("./app/component/footer.html"));
@@ -37,13 +40,6 @@ app.get("/search" , (req, res) => {
   console.log("c");
   
   let doc = fs.readFileSync("./app/html/searchPage.html", "utf8");
-  res.send(doc);
-})
-
-app.get("/getScoreList" , (req,res)=> {
-  console.log("d");
-
-  let doc = fs.readFileSync("./app/component/scoreListPage.html", "utf8");
   res.send(doc);
 })
 

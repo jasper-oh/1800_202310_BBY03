@@ -8,7 +8,9 @@ const apiKey = '09493051d39bc31a23363d3b99bf7f81';
 navigator.geolocation.getCurrentPosition(position => {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    const cityElement = document.getElementById('city');
+    
+    localStorage.setItem("lat", latitude);
+    localStorage.setItem("long", longitude);
 
     // Use the latitude and longitude coordinates to fetch the weather data from the OpenWeather API
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
@@ -44,3 +46,14 @@ navigator.geolocation.getCurrentPosition(position => {
 }, error => {
     console.error(error);
 });
+
+// let user = {
+//     userName : "",
+//     userEmail: "",
+//     userLocation: "",
+//     userLocLat: "",
+//     userLocLong: "",
+//     userPreferenceTemp: "",
+//     userPreferenceHumid: "",
+//     userAchievement: "",
+//   }

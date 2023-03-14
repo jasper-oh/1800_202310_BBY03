@@ -16,7 +16,12 @@
 
 
   <!-- Other libraries go here -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
   
   <!-- Link to styles of your own -->
 
@@ -33,7 +38,9 @@
     <div class="container">
       <!-- Code will be here -->
       
-      <form action="/search">
+      <!-- <form action="/search">
+         -->
+       <form>
         <div class="information-section">
           <p><b>Upload your Howdy Score!</b></p>
           <p> Rate the temperature and humidity in your area</p>
@@ -43,13 +50,13 @@
         <div class="information-temperature info" >
           <span>Temperature</span>
           <span id="curTemp"> 3.5 </span>
-          <input type="range" min="1" max="5" value="1" class="temperatureSlider" id="howdyTemperature">
+          <input type="range" min="1" max="5" value="1" class="temperatureSlider" id="howdyTemp">
         </div>
 
         <div class="information-precipitation info">
-          <span>precipitation</span>
+          <span>Humidity</span>
           <span id="curHumidity"> 2 </span>
-          <input type="range" min="1" max="5" value="1" class="precipitationSlider" id="howdyPrecipitation">
+          <input type="range" min="1" max="5" value="1" class="precipitationSlider" id="howdyHumid">
         </div>
 
         <div class="mb-3">
@@ -58,7 +65,8 @@
         </div>
 
       </div>
-        <input type="submit" id="submit-btn" onclick="submitBtnClicked()"/>
+        <!-- <input type="submit" id="submit-btn" onclick="submitBtnClicked()"/> -->
+        <input type="button" id="submit-btn" onclick="submitBtnClicked()"/>
 
       </form>
 
@@ -66,6 +74,10 @@
     <!-- footer -->
     <nav id="footerPlaceholder"></nav>
   </div>
+  
+  <script src="./js/firebase_API_TEAM03.js"></script>
+  <script src="https://cdn.firebase.com/libs/geofire/2.0.0/geofire.min.js"></script>
+  <script type="text/javascript" src="./js/apiKey.js"></script>
   <script src="./js/skeleton.js"></script>
   <script src="./js/uploadPage.js"></script>
 </body>

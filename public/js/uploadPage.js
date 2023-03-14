@@ -1,46 +1,54 @@
-
 // get reference to the submit button
 const submitBtn = document.getElementById('submit-btn');
 
-// add event listener to the submit button
+const lat = localStorage.getItem("lat");
+const long =  localStorage.getItem("long")
+var coords = new firebase.firestore.GeoPoint(lat,long)
 
+
+
+
+// add event listener to the submit button
 function submitBtnClicked() {
     //Get the data from user input
-    const cold = document.getElementById("cold").value;
-    const coords = document.getElementById("coords").value;
-    const curHumidity = document.getElementById("curHumidity").value;
-    const curTemp = document.getElementById("curTemp").value;
-    const userEmail = firebase.auth().currentUser.email;
-    const hot = document.getElementById("hot").value;
-    const superDry = document.getElementById("superDry").value;
-    const superHumid = document.getElementById("superHumid").value;
-    console.error('Element value got.');
+    const city = localStorage.getItem("location")
+    const curTemp = document.getElementById("howdyTemp").value;
+    const curHumidity = document.getElementById("howdyHumid").value;
+    const comment = document.getElementById("exampleFormControlTextarea1").value
+    // TODO later
+    // const hot = document.getElementById("hot").value;
+    // const cold = document.getElementById("howdyHumid").value;
+    // const superDry = document.getElementById("superDry").value;
+    // const superHumid = document.getElementById("superHumid").value;
 
   // get the current user
-  const user = firebase.auth().currentUser;
+  // const user = firebase.auth().currentUser;
 
-  // check if user is signed in
-  if (user) {
-    // write the user input to the Firestore database
-    db.collection('ratings').add({
-        cold: cold,
-        coords: coords,
-        curHumidity: curHumidity,
-        curTemp: curTemp,
-        email: userEmail,
-        hot: hot,
-        likes: 0,          //default value
-        superDry: superDry,       
-        superHumid: superHumid,
-        uploadTime: firebase.firestore.FieldValue.serverTimestamp()  //current system time
-    })
-    .then(function() {
-      console.log('User input written to Firestore.');
-    })
-    .catch(function(error) {
-      console.error('Error writing user input to Firestore: ', error);
-    });
-  } else {
-    console.error('User not signed in.');
-  }
+  firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+      var currentUser = db.collection("users").doc(user.uid)
+      var userID = user.uid
+
+      currentUser.get()
+        .then(userDoc => {
+          var userEmail = userDoc.data().email;
+          db.collection("ratings").add({
+            city : city,
+            userID : userID,
+            city : city,
+            coords : coords,
+            curTemp : curTemp,
+            curHumidity : curHumidity,
+            userEmail : userEmail,
+            comment : comment,
+            uploadTime: firebase.firestore.FieldValue.serverTimestamp()
+          }).then(() => {
+            console.log("save done")
+          })
+
+        })
+    }else{
+      console.log("unsaved")
+    }
+  })
 };
