@@ -40,35 +40,6 @@ function getRatings(){
 
 getRatings();
 
-
-
-// let dataSet = [
-//   {
-//     img : "/images/logoWhite.png",
-//     userTemp : "3.5",
-//     userHumid : "2.0",
-//     userScore : "53%"
-//   },
-//   {
-//     img : "/images/logoWhite.png",
-//     userTemp : "2.0",
-//     userHumid : "5.0",
-//     userScore : "33%"
-//   },
-//   {
-//     img : "/images/logoWhite.png",
-//     userTemp : "1.0",
-//     userHumid : "1.0",
-//     userScore : "73%"
-//   },
-//   {
-//     img : "/images/logoWhite.png",
-//     userTemp : "4.5",
-//     userHumid : "2.0",
-//     userScore : "23%"
-//   }
-// ]
-
 function generateData(imgSrc ,temp, humid ,score){
   const tbody = document.getElementById("tbody");
   const insertRow = tbody.insertRow();

@@ -15,28 +15,26 @@ window.initMap = function(){
   const input = document.getElementById("location-search");
   const searchBox = new google.maps.places.SearchBox(input);
 
-  // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-  // // Bias the SearchBox results towards current map's viewport.
-  // map.addListener("bounds_changed", () => {
-  //   searchBox.setBounds(map.getBounds());
-  // });
-
+  // The Logic that When user search and click the location that is given.
   searchBox.addListener("places_changed" , () => {
     //Erase the list logic
     $("#tbody").empty()
 
     const places = searchBox.getPlaces();
     if (places.length == 0) {
-      
       return;
     }
     
+    //  Get the given one.
     const place = places[0];
     input.value = place.name;
+
     if (!place.geometry || !place.geometry.location) {
       console.log("Returned place contains no geometry");
       return;
     }
+
+    // Give the search location value 
     document.getElementById("scoreList-location").innerHTML = place.name;
     let lat = place.geometry.viewport.Va.lo;
     let long = place.geometry.viewport.Ja.lo;
@@ -56,6 +54,7 @@ window.initMap = function(){
           if(distance <= 100){
             realDataSet.push(
               {
+                ratingID : doc.id,
                 userImg : "/images/logoWhite.png",
                 userID : doc.data().userID,
                 userEmail : doc.data().email,
@@ -69,7 +68,7 @@ window.initMap = function(){
         })
         
         for(let j = 0 ; j < realDataSet.length ; j++){
-          generateData(realDataSet[j].userImg , realDataSet[j].curTemp , realDataSet[j].curHumidity , realDataSet[j].userScore )
+          generateData(realDataSet[j].userImg , realDataSet[j].curTemp , realDataSet[j].curHumidity , realDataSet[j].userScore, realDataSet[j].ratingID )
         }
         let commentsList = [];
 
@@ -98,17 +97,22 @@ window.initMap = function(){
     
     getRatings();
     
-    function generateData(imgSrc ,temp, humid ,score){
+    function generateData(imgSrc ,temp, humid ,score , id){
       const tbody = document.getElementById("tbody");
       const insertRow = tbody.insertRow();
       const imgData = insertRow.insertCell();
       const tempData = insertRow.insertCell()
       const humidData = insertRow.insertCell();
       const scoreData = insertRow.insertCell();
+      const likeData = insertRow.insertCell();
     
       let imgTag = document.createElement("IMG")
       imgTag.setAttribute("src" , imgSrc);
       imgTag.setAttribute("width" , "40px");
+      imgTag.classList.add(id)
+      imgTag.setAttribute("data-toggle" , "modal")
+      imgTag.setAttribute("data-target", "#myModal")
+      imgTag.setAttribute("onclick" , "openModal(this.className);");
       imgData.appendChild(imgTag);
       let tempDataText = document.createTextNode(temp);
       tempData.appendChild(tempDataText)
@@ -116,7 +120,14 @@ window.initMap = function(){
       humidData.appendChild(humidDataText)
       let scoreDataText = document.createTextNode(score);
       scoreData.appendChild(scoreDataText)
+      //Like button logic will be here.
+      let likesDataText = document.createElement("i");
+      likesDataText.classList.add("fa-regular", "fa-thumbs-up")
+      likesDataText.setAttribute("onclick","clickLikes(this.id);")
+      likesDataText.setAttribute("id", id)
+      likeData.appendChild(likesDataText)
     }
+    
 
     if (place.geometry.viewport) {
       map.fitBounds(place.geometry.viewport);
@@ -153,4 +164,69 @@ function distanceBetweenPoints(point1, point2) {
   return distance;
 }
 
+
+function clickLikes(cliked_id){
+  
+  let clickedEle = document.getElementById(cliked_id)
+  
+  if(clickedEle.classList.contains("fa-regular")){
+    clickedEle.classList.remove("fa-regular")
+    clickedEle.classList.add("fa-solid")
+    // Firebase connect logic
+    var setRatings = db.collection("ratings").doc(cliked_id)
+    setRatings.get()
+    .then(
+      ratingDoc => {
+        var curLikes = ratingDoc.data().likes + 1;
+        db.collection("ratings").doc(cliked_id).update({
+          likes : curLikes
+        }).then(() => {
+          console.log("save done!")
+        })
+      }
+    )
+
+  }else{
+    clickedEle.classList.remove("fa-solid")
+    clickedEle.classList.add("fa-regular")
+    // Firebase connect logic
+    var setRatings = db.collection("ratings").doc(cliked_id)
+    setRatings.get()
+    .then(
+      ratingDoc => {
+        var curLikes = ratingDoc.data().likes - 1;
+        db.collection("ratings").doc(cliked_id).update({
+          likes : curLikes
+        }).then(() => {
+          console.log("save done!")
+        })
+      }
+    )
+    
+  }
+}
+
+function openModal(clickedClass){
+  var getRatings = db.collection("ratings").doc(clickedClass)
+  getRatings.get()
+  .then(
+    ratingDoc => {
+      $("#modal-title").text(ratingDoc.data().city)
+      $("#modal-temp").text(ratingDoc.data().curTemp)
+      $("#modal-humid").text(ratingDoc.data().curHumidity)
+      $("#modal-comment").text(ratingDoc.data().comment)
+      $("#modal-like").text(ratingDoc.data().likes)
+      $("#modal-time").text(new Date(ratingDoc.data().uploadTime.seconds*1000))
+    }
+  )
+
+
+    $("#myModal").modal('show')
+}
+
+
+
+
+
+// <i class="fa-regular fa-thumbs-up"></i>
 document.head.appendChild(script);

@@ -1,6 +1,7 @@
 // get reference to the submit button
 const submitBtn = document.getElementById('submit-btn');
 
+// Lat and long data convert to GeoPoint
 const lat = localStorage.getItem("lat");
 const long =  localStorage.getItem("long")
 var coords = new firebase.firestore.GeoPoint(lat,long)
@@ -17,13 +18,11 @@ function submitBtnClicked() {
     const comment = document.getElementById("exampleFormControlTextarea1").value
     // TODO later
     // const hot = document.getElementById("hot").value;
-    // const cold = document.getElementById("howdyHumid").value;
+    // const cold = document.getElementById("cold").value;
     // const superDry = document.getElementById("superDry").value;
     // const superHumid = document.getElementById("superHumid").value;
 
-  // get the current user
-  // const user = firebase.auth().currentUser;
-
+  // Save the data to ratings collection
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
       var currentUser = db.collection("users").doc(user.uid)
@@ -34,15 +33,20 @@ function submitBtnClicked() {
           var userEmail = userDoc.data().email;
           db.collection("ratings").add({
             city : city,
-            userID : userID,
-            city : city,
-            coords : coords,
-            curTemp : curTemp,
-            curHumidity : curHumidity,
-            userEmail : userEmail,
+            // cold : cold,
             comment : comment,
-            uploadTime: firebase.firestore.FieldValue.serverTimestamp()
+            coords : coords,
+            curHumidity : curHumidity,
+            curTemp : curTemp,
+            email : userEmail,
+            // hot : hot,
+            likes : 0,
+            // superDry : superDry,
+            // superHumid : superHumid,
+            uploadTime: firebase.firestore.FieldValue.serverTimestamp(),
+            userID : userID,
           }).then(() => {
+            //Save Done logic!
             console.log("save done")
           })
 
