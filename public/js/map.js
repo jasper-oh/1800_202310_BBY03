@@ -51,7 +51,9 @@ window.initMap = function(){
         ratings.forEach(doc => {    
           const point = doc.data().coords;
           const distance = distanceBetweenPoints(center , point);
-          if(distance <= 20){
+
+          //range can be change!
+          if(distance <= 100){
             realDataSet.push(
               {
                 userImg : "/images/logoWhite.png",
