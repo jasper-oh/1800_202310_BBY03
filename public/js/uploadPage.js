@@ -31,6 +31,7 @@ function submitBtnClicked() {
       currentUser.get()
         .then(userDoc => {
           var userEmail = userDoc.data().email;
+          var userImg = userDoc.data().userImg;
           db.collection("ratings").add({
             city : city,
             // cold : cold,
@@ -45,6 +46,7 @@ function submitBtnClicked() {
             // superHumid : superHumid,
             uploadTime: firebase.firestore.FieldValue.serverTimestamp(),
             userID : userID,
+            userImg : userImg
           }).then(() => {
             //Save Done logic!
             console.log("save done")

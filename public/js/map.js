@@ -49,13 +49,15 @@ window.initMap = function(){
         ratings.forEach(doc => {    
           const point = doc.data().coords;
           const distance = distanceBetweenPoints(center , point);
-
+          
+          
+                    
           //range can be change! unit is "KM".
           if(distance <= 20){
             realDataSet.push(
               {
                 ratingID : doc.id,
-                userImg : "/images/logoWhite.png",
+                // userImg : userImgIndividual,
                 userID : doc.data().userID,
                 userEmail : doc.data().email,
                 curHumidity : doc.data().curHumidity,
@@ -65,10 +67,12 @@ window.initMap = function(){
               }
             )
           }
+          
         })
         
         for(let j = 0 ; j < realDataSet.length ; j++){
-          generateData(realDataSet[j].userImg , realDataSet[j].curTemp , realDataSet[j].curHumidity , realDataSet[j].userScore, realDataSet[j].ratingID )
+          // realDataSet[j].userImg , 
+          generateData(realDataSet[j].curTemp , realDataSet[j].curHumidity , realDataSet[j].userScore, realDataSet[j].ratingID , realDataSet[j].userID)
         }
         let commentsList = [];
 
@@ -97,7 +101,7 @@ window.initMap = function(){
     
     getRatings();
     
-    function generateData(imgSrc ,temp, humid ,score , id){
+    function generateData(temp, humid ,score , id ,userId){
       const tbody = document.getElementById("tbody");
       const insertRow = tbody.insertRow();
       const imgData = insertRow.insertCell();
@@ -107,13 +111,19 @@ window.initMap = function(){
       const likeData = insertRow.insertCell();
     
       let imgTag = document.createElement("IMG")
-      imgTag.setAttribute("src" , imgSrc);
-      imgTag.setAttribute("width" , "40px");
-      imgTag.classList.add(id)
-      imgTag.setAttribute("data-toggle" , "modal")
-      imgTag.setAttribute("data-target", "#myModal")
-      imgTag.setAttribute("onclick" , "openModal(this.className);");
-      imgData.appendChild(imgTag);
+      var user = db.collection("users").doc(userId)
+            
+      user.get().then(userDoc => {
+        var userImg = userDoc.data().userImg;
+        imgTag.setAttribute("src" , userImg);
+        imgTag.setAttribute("width" , "40px");
+        imgTag.classList.add(id)
+        imgTag.setAttribute("data-toggle" , "modal")
+        imgTag.setAttribute("data-target", "#myModal")
+        imgTag.setAttribute("onclick" , "openModal(this.className);");
+        imgData.appendChild(imgTag);  
+      })
+      
       let tempDataText = document.createTextNode(temp);
       tempData.appendChild(tempDataText)
       let humidDataText = document.createTextNode(humid);
@@ -163,7 +173,6 @@ function distanceBetweenPoints(point1, point2) {
   const distance = earthRadius * c;
   return distance;
 }
-
 
 function clickLikes(cliked_id){
   
