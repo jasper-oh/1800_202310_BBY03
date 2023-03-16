@@ -111,3 +111,115 @@ function trimImgName(name){
 
   return checkRadioId2;
 }
+
+//checking streaks 
+// Assuming that "latestSubmissionDate", "currentStreak", "oneDayStreak", "threeDayStreak", "oneWeekStreak", and "twoWeekStreak" are fields in the Firestore document
+const userRef = db.collection("users").doc(user.uid);
+
+// Get the Firestore document for the user
+userRef.get().then(userDoc => {
+  if (userDoc.exists) {
+    // Retrieve the latest submission date from the Firestore document
+    const latestSubmissionDate = userDoc.data().latestSubmissionDate.toDate();
+
+    // Calculate the time difference between the latest submission and the current time
+    const timeDiffInMs = Date.now() - latestSubmissionDate.getTime();
+
+    // Convert the time difference to days
+    const timeDiffInDays = Math.floor(timeDiffInMs / (1000 * 60 * 60 * 24));
+
+    // Check if the user has a current streak
+    if (timeDiffInDays <= 1) {
+      // User has a 1 day streak
+      const newStreak = userDoc.data().currentStreak + 1;
+
+      // Update the "currentStreak" field in Firestore
+      userRef.update({ currentStreak: newStreak });
+
+      // Check if the user has a 1 day streak
+      if (newStreak >= 1) {
+        // User has a 1 day streak
+        userRef.update({ oneDayStreak: true });
+      }
+
+      // Check if the user has a 3 day streak
+      if (userDoc.data().currentStreak >= 3) {
+        // User has a 3 day streak
+        userRef.update({ threeDayStreak: true });
+      }
+
+      // Check if the user has a 1 week streak
+      if (timeDiffInDays <= 7 && userDoc.data().currentStreak >= 7) {
+        // User has a 1 week streak
+        userRef.update({ oneWeekStreak: true });
+      }
+
+      // Check if the user has a 2 week streak
+      if (timeDiffInDays <= 14 && userDoc.data().currentStreak >= 14) {
+        // User has a 2 week streak
+        userRef.update({ twoWeekStreak: true });
+      }
+    } else {
+      // User does not have a current streak
+      // Update the "currentStreak" field in Firestore to 0
+      userRef.update({ currentStreak: 0 });
+    }
+  } else {
+    console.log("User does not exist in Firestore.");
+  }
+}).catch(error => {
+  console.log("Error getting user document: ", error);
+});
+
+//showing badge
+
+// Get the Firestore document for the user
+userRef.get().then(userDoc => {
+  if (userDoc.exists) {
+    const oneDayStreakBadge = document.getElementById("oneDayStreakBadge");
+    const threeDayStreakBadge = document.getElementById("threeDayStreakBadge");
+    const oneWeekStreakBadge = document.getElementById("oneWeekStreakBadge");
+    const twoWeekStreakBadge = document.getElementById("twoWeekStreakBadge");
+
+    // Check if the user has achieved the 1 day streak
+    if (userDoc.data().oneDayStreak) {
+      // Show the 1 day streak badge
+      oneDayStreakBadge.style.display = "inline-block";
+    } else {
+      // Hide the 1 day streak badge
+      oneDayStreakBadge.style.display = "none";
+    }
+
+    // Check if the user has achieved the 3 day streak
+    if (userDoc.data().threeDayStreak) {
+      // Show the 3 day streak badge
+      threeDayStreakBadge.style.display = "inline-block";
+    } else {
+      // Hide the 3 day streak badge
+      threeDayStreakBadge.style.display = "none";
+    }
+
+    // Check if the user has achieved the 1 week streak
+    if (userDoc.data().oneWeekStreak) {
+      // Show the 1 week streak badge
+      oneWeekStreakBadge.style.display = "inline-block";
+    } else {
+      // Hide the 1 week streak badge
+      oneWeekStreakBadge.style.display = "none";
+    }
+
+    // Check if the user has achieved the 2 week streak
+    if (userDoc.data().twoWeekStreak) {
+      // Show the 2 week streak badge
+      twoWeekStreakBadge.style.display = "inline-block";
+    } else {
+      // Hide the 2 week streak badge
+      twoWeekStreakBadge.style.display = "none";
+    }
+  } else {
+    console.log("User does not exist in Firestore.");
+  }
+}).catch(error => {
+  console.log("Error getting user document: ", error);
+});
+
