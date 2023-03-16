@@ -43,16 +43,15 @@
       <!-- Code will be here -->
         <div class="map-container">
           <input type="text" id="location-search" placeholder="Search the Location!" />
-        <div id="map">
+          <div id="map">
+          </div>
         </div>
-      </div>
 
       <div class="scoreList-container">
         <div class="information-section">
-          <p>Location :  <span id="scoreList-location"> Location </span></p>
+          <p><span id="scoreList-location">Location</span></p>
         </div>
         <div id="searchpage-comment-list">
-          <body>
             <table>
               <thead class="table">
                 <tr>
@@ -67,33 +66,34 @@
                 
               </tbody>
             </table>  
-          </body>
         </div>
       </div>
     </div>
+    <!-- Modal Code Start -->
     <div class="modal" tabindex="-1" role="dialog" id="myModal">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 id="modal-title"></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+            <h5 id="modal-title"></h5>              
           </div>
           <div class="modal-body">
-            <span>Today's temperature is </span><p id="modal-temp"></p>
-            <span>Today's humidity is </span><p id="modal-humid"></p>
-            <span>Comments : </span><p id="modal-comment"></p>
+            <span>Today's temperature is </span><input type="range" id="modal-temp" min="1" max="5"/><br/>
+            <span>Today's humidity is </span><input type="range" id="modal-humid" min="1" max="5"/><br/>
+            <span>Comments : </span><textarea id="modal-comment"></textarea>
             <p id="modal-score"></p>
             <span>This comment liked by</span><p id="modal-like"></p>
             <span>Upload Time : </span><p id="modal-time"></p>
           </div>
           <div class="modal-footer">
+            <button type="button"  class="btn btn-danger modal-btn-delete" style="display: none;" onclick="deleteComment(this.id)">delete comments</button>
+            <button type="button"  class="btn btn-primary modal-btn-save" style="display: none;" onclick="saveComment(this.id)">Save changes</button>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
+    <!-- Modal Code End -->
+
     <!-- footer -->
     <nav id="footerPlaceholder"></nav>
   </div>

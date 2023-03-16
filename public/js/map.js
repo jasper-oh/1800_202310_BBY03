@@ -25,7 +25,7 @@ window.initMap = function(){
       return;
     }
     
-    //  Get the given one.
+    // Get the given one.
     const place = places[0];
     input.value = place.name;
 
@@ -50,8 +50,8 @@ window.initMap = function(){
           const point = doc.data().coords;
           const distance = distanceBetweenPoints(center , point);
 
-          //range can be change!
-          if(distance <= 100){
+          //range can be change! unit is "KM".
+          if(distance <= 20){
             realDataSet.push(
               {
                 ratingID : doc.id,
@@ -206,27 +206,79 @@ function clickLikes(cliked_id){
   }
 }
 
+// TODO make a logic that if the User click his own comment, 
+// then put the edit or delete or save button.
 function openModal(clickedClass){
-  var getRatings = db.collection("ratings").doc(clickedClass)
-  getRatings.get()
-  .then(
-    ratingDoc => {
-      $("#modal-title").text(ratingDoc.data().city)
-      $("#modal-temp").text(ratingDoc.data().curTemp)
-      $("#modal-humid").text(ratingDoc.data().curHumidity)
-      $("#modal-comment").text(ratingDoc.data().comment)
-      $("#modal-like").text(ratingDoc.data().likes)
-      $("#modal-time").text(new Date(ratingDoc.data().uploadTime.seconds*1000))
+
+  firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+      var userID = user.uid
+      var getRatings = db.collection("ratings").doc(clickedClass)
+      getRatings.get()
+      .then(
+        ratingDoc => {
+          // If the comment is generate by user
+          if(userID == ratingDoc.data().userID){
+            $(".modal-btn-delete").css('display','inline-block');
+            $(".modal-btn-delete").attr('id' , clickedClass);
+            $(".modal-btn-save").css('display','inline-block');
+            $(".modal-btn-save").attr('id' , clickedClass);
+            $("#modal-title").text(ratingDoc.data().city)
+            $("#modal-temp").val(ratingDoc.data().curTemp)
+            $("#modal-humid").val(ratingDoc.data().curHumidity)
+            $("#modal-comment").text(ratingDoc.data().comment)
+            $("#modal-like").text(ratingDoc.data().likes)
+            $("#modal-time").text(new Date(ratingDoc.data().uploadTime.seconds*1000))
+          // If the comment is just showing
+          }else{
+            $(".modal-btn-delete").css('display','none');
+            $(".modal-btn-save").css('display','none');
+            $("#modal-title").text(ratingDoc.data().city)
+            $("#modal-temp").val(ratingDoc.data().curTemp)
+            $("#modal-humid").val(ratingDoc.data().curHumidity)
+            $("#modal-comment").text(ratingDoc.data().comment)
+            $("#modal-like").text(ratingDoc.data().likes)
+            $("#modal-time").text(new Date(ratingDoc.data().uploadTime.seconds*1000))
+          }
+
+        }
+      )
+      
     }
-  )
-
-
+  })
     $("#myModal").modal('show')
+}
+
+function deleteComment(clickedId){
+  var userCheck = confirm("Do you want to delete it?");
+  if (userCheck == true){
+    db.collection("ratings").doc(clickedId).delete().then(() => {
+      alert("Successfully deleted")
+    })
+  }else{
+    return;
+  }
+}
+
+function saveComment(clickedId){
+  var userCheck = confirm("Do you want to save it?");
+  var modifiedTemp = $("#modal-temp").val()
+  console.log(modifiedTemp)
+  var modifiedHumid = $("#modal-humid").val()
+  if (userCheck == true){
+    db.collection("ratings").doc(clickedId).update({
+      curTemp : modifiedTemp,
+      curHumidity : modifiedHumid
+    }).then(() => {
+      alert("Successfully saved")
+      window.location.href = "/search"
+    })
+  }else{
+    return;
+  }
+
 }
 
 
 
-
-
-// <i class="fa-regular fa-thumbs-up"></i>
 document.head.appendChild(script);

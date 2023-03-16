@@ -16,22 +16,28 @@
 
 
 .map-container{
-  width: 100%;
+  width: 60%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   padding: 20px;
 }
 #location-search{
-  width: 50%;
+  width: 100%;
+  height: 50px;
 }
 
 #map{
   margin-top: 50pt;
   height: 80%;
 }
+
+.scoreList-container{
+  width:40%;
+}
+
 #searchpage-comment-list{
-  width: 50%;
+  width: 100%;
 }
 
 .information-section{
@@ -40,6 +46,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 
@@ -48,6 +56,7 @@ table{
   border-spacing: 0 50px;
   border: 1px solid black;
   width: 100%; 
+  text-align: center;
 }
 
 th, td{
@@ -58,4 +67,40 @@ th, td{
 
 #invisible{
   display: none;
+}
+
+@media screen and (max-width : 900px) {
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .container-1{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .map-container{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+  #location-search{
+    width: 100%;
+  }
+  
+  
+  
+  .scoreList-container{
+    width:100%;
+    height: 50%;
+  }
 }

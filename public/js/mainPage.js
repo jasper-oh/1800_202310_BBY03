@@ -46,14 +46,3 @@ navigator.geolocation.getCurrentPosition(position => {
 }, error => {
     console.error(error);
 });
-
-// let user = {
-//     userName : "",
-//     userEmail: "",
-//     userLocation: "",
-//     userLocLat: "",
-//     userLocLong: "",
-//     userPreferenceTemp: "",
-//     userPreferenceHumid: "",
-//     userAchievement: "",
-//   }
