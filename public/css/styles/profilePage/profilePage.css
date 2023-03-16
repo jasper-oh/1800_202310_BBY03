@@ -20,6 +20,14 @@
   min-width: 390px;
 }
 
+
+.edit-profile-photo-btn{
+  position: absolute;
+  z-index: 1;
+  left: 134px;
+  top: 284px;
+}
+
 .range-container {
   display: flex;
   align-items: center;
@@ -30,5 +38,28 @@
   text-align: center;
 }
 
+
+/* Radio Button CSS */
+.profile-label{
+  margin: 30px;
+}
+
+/* HIDE RADIO */
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  outline: 2px solid #f00;
+}
 
 

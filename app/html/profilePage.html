@@ -51,10 +51,11 @@
           <img
             class="user-photo"
             height="200"
-            src="../../../images/logoWhite.png"
+            src="/images/logoWhite.png"
             alt="user-photo"
           />
-          <span class="user-name fs-1 border-bottom border-2" id="name-goes-here">User Name</span>
+          <span class="edit-profile-photo-btn" onclick="editClick(this.id)" style="color:brown"><b>Edit</b></span>
+          <span class="user-name fs-1 border-bottom border-2" id="name-goes-here" >User Name</span>
           <div class="streak fs-3">Achievements</div>
         </div>
 
@@ -111,7 +112,44 @@
           <!--Footer here-->
       <nav id="footerPlaceholder"></nav>
     </div>
+    <!-- Modal -->
+    <div class="modal" tabindex="-1" role="dialog" id="profileModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Change Your Profile Photo</h5>
+            </button>
+          </div>
+          <div class="modal-body">
+            <label class="profile-label">
+              <input type="radio" name="profile" id="avatar1" value="/images/avatar1.png">
+              <img src="/images/avatar1.png" width="100px"/>
+            </label>
+            
+            <label class="profile-label">
+              <input type="radio" name="profile" id="avatar2" value="/images/avatar2.png">
+              <img src="/images/avatar2.png" width="100px"/>              
+            </label>
 
+            <label class="profile-label">
+              <input type="radio" name="profile" id="avatar3" value="/images/avatar3.png">
+              <img src="/images/avatar3.png" width="100px"/>
+            </label>
+            
+            <label class="profile-label">
+              <input type="radio" name="profile" id="logoWhite" value="/images/logoWhite.png">
+              <img src="/images/logoWhite.png" width="100px"/>
+            </label>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary save-profile-img-btn" onclick="saveUserProfileImg(this.id)">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
 
 
     <!-- Link to scripts of your own -->
