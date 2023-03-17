@@ -1,83 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Bootstrap Library CSS CDN go here -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <!-- Bootstrap Library CSS CDN go here -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
 
-  <!-- Boostrap Library JS CDN  go here -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/07ca69b752.js" crossorigin="anonymous"></script>
+    <!-- Boostrap Library JS CDN  go here -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/07ca69b752.js"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- Other libraries go here -->
+    <!-- Other libraries go here -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
-  
-  <!-- Link to styles of your own -->
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
 
-  <link rel="stylesheet" href="./css/styles/component/footer.css" />
-  <link rel="stylesheet" href="./css/styles/component/header.css" />
-  <link rel="stylesheet" href="./css//styles/uploadPage/uploadPage.css"/>
-  
-  <title>Rating Page</title>
-</head>
-<body>
-  <div class="wrapper">
-    <!-- nav bar -->
-    <nav id="navbarPlaceholder"></nav>
-    <div class="container">
-      <!-- Code will be here -->
-      
-      <!-- <form action="/search">-->
-       <form>
-        <div class="information-section">
-          <p><b>Upload your Howdy Score!</b></p>
-          <p> Rate the temperature and humidity in your area</p>
-          <p>Location :  <span id="coords"> Location </span></p>
-        </div>
-        <div class="information-wrapper">
-        <div class="information-temperature info" >
-          <span>Temperature</span>
-          <span id="curTemp"> 3.5 </span>
-          <input type="range" min="1" max="5" value="1" class="temperatureSlider" id="howdyTemp">
-        </div>
+    <!-- Link to styles of your own -->
 
-        <div class="information-precipitation info">
-          <span>Humidity</span>
-          <span id="curHumidity"> 2 </span>
-          <input type="range" min="1" max="5" value="1" class="precipitationSlider" id="howdyHumid">
-        </div>
+    <link rel="stylesheet" href="./css/styles/component/footer.css" />
+    <link rel="stylesheet" href="./css/styles/component/header.css" />
+    <link rel="stylesheet" href="./css//styles/uploadPage/uploadPage.css" />
 
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label fs-4">Leave your tips or comments:</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-        </div>
+    <title>Rating Page</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- nav bar -->
+      <nav id="navbarPlaceholder"></nav>
+      <div class="container">
+        <!-- Code will be here -->
 
+        <!-- <form action="/search">-->
+        <form>
+          <div class="information-section">
+            <p><b>Upload your Howdy Score!</b></p>
+            <p>Rate the weather in your area</p>
+            <p id="locationText">location: <span id="city"></span></p>
+          </div>
+        
+          <div class="content row">
+            <!--Same div as the main page-->
+            <div class="weather-forecast mx-3 col text-white shadow p-3 rounded-3">
+              <div id="content1">
+                <div><h2 class="divTitle"> Forecast </h2> </div>
+                <div class="mb-3 card-body">
+                  <p> Temperature</p>
+                  <div id="forecastTemp">  °C </div> 
+                </div>
+
+
+                <div class="mb-3">
+                  <p>Humidity</p> 
+                  <div id="forecastHumidity">  % </div>
+                </div>
+
+              </div>
+            </div>
+            
+            <!--Howdy score rating div, side-by-side with the forecast-->
+            <div class="howdy-rating card col shadow p-3 border-white rounded-2">
+              <div class=""><h2>Howdy Score</h2></div>
+              <!---Temperature-->
+              <div class="temp-wrapper card-body mb-3">
+                <span id="temp-rating-label-goes-here">Rate based on the forecasted Temp </span>
+              <div class="temp-rating">
+                <label class="switch-left" id="switch-left1">
+                  <input type="checkbox" >
+                  <span class="slider round"></span>
+                  <label>Extreme weather?</label>
+                </label>
+
+                <div class="information-wrapper mx-3">
+                  <input type="range" min="1" max="5" value="2.5" class="form-range" id="my-slider1" >
+                </div>
+                
+                <label class="switch-right" id="switch-right1">
+                  <input type="checkbox" >
+                  <span class="slider round"></span>
+                  <label>Extreme weather?</label>
+                </label>
+              </div>
+            </div>
+              
+
+              <!--Humidity-->
+              <div class="humidity-wrapper mb-5 ">
+                <span id="humidity-rating-label-goes-here">Rate based on forcasted Humidity</span>
+                <div class="humidity-rating">
+                  <label class="switch-left" id="switch-left2">
+                    <input type="checkbox" >
+                    <span class="slider round"></span>
+                    <label>Extreme weather?</label>
+                  </label>
+
+                  <div class="information-wrapper mx-3">
+                    <input type="range" min="1" max="5" value="2.5" class="form-range" id="my-slider2" >
+                  </div>
+                  
+                  <label class="switch-right" id="switch-right2">
+                    <input type="checkbox" >
+                    <span class="slider round"></span>
+                    <label>Extreme weather?</label>
+                  </label>
+                </div>
+              </div>
+
+                <div class="comment card-body mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label fs-4"
+                    >Leave your tips or comments:</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="5"
+                  ></textarea>
+                </div>
+                <input type="submit" class="mx-5" id="submit-btn" onclick="submitBtnClicked()" />
+              </div>
+
+              
+        </form>
+          </div>
+            </div>
       </div>
-        <!-- <input type="submit" id="submit-btn" onclick="submitBtnClicked()"/> -->
-        <input type="button" id="submit-btn" onclick="submitBtnClicked()"/>
-
-      </form>
-
+          
+      <!-- footer -->
+      <nav id="footerPlaceholder"></nav>
     </div>
-    <!-- footer -->
-    <nav id="footerPlaceholder"></nav>
-  </div>
-  
-  <script src="./js/firebase_API_TEAM03.js"></script>
-  <script src="https://cdn.firebase.com/libs/geofire/2.0.0/geofire.min.js"></script>
-  <script type="text/javascript" src="./js/apiKey.js"></script>
-  <script src="./js/skeleton.js"></script>
-  <script src="./js/uploadPage.js"></script>
-</body>
+
+    <script src="./js/firebase_API_TEAM03.js"></script>
+    <script src="https://cdn.firebase.com/libs/geofire/2.0.0/geofire.min.js"></script>
+    <script type="text/javascript" src="./js/apiKey.js"></script>
+    <script src="./js/skeleton.js"></script>
+    <script src="./js/uploadPage.js"></script>
+  </body>
 </html>

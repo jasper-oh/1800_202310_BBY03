@@ -1,60 +1,191 @@
 // get reference to the submit button
-const submitBtn = document.getElementById('submit-btn');
+const submitBtn = document.getElementById("submit-btn");
 
+// toggle
+const slider1 = document.getElementById("my-slider1");
+const toggleLeft1 = document.getElementById("switch-left1");
+const toggleRight1 = document.getElementById("switch-right1");
+
+slider1.addEventListener("input", () => {
+  if (slider1.value == slider1.min) {
+    toggleLeft1.style.display = "block";
+  } else {
+    toggleLeft1.style.display = "none";
+  }
+
+  if (slider1.value == slider1.max) {
+    toggleRight1.style.display = "block";
+  } else {
+    toggleRight1.style.display = "none";
+  }
+});
+
+// Auto update slider label when drag
+
+var sliderLabel1 = document.getElementById("temp-rating-label-goes-here");
+slider1.addEventListener("input", function () {
+  switch (slider1.value) {
+    case "1":
+      console.log("it's working");
+      sliderLabel1.innerHTML = "Very cold!";
+      break;
+    case "2":
+      sliderLabel1.innerHTML = "Colder than I feel";
+      break;
+    case "3":
+      sliderLabel1.innerHTML = "Exactly how I feel!";
+      break;
+    case "4":
+      sliderLabel1.innerHTML = "Warmer than I feel";
+      break;
+    case "5":
+      sliderLabel1.innerHTML = "Very hot!";
+      break;
+  }
+});
+
+var slider2 = document.getElementById("my-slider2");
+const toggleLeft2 = document.getElementById("switch-left2");
+const toggleRight2 = document.getElementById("switch-right2");
+slider2.addEventListener("input", () => {
+  if (slider2.value == slider2.min) {
+    toggleLeft2.style.display = "block";
+  } else {
+    toggleLeft2.style.display = "none";
+  }
+
+  if (slider2.value == slider2.max) {
+    toggleRight2.style.display = "block";
+  } else {
+    toggleRight2.style.display = "none";
+  }
+});
+
+var sliderLabel2 = document.getElementById("humidity-rating-label-goes-here");
+slider2.addEventListener("input", function () {
+  switch (slider2.value) {
+    case "1":
+      console.log("it's working");
+      sliderLabel2.innerHTML = "Very cold!";
+      break;
+    case "2":
+      sliderLabel2.innerHTML = "Colder than I feel";
+      break;
+    case "3":
+      sliderLabel2.innerHTML = "Exactly how I feel!";
+      break;
+    case "4":
+      sliderLabel2.innerHTML = "Warmer than I feel";
+      break;
+    case "5":
+      sliderLabel2.innerHTML = "Very hot!";
+      break;
+  }
+});
+
+// },
+// });
+// });
 // Lat and long data convert to GeoPoint
 const lat = localStorage.getItem("lat");
-const long =  localStorage.getItem("long")
-var coords = new firebase.firestore.GeoPoint(lat,long)
-
-
-
+const long = localStorage.getItem("long");
+var coords = new firebase.firestore.GeoPoint(lat, long);
 
 // add event listener to the submit button
 function submitBtnClicked() {
-    //Get the data from user input
-    const city = localStorage.getItem("location")
-    const curTemp = document.getElementById("howdyTemp").value;
-    const curHumidity = document.getElementById("howdyHumid").value;
-    const comment = document.getElementById("exampleFormControlTextarea1").value
-    // TODO later
-    // const hot = document.getElementById("hot").value;
-    // const cold = document.getElementById("cold").value;
-    // const superDry = document.getElementById("superDry").value;
-    // const superHumid = document.getElementById("superHumid").value;
+  //Get the data from user input
+  const city = localStorage.getItem("location");
+  const curTemp = document.getElementById("howdyTemp").value;
+  const curHumidity = document.getElementById("howdyHumid").value;
+  const comment = document.getElementById("exampleFormControlTextarea1").value;
+  // TODO later
+  // const hot = document.getElementById("hot").value;
+  // const cold = document.getElementById("cold").value;
+  // const superDry = document.getElementById("superDry").value;
+  // const superHumid = document.getElementById("superHumid").value;
 
   // Save the data to ratings collection
-  firebase.auth().onAuthStateChanged(user => {
+  firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      var currentUser = db.collection("users").doc(user.uid)
-      var userID = user.uid
+      var currentUser = db.collection("users").doc(user.uid);
+      var userID = user.uid;
 
-      currentUser.get()
-        .then(userDoc => {
-          var userEmail = userDoc.data().email;
-          var userImg = userDoc.data().userImg;
-          db.collection("ratings").add({
-            city : city,
+      currentUser.get().then((userDoc) => {
+        var userEmail = userDoc.data().email;
+        var userImg = userDoc.data().userImg;
+        db.collection("ratings")
+          .add({
+            city: city,
             // cold : cold,
-            comment : comment,
-            coords : coords,
-            curHumidity : curHumidity,
-            curTemp : curTemp,
-            email : userEmail,
+            comment: comment,
+            coords: coords,
+            curHumidity: curHumidity,
+            curTemp: curTemp,
+            email: userEmail,
             // hot : hot,
-            likes : 0,
+            likes: 0,
             // superDry : superDry,
             // superHumid : superHumid,
             uploadTime: firebase.firestore.FieldValue.serverTimestamp(),
-            userID : userID,
-            userImg : userImg
-          }).then(() => {
-            //Save Done logic!
-            console.log("save done")
+            userID: userID,
+            userImg: userImg,
           })
-
-        })
-    }else{
-      console.log("unsaved")
+          .then(() => {
+            //Save Done logic!
+            console.log("save done");
+          });
+      });
+    } else {
+      console.log("unsaved");
     }
-  })
-};
+  });
+}
+
+//open weather api key
+const apiKey = "09493051d39bc31a23363d3b99bf7f81";
+
+// Get the user's current location
+navigator.geolocation.getCurrentPosition(
+  (position) => {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    localStorage.setItem("lat", latitude);
+    localStorage.setItem("long", longitude);
+
+    // Use the latitude and longitude coordinates to fetch the weather data from the OpenWeather API
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        // Extract the temperature, location, humidity from API
+        const temperature = data.main.temp;
+        const cityName = data.name;
+        const humidity = data.main.humidity;
+
+        //store city name into localStorage
+        localStorage.setItem("location", cityName);
+
+        // Convert temperature from Kelvin to Celsius
+        const celsiusTemperature = temperature - 273.15;
+
+        //display the location on the webpage
+        const cityElement = document.getElementById("city");
+        cityElement.textContent = cityName;
+
+        //display the temp on the webpage
+        const forecastTempElement = document.getElementById("forecastTemp");
+        forecastTempElement.textContent = `${celsiusTemperature.toFixed(1)}°C`;
+
+        // Display the humidity on the webpage
+        const forecastHumidityElement =
+          document.getElementById("forecastHumidity");
+        forecastHumidityElement.textContent = `${humidity}%`;
+      })
+      .catch((error) => console.error(error));
+  },
+  (error) => {
+    console.error(error);
+  }
+);

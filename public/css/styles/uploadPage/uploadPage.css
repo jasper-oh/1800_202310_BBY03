@@ -1,35 +1,151 @@
-.wrapper{
+.bg-warning {
+}
+
+form {
+  width: 80%;
+}
+.wrapper {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
-.container{
+.container {
   flex: 1;
   display: flex;
   justify-content: center;
   text-align: center;
 }
 
-.information-section{
+.information-section {
   display: flex;
   flex-direction: column;
-  height:30%;
-  margin-top:30pt;
+  height: 20%;
+  margin-top: 30pt;
   font-size: 25pt;
 }
 
-.information-wrapper{
-  display: flex;
-  flex-direction: column;
-  
-}
-.information-temperature{
+.information-temperature {
   margin-bottom: 40pt;
 }
-.info{
+.info {
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
   font-size: 20pt;
+}
+
+#infomation-wrapper {
+  width: 150%;
+}
+
+/* The switch - the box around the slider */
+.switch-left {
+  display: none;
+  position: relative;
+  width: 58px;
+  height: 28px;
+}
+
+.switch-right {
+  display: none;
+  position: relative;
+  width: 58px;
+  height: 28px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  -webkit-appearance: none;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  background: #d3d3d3;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04aa6d;
+  cursor: pointer;
+}
+
+input:checked + .slider {
+  background-color: #fbc687;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #fbc687;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.temp-rating {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.humidity-rating {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+}
+.information-wrapper {
+  width: 70%;
+}
+
+.howdy-rating {
+  width: 100%;
+}
+
+.weather-forecast {
+  background: linear-gradient(to bottom right, lightslategrey, #000000);
+}
+
+.howdy-rating {
+  background: linear-gradient(to bottom right, #f4f7c5, #aacdbe);
+  color: slategrey;
 }
