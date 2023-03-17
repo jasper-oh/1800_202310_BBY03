@@ -1,7 +1,9 @@
-// get reference to the submit button
-const submitBtn = document.getElementById("submit-btn");
+//read name into mainPage after Howdy
+document.getElementById("welcomeText1").innerText = `${localStorage.getItem(
+  "name"
+)}, `;
 
-// toggle
+// toggle1
 const slider1 = document.getElementById("my-slider1");
 const toggleLeft1 = document.getElementById("switch-left1");
 const toggleRight1 = document.getElementById("switch-right1");
@@ -20,13 +22,12 @@ slider1.addEventListener("input", () => {
   }
 });
 
-// Auto update slider label when drag
+// Auto update slider label1 when drag
 
 var sliderLabel1 = document.getElementById("temp-rating-label-goes-here");
 slider1.addEventListener("input", function () {
   switch (slider1.value) {
     case "1":
-      console.log("it's working");
       sliderLabel1.innerHTML = "Very cold!";
       break;
     case "2":
@@ -44,6 +45,7 @@ slider1.addEventListener("input", function () {
   }
 });
 
+//toggle 2
 var slider2 = document.getElementById("my-slider2");
 const toggleLeft2 = document.getElementById("switch-left2");
 const toggleRight2 = document.getElementById("switch-right2");
@@ -61,31 +63,32 @@ slider2.addEventListener("input", () => {
   }
 });
 
+// Auto update slider label1 when drag
 var sliderLabel2 = document.getElementById("humidity-rating-label-goes-here");
 slider2.addEventListener("input", function () {
   switch (slider2.value) {
     case "1":
       console.log("it's working");
-      sliderLabel2.innerHTML = "Very cold!";
+      sliderLabel2.innerHTML = "Very Dry!";
       break;
     case "2":
-      sliderLabel2.innerHTML = "Colder than I feel";
+      sliderLabel2.innerHTML = "Dryer than I feel";
       break;
     case "3":
       sliderLabel2.innerHTML = "Exactly how I feel!";
       break;
     case "4":
-      sliderLabel2.innerHTML = "Warmer than I feel";
+      sliderLabel2.innerHTML = "Wetter than I feel";
       break;
     case "5":
-      sliderLabel2.innerHTML = "Very hot!";
+      sliderLabel2.innerHTML = "Very Dry!";
       break;
   }
 });
 
-// },
-// });
-// });
+// get reference to the submit button
+const submitBtn = document.getElementById("submit-btn");
+
 // Lat and long data convert to GeoPoint
 const lat = localStorage.getItem("lat");
 const long = localStorage.getItem("long");
@@ -95,14 +98,15 @@ var coords = new firebase.firestore.GeoPoint(lat, long);
 function submitBtnClicked() {
   //Get the data from user input
   const city = localStorage.getItem("location");
-  const curTemp = document.getElementById("howdyTemp").value;
-  const curHumidity = document.getElementById("howdyHumid").value;
-  const comment = document.getElementById("exampleFormControlTextarea1").value;
-  // TODO later
-  // const hot = document.getElementById("hot").value;
-  // const cold = document.getElementById("cold").value;
-  // const superDry = document.getElementById("superDry").value;
-  // const superHumid = document.getElementById("superHumid").value;
+  const curTemp = document.getElementById("my-slider1").value;
+  const curHumidity = document.getElementById("my-slider2").value;
+  const comment = document.getElementById("commentArea").value;
+
+  // Get the toggle data
+  const extremeCold = document.getElementById("mySwitchLeft1").checked;
+  const extremeHot = document.getElementById("mySwitchRight1").checked;
+  const extremeDry = document.getElementById("mySwitchLeft2").checked;
+  const extremeWet = document.getElementById("mySwitchRight2").checked;
 
   // Save the data to ratings collection
   firebase.auth().onAuthStateChanged((user) => {
@@ -116,21 +120,23 @@ function submitBtnClicked() {
         db.collection("ratings")
           .add({
             city: city,
-            // cold : cold,
+            cold: extremeCold,
             comment: comment,
             coords: coords,
             curHumidity: curHumidity,
             curTemp: curTemp,
             email: userEmail,
-            // hot : hot,
+            hot: extremeHot,
             likes: 0,
-            // superDry : superDry,
-            // superHumid : superHumid,
+            superDry: extremeDry,
+            superHumid: extremeWet,
             uploadTime: firebase.firestore.FieldValue.serverTimestamp(),
             userID: userID,
             userImg: userImg,
           })
           .then(() => {
+            // create alert window
+            alert("Your Howdy Score submitted!");
             //Save Done logic!
             console.log("save done");
           });

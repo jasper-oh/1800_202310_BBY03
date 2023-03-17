@@ -49,98 +49,117 @@
 
         <!-- <form action="/search">-->
         <form>
-          <div class="information-section">
-            <p><b>Upload your Howdy Score!</b></p>
+          <div class="information-section my-3">
+            <p><b><span id="welcomeText1">User, </span>upload your Howdy Score!</b></p>
             <p>Rate the weather in your area</p>
             <p id="locationText">location: <span id="city"></span></p>
           </div>
-        
+  
           <div class="content row">
             <!--Same div as the main page-->
-            <div class="weather-forecast mx-3 col text-white shadow p-3 rounded-3">
+            <div
+              class="weather-forecast mx-5 col text-white shadow p-3 rounded-3"
+            >
               <div id="content1">
-                <div><h2 class="divTitle"> Forecast </h2> </div>
+                <div><h2 class="divTitle">Forecast</h2></div>
                 <div class="mb-3 card-body">
-                  <p> Temperature</p>
-                  <div id="forecastTemp">  °C </div> 
+                  <p>Temperature</p>
+                  <div id="forecastTemp">°C</div>
                 </div>
-
-
+  
                 <div class="mb-3">
-                  <p>Humidity</p> 
-                  <div id="forecastHumidity">  % </div>
+                  <p>Humidity</p>
+                  <div id="forecastHumidity">%</div>
                 </div>
-
               </div>
             </div>
-            
+  
             <!--Howdy score rating div, side-by-side with the forecast-->
             <div class="howdy-rating card col shadow p-3 border-white rounded-2">
               <div class=""><h2>Howdy Score</h2></div>
               <!---Temperature-->
               <div class="temp-wrapper card-body mb-3">
-                <span id="temp-rating-label-goes-here">Rate based on the forecasted Temp </span>
-              <div class="temp-rating">
-                <label class="switch-left" id="switch-left1">
-                  <input type="checkbox" >
-                  <span class="slider round"></span>
-                  <label>Extreme weather?</label>
-                </label>
-
-                <div class="information-wrapper mx-3">
-                  <input type="range" min="1" max="5" value="2.5" class="form-range" id="my-slider1" >
+                <span id="temp-rating-label-goes-here"
+                  >Rate based on the forecasted Temp
+                </span>
+                <div class="temp-rating">
+                  <label class="switch-left" id="switch-left1">
+                    <input type="checkbox" id="mySwitchLeft1"/>
+                    <span class="slider round"></span>
+                    <label>Extreme weather?</label>
+                  </label>
+  
+                  <div class="information-wrapper mx-3">
+                    <input
+                      type="range"
+                      min="1"
+                      max="5"
+                      value="2.5"
+                      class="form-range"
+                      id="my-slider1"
+                    />
+                  </div>
+  
+                  <label class="switch-right" id="switch-right1">
+                    <input type="checkbox" id="mySwitchRight1" />
+                    <span class="slider round"></span>
+                    <label>Extreme weather?</label>
+                  </label>
                 </div>
-                
-                <label class="switch-right" id="switch-right1">
-                  <input type="checkbox" >
-                  <span class="slider round"></span>
-                  <label>Extreme weather?</label>
-                </label>
               </div>
-            </div>
-              
-
+  
               <!--Humidity-->
-              <div class="humidity-wrapper mb-5 ">
-                <span id="humidity-rating-label-goes-here">Rate based on forcasted Humidity</span>
+              <div class="humidity-wrapper mb-5">
+                <span id="humidity-rating-label-goes-here"
+                  >Rate based on forcasted Humidity</span
+                >
                 <div class="humidity-rating">
                   <label class="switch-left" id="switch-left2">
-                    <input type="checkbox" >
+                    <input type="checkbox" id="mySwitchLeft2"/>
                     <span class="slider round"></span>
                     <label>Extreme weather?</label>
                   </label>
-
+  
                   <div class="information-wrapper mx-3">
-                    <input type="range" min="1" max="5" value="2.5" class="form-range" id="my-slider2" >
+                    <input
+                      type="range"
+                      min="1"
+                      max="5"
+                      value="2.5"
+                      class="form-range"
+                      id="my-slider2"
+                    />
                   </div>
-                  
+  
                   <label class="switch-right" id="switch-right2">
-                    <input type="checkbox" >
+                    <input type="checkbox" id="mySwitchRight2" />
                     <span class="slider round"></span>
                     <label>Extreme weather?</label>
                   </label>
                 </div>
               </div>
-
-                <div class="comment card-body mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label fs-4"
-                    >Leave your tips or comments:</label
-                  >
-                  <textarea
-                    class="form-control"
-                    id="exampleFormControlTextarea1"
-                    rows="5"
-                  ></textarea>
-                </div>
-                <input type="submit" class="mx-5" id="submit-btn" onclick="submitBtnClicked()" />
+  
+              <div class="comment card-body mb-3">
+                <label for="commentAreaLable" class="form-label fs-5"
+                  >Leave your tips or comments:</label
+                >
+                <textarea
+                  class="form-control"
+                  id="commentArea"
+                  rows="2"
+                ></textarea>
               </div>
-
-              
-        </form>
-          </div>
+              <button
+                type="button"
+                class="btn btn-success mx-5"
+                id="submit-btn"
+                onclick="submitBtnClicked()"
+              >Submit</button>
             </div>
-      </div>
-          
+          </div>
+        </div>
+        </form>
+        
       <!-- footer -->
       <nav id="footerPlaceholder"></nav>
     </div>

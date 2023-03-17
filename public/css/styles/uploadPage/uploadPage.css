@@ -43,14 +43,14 @@ form {
 .switch-left {
   display: none;
   position: relative;
-  width: 58px;
+  width: 56px;
   height: 28px;
 }
 
 .switch-right {
   display: none;
   position: relative;
-  width: 58px;
+  width: 56px;
   height: 28px;
 }
 
@@ -63,7 +63,6 @@ form {
 
 /* The slider */
 .slider {
-  -webkit-appearance: none;
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -148,4 +147,17 @@ input:checked + .slider:before {
 .howdy-rating {
   background: linear-gradient(to bottom right, #f4f7c5, #aacdbe);
   color: slategrey;
+}
+
+.btn-success:hover {
+  background-color: #aacdbe;
+  transform: translateY(-2px);
+  color: whitesmoke;
+}
+
+.btn-success {
+  background-color: #f4f7c5;
+  border-radius: 15px;
+  color: slategrey;
+  box-sizing: border-box;
 }
