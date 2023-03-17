@@ -149,15 +149,17 @@ input:checked + .slider:before {
   color: slategrey;
 }
 
-.btn-success:hover {
+.btn-primary:hover {
   background-color: #aacdbe;
   transform: translateY(-2px);
   color: whitesmoke;
+  border-color: white;
 }
 
-.btn-success {
+.btn-primary {
   background-color: #f4f7c5;
   border-radius: 15px;
   color: slategrey;
   box-sizing: border-box;
+  border-color: #aacdbe;
 }

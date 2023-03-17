@@ -1,45 +1,40 @@
 #container {
-    display: grid;
-    grid-template-columns: 35vw 50vw;
-    grid-template-rows: 40vh 15vh 6vh 20vh;
-    
+  display: grid;
+  grid-template-columns: 35vw 50vw;
+  grid-template-rows: 40vh 15vh 6vh 20vh;
 }
 
 #largeText {
-    /* background-color: rgb(209, 239, 239); */
-    grid-row: 1 / span 1;
-    grid-column: 1 / span 1;
-    text-align: left;
-    padding-top: 20%;
-    padding-left: 10%;
-
+  /* background-color: rgb(209, 239, 239); */
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+  text-align: left;
+  padding-top: 20%;
+  padding-left: 10%;
 }
 #largeText > h2 {
-    font-size: 30pt;
-    
+  font-size: 30pt;
 }
 
 #appName {
-    font-size: 60pt;
-   
+  font-size: 60pt;
 }
 
-
 #links {
-    /* background-color: rgb(22, 51, 102); */
-    padding-top: 5%;
-    grid-row: 3 / span 1;
-    grid-column: 1/ span 1;
-    display: flex;
-    justify-content: left;
-    padding-left: 10%;
-    
+  /* background-color: rgb(22, 51, 102); */
+  margin-top: 20px;
+  padding-top: 5%;
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 1;
+  display: flex;
+  justify-content: left;
+  padding-left: 10%;
 }
 
 .button1 {
   appearance: none;
   background-color: #fbc687;
-  border: 2px solid rgb(201, 215, 235) ; 
+  border: 2px solid rgb(201, 215, 235);
   border-radius: 15px;
   box-sizing: border-box;
   color: white;
@@ -65,21 +60,19 @@
   transform: translateY(-2px);
 }
 
-
 #explain {
-    /* background-color: rgb(245, 223, 194); */
-    grid-row: 2 / span 1;
-    grid-column: 1 / span 1;
-    display: flex;
-    justify-content: left;
-    padding-left: 10%;
+  /* background-color: rgb(245, 223, 194); */
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 1;
+  display: flex;
+  justify-content: left;
+  padding-left: 10%;
 }
 
 #bigImg {
-    /* background-color: blue; */
-    grid-row: 1/ span 1;
-    grid-column: 2/ span 1;
-    display: flex;
-    justify-content: center;
-
+  /* background-color: blue; */
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+  justify-content: center;
+  margin-left: 30px;
 }
