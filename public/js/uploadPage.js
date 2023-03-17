@@ -68,7 +68,6 @@ var sliderLabel2 = document.getElementById("humidity-rating-label-goes-here");
 slider2.addEventListener("input", function () {
   switch (slider2.value) {
     case "1":
-      console.log("it's working");
       sliderLabel2.innerHTML = "Very Dry!";
       break;
     case "2":

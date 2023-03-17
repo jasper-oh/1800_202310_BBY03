@@ -1,62 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Bootstrap Library CSS CDN go here -->
-  <link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-  rel="stylesheet"
-  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-  crossorigin="anonymous"
-/>
+    <!-- Bootstrap Library CSS CDN go here -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
 
-  <!-- Boostrap Library JS CDN  go here -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"
-  ></script>
+    <!-- Boostrap Library JS CDN  go here -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/07ca69b752.js"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- Other libraries go here -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Other libraries go here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
 
-  <!--Link to styles of your own-->
-  <link rel="stylesheet" href="./css/styles/notificationPage/notificationPage.css" />
-  <link rel="stylesheet" href="./css/styles/component/footer.css" />
-  <link rel="stylesheet" href="./css/styles/component/header.css" />
+    <!--Link to styles of your own-->
+    <link
+      rel="stylesheet"
+      href="./css/styles/notificationPage/notificationPage.css"
+    />
+    <link rel="stylesheet" href="./css/styles/component/footer.css" />
+    <link rel="stylesheet" href="./css/styles/component/header.css" />
 
-  <title>Notification</title>
-</head>
+    <title>Notification</title>
+  </head>
 
-<body>
-  <div class="wrapper">
-    <nav id="navbarPlaceholder"></nav>
+  <body>
+    <div class="wrapper">
+      <nav id="navbarPlaceholder"></nav>
       <!--Notification page content here-->
       <div class="container ms-5">
         <div class="notification m-5">
           <div class="m-auto col-lg-20 text-wrap">
-            <label for="today-notification" class="form-label-1 ">Today</label>
-            <textarea class="form-control" rows="5" readonly>25mm percipataions in Stanley Park right now</textarea>
+            <label for="today-notification" class="form-label-1">Today</label>
+            <textarea
+              class="form-control"
+              id="notification-goes-here"
+              rows="5"
+              readonly
+            >
+            </textarea>
           </div>
-
-          <div class="my-5 col-lg-20 text-wrap">
-            <label for="current-week-notification" class="form-label-2 ">Forecast</label>
-            <textarea class="form-control" rows="5" readonly>Six hours of snow ahead</textarea>
-          </div>
-
-
         </div>
+      </div>
+      <!--Footer here-->
+      <nav id="footerPlaceholder"></nav>
     </div>
-    <!--Footer here-->
-    <nav id="footerPlaceholder"></nav>
-  </div>
 
-
-    
     <!-- Link to scripts of your own -->
+    <script src="./js/firebase_API_TEAM03.js"></script>
+    <script src="https://cdn.firebase.com/libs/geofire/2.0.0/geofire.min.js"></script>
+    <script type="text/javascript" src="./js/apiKey.js"></script>
     <script src="./js/skeleton.js"></script>
-</body>
+    <script src="./js/notification.js"></script>
+  </body>
 </html>
