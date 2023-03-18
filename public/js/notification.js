@@ -7,22 +7,17 @@ let hotCount = 0;
 let superDryCount = 0;
 let superHumidCount = 0;
 let city = ""; // variable to store the current city being processed
-let date = ""; //  variable to store the current timeStamp being processed
+const today = new Date().toISOString().substring(0, 10); //  to get today's date
 
 // Retrieve all documents from the ratings collection
 ratingsRef.get().then((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     const data = doc.data();
-    // let timeStamp1 = data.uploadTime;
-    // newDate = datetime.datetime.fromtimestamp(timeStamp1);
-    // console.log(`ruby print ${newDate}`);
-    // console.log(typeof newDate);
     const milliseconds =
       data.uploadTime.seconds * 1000 + data.uploadTime.nanoseconds / 1000000;
-
-    const newDate = new Date(milliseconds).toISOString().substring(0, 10);
-
-    if (city === data.city && date === newDate) {
+    const date = new Date(milliseconds).toISOString().substring(0, 10);
+    console.log(date);
+    if (city === data.city && today === date) {
       if (data.cold === true) {
         coldCount++;
       }
@@ -37,11 +32,6 @@ ratingsRef.get().then((querySnapshot) => {
       }
     } else {
       city = data.city;
-      date = newDate;
-      coldCount = 0;
-      hotCount = 0;
-      superDryCount = 0;
-      superHumidCount = 0;
     }
 
     if (coldCount >= 5) {
