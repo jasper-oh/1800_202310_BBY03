@@ -31,13 +31,13 @@ slider1.addEventListener("input", function () {
       sliderLabel1.innerHTML = "Very cold!";
       break;
     case "2":
-      sliderLabel1.innerHTML = "Colder than I feel";
+      sliderLabel1.innerHTML = "It feels colder";
       break;
     case "3":
-      sliderLabel1.innerHTML = "Exactly how I feel!";
+      sliderLabel1.innerHTML = "Exactly how it feels!";
       break;
     case "4":
-      sliderLabel1.innerHTML = "Warmer than I feel";
+      sliderLabel1.innerHTML = "It feels warmer";
       break;
     case "5":
       sliderLabel1.innerHTML = "Very hot!";
@@ -71,16 +71,16 @@ slider2.addEventListener("input", function () {
       sliderLabel2.innerHTML = "Very Dry!";
       break;
     case "2":
-      sliderLabel2.innerHTML = "Dryer than I feel";
+      sliderLabel2.innerHTML = "It feels less humid";
       break;
     case "3":
-      sliderLabel2.innerHTML = "Exactly how I feel!";
+      sliderLabel2.innerHTML = "Exactly how it feels!";
       break;
     case "4":
-      sliderLabel2.innerHTML = "Wetter than I feel";
+      sliderLabel2.innerHTML = "It feels more humid";
       break;
     case "5":
-      sliderLabel2.innerHTML = "Very Dry!";
+      sliderLabel2.innerHTML = "Very Damp!";
       break;
   }
 });
