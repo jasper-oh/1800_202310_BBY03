@@ -1,4 +1,3 @@
-// Setting the weather preference for new and old users
 function handleWeatherPreferenceSet() {
   var db = firebase.firestore();
   var user = firebase.auth().currentUser;
@@ -17,31 +16,35 @@ function handleWeatherPreferenceSet() {
     preferHumid = 1;
   }
 
-  db.collection("users").doc(user.uid).get().then((doc) => {
-    if (doc.exists) {
-      db.collection("users").doc(user.uid).update({
-        preferTemp: preferTemp,
-        preferHumid: preferHumid
-      }).then(() => {
-        //show alert
-        alert("Your weather preferences have been saved!");
-       // Display animal image
-       displayAnimalImage();
-      });
-    } else {
-      db.collection("users").doc(user.uid).set({
-        preferTemp: preferTemp,
-        preferHumid: preferHumid
-      }).then(() => {
-        //show alert
-        alert("Your weather preferences have been saved!");
-      // Display animal image
-      displayAnimalImage();
-      });
-    }
-  });
-}
+  // Confirmation alert
+  var confirmation = confirm("Are you sure?");
 
+  if (confirmation) {
+    db.collection("users").doc(user.uid).get().then((doc) => {
+      if (doc.exists) {
+        db.collection("users").doc(user.uid).update({
+          preferTemp: preferTemp,
+          preferHumid: preferHumid
+        }).then(() => {
+          //show alert
+          alert("Your weather preferences have been saved!");
+          // Display animal image
+          displayAnimalImage();
+        });
+      } else {
+        db.collection("users").doc(user.uid).set({
+          preferTemp: preferTemp,
+          preferHumid: preferHumid
+        }).then(() => {
+          //show alert
+          alert("Your weather preferences have been saved!");
+          // Display animal image
+          displayAnimalImage();
+        });
+      }
+    });
+  }
+}
 
 
 function getImageUrlForAnimal(animal) {
@@ -100,6 +103,17 @@ function displayAnimalImage() {
 window.onload = function() {
   displayAnimalImage();
 };
+
+//disable the "save changes" button if the default option is selected
+function handleAnimalSelectionChange() {
+  var animalDropdown = document.getElementById("animal-names");
+  var saveChangesBtn = document.getElementById("save-changes-btn");
+  if (animalDropdown.value === "") {
+    saveChangesBtn.disabled = true;
+  } else {
+    saveChangesBtn.disabled = false;
+  }
+}
 
 function insertNameFromFirestore() {
   // to check if the user is logged in:

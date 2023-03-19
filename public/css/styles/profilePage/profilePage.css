@@ -1,9 +1,19 @@
-.btn-secondary {
+.btn-secondary{
   background-color: #fbc687;
   border: 1px solid #f4f7c5;
   border-radius: 15px;
   color: white;
   box-sizing: border-box;
+}
+.btn-secondary:hover {
+  background-color: #eb947b;
+  color: white;
+}
+
+#save-changes-btn:disabled{
+  background-color:grey;
+  color: #ccc;
+  border-color: grey;
 }
 
 .wrapper {

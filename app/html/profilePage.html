@@ -41,6 +41,7 @@
     <nav id="navbarPlaceholder"></nav>
 
     <div class="profile-align ms-5" id="container">
+
       <!--User info content-->
       <div class="User-info my-5">
         <img class="user-photo" height="200" src="/images/logoWhite.png" alt="user-photo" />
@@ -66,45 +67,22 @@
         <p>Your weather animal identity:</p>
         <img id="animal-goes-here" class="animalPic">
 
-        <!--set animal dropdown-->
-        <label for="weather-pref"></label>
-        <select name="preference" id="animal-names">
-          <option value="" disabled selected>Select your animal</option>
-          <option value="camel">Camel &#40My preferred season is summer, I love hot weather&#41</option>
-          <option value="squirrel">Squirrel &#40My preferred season is spring or fall, I love mild weather&#41</option>
-          <option value="bear">Polar bear &#40My preferred season is winder, I love cold weather&#41 </option>
-        </select>
+        <div style="display: flex; align-items: center;">
+          <!--animal drop down menu-->
+          <label for="weather-pref"></label>
+          <select name="preference" id="animal-names" onchange="handleAnimalSelectionChange()">
+            <option value="" disabled selected>Select your animal</option>
+            <option value="camel">Camel &#40My preferred season is summer, I love hot weather&#41</option>
+            <option value="squirrel">Squirrel &#40My preferred season is spring or fall, I love mild weather&#41
+            </option>
+            <option value="bear">Polar bear &#40My preferred season is winder, I love cold weather&#41 </option>
+          </select>
 
-
-        <!--set preference buttons here-->
-        <span class="set-preference-btn">
-          <button class="btn btn-success mx-2" onclick="handleWeatherPreferenceSet()" role="button">Save
+          <!--save changes button-->
+          <button class="btn btn-success mx-2" id="save-changes-btn" onclick="handleWeatherPreferenceSet()" role="button" disabled>Save
             changes</button>
-        </span>
+        </div>
 
-
-        <!-- Preferred temp slider her
-        <label class="prefTemp my-3" for="slider" class="form-label">Preferred Temperature: </label>
-
-        <div class="range-container">
-          <span id="rangeLabel">1</span>
-          <input type="range" class="form-range" id="slider1" min="1" max="5" step="0.5" value="3" required>
-          <label for="slider" id="rangeLabelTemp">5</label>
-        </div> -->
-
-        <!--auto updated slider label for preferred temp-->
-        <!-- <p for="slider" class="autoSliderValue text-center" id="sliderValueLabel1">3</p><br> -->
-
-        <!--Preferred humidity slider her-->
-        <!-- <label class="prefHumidity my-3" for="slider">Preferred Humidity:</label>
-        <div class="range-container">
-          <span id="rangeLabel">1</span>
-          <input type="range" class="form-range" id="slider2" min="1" max="5" step="0.5" value="3" required>
-          <span id="rangeLabelHumid">5</span>
-        </div> -->
-
-        <!--auto updated slider label for preferred humidity-->
-        <!-- <p for="slider" class="autoSliderValue text-center" id="sliderValueLabel2">3</p> -->
 
       </div>
 
