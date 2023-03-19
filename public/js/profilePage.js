@@ -1,47 +1,105 @@
-// Auto update slider label when drag
-
-var slider1 = document.getElementById("slider1");
-var sliderLabel1 = document.getElementById("sliderValueLabel1");
-slider1.addEventListener("input", function () {
-  sliderLabel1.innerHTML = slider1.value;
-});
-
-var slider2 = document.getElementById("slider2");
-var sliderLabel2 = document.getElementById("sliderValueLabel2");
-slider2.addEventListener("input", function () {
-  sliderLabel2.innerHTML = slider2.value;
-});
-
-//------------------------------------------------
-// Call this function when the "logout" button is clicked
-//-------------------------------------------------
-
+// Setting the weather preference for new and old users
 function handleWeatherPreferenceSet() {
-  let tempPreference = document.getElementById("slider1").value;
-  let humidityPreference = document.getElementById("slider2").value;
+  var db = firebase.firestore();
+  var user = firebase.auth().currentUser;
+  var selectedAnimal = document.getElementById("animal-names").value;
+  var preferTemp;
+  var preferHumid;
 
-  if (userCheck == true) {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        console.log(user.uid); // let me to know who is the user that logged in to get the UID
-        currentUser = db.collection("users").doc(user.uid); // will to to the firestore and go to the document of the user
-        currentUser.get().then(userDoc => {
-          db.collection("users").doc(user.uid).update({
-            preferTemp: tempPreference,
-            preferHumid: humidityPreference,
-          }).then(() => {
-            var userCheck = confirm("Do you want to save?");
+  if (selectedAnimal == "camel") {
+    preferTemp = 3;
+    preferHumid = 3;
+  } else if (selectedAnimal == "squirrel") {
+    preferTemp = 2;
+    preferHumid = 2;
+  } else if (selectedAnimal == "bear") {
+    preferTemp = 1;
+    preferHumid = 1;
+  }
 
-          })
-        })
-      }
-    })
-    location.href = "/main"
-  } else {
-    return;
+  db.collection("users").doc(user.uid).get().then((doc) => {
+    if (doc.exists) {
+      db.collection("users").doc(user.uid).update({
+        preferTemp: preferTemp,
+        preferHumid: preferHumid
+      }).then(() => {
+        //show alert
+        alert("Your weather preferences have been saved!");
+       // Display animal image
+       displayAnimalImage();
+      });
+    } else {
+      db.collection("users").doc(user.uid).set({
+        preferTemp: preferTemp,
+        preferHumid: preferHumid
+      }).then(() => {
+        //show alert
+        alert("Your weather preferences have been saved!");
+      // Display animal image
+      displayAnimalImage();
+      });
+    }
+  });
+}
+
+
+
+function getImageUrlForAnimal(animal) {
+  if (animal == "camel") {
+    return "/images/camel.png";
+  } else if (animal == "squirrel") {
+    return "/images/squirrel.png";
+  } else if (animal == "bear") {
+    return "/images/bear.png";
   }
 }
 
+function displayAnimalImage() {
+  var db = firebase.firestore();
+  var user = firebase.auth().currentUser;
+
+  if (user) {
+    db.collection("users").doc(user.uid).get().then((doc) => {
+      if (doc.exists) {
+        var preferTemp = doc.data().preferTemp;
+        var animal;
+        if (preferTemp == 3) {
+          animal = "camel";
+        } else if (preferTemp == 2) {
+          animal = "squirrel";
+        } else if (preferTemp == 1) {
+          animal = "bear";
+        }
+        var animalImage = document.getElementById("animal-goes-here");
+        animalImage.src = getImageUrlForAnimal(animal);
+      }
+    });
+  } else {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        db.collection("users").doc(user.uid).get().then((doc) => {
+          if (doc.exists) {
+            var preferTemp = doc.data().preferTemp;
+            var animal;
+            if (preferTemp == 3) {
+              animal = "camel";
+            } else if (preferTemp == 2) {
+              animal = "squirrel";
+            } else if (preferTemp == 1) {
+              animal = "bear";
+            }
+            var animalImage = document.getElementById("animal-goes-here");
+            animalImage.src = getImageUrlForAnimal(animal);
+          }
+        });
+      }
+    });
+  }
+}
+
+window.onload = function() {
+  displayAnimalImage();
+};
 
 function insertNameFromFirestore() {
   // to check if the user is logged in:
@@ -59,16 +117,16 @@ function insertNameFromFirestore() {
         //get the user Img
         var userImg = userDoc.data().userImg;
 
-        //get The user prefer Temp
+        // //get The user prefer Temp
         var userPreferTemp = userDoc.data().preferTemp;
         var userPreferHumid = userDoc.data().preferHumid;
 
         //$("#name-goes-here").text(userName); //jquery
         document.getElementById("name-goes-here").innerText = userName;
-        document.getElementById("slider2").setAttribute("value", userPreferTemp);
-        document.getElementById("slider1").setAttribute("value", userPreferHumid);
-        document.getElementById('sliderValueLabel2').innerText = userPreferHumid;
-        document.getElementById('sliderValueLabel1').innerText = userPreferTemp;
+        // document.getElementById("slider2").setAttribute("value", userPreferTemp);
+        // document.getElementById("slider1").setAttribute("value", userPreferHumid);
+        // document.getElementById('sliderValueLabel2').innerText = userPreferHumid;
+        // document.getElementById('sliderValueLabel1').innerText = userPreferTemp;
 
         $(".user-photo").attr("src", userImg)
 
@@ -190,3 +248,4 @@ function checkStreak(user) {
     console.log("User is not logged in.");
   }
 }
+
