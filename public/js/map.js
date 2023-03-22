@@ -5,7 +5,7 @@ script.async = true;
 
 //init the map
 window.initMap = function(){
-
+  
   const map = new google.maps.Map(document.getElementById("map"), {
     center: {lat:49.2460, lng :-123.0018},
     zoom: 15,
@@ -14,9 +14,18 @@ window.initMap = function(){
   
   const input = document.getElementById("location-search");
   const searchBox = new google.maps.places.SearchBox(input);
-
+  
   // The Logic that When user search and click the location that is given.
   searchBox.addListener("places_changed" , () => {
+    
+    const map = new google.maps.Map(document.getElementById("map"), {
+      center: {lat:49.2460, lng :-123.0018},
+      zoom: 15,
+      gestureHandling: "greedy",
+    });
+  
+
+
     //Erase the list logic
     $("#tbody").empty()
 
@@ -40,24 +49,24 @@ window.initMap = function(){
     let long = place.geometry.viewport.Ja.lo;
 
     const center = new firebase.firestore.GeoPoint(lat, long); //search location
-    
-    let realDataSet = []
-
+  
     function getRatings(){
-      db.collection("ratings").where("coords", "!=" , null).get()
+      let realDataSet = []
+
+      let today = new Date();
+      today.setHours(today.getUTCHours()+7,0,0,0);
+
+      db.collection("ratings").where("uploadTime", "<=" , today ).get()
       .then( ratings => {
         ratings.forEach(doc => {    
           const point = doc.data().coords;
           const distance = distanceBetweenPoints(center , point);
           
-          
-                    
           //range can be change! unit is "KM".
-          if(distance <= 20){
+          if(distance <= 8){
             realDataSet.push(
               {
                 ratingID : doc.id,
-                // userImg : userImgIndividual,
                 userID : doc.data().userID,
                 userEmail : doc.data().email,
                 curHumidity : doc.data().curHumidity,
@@ -69,14 +78,17 @@ window.initMap = function(){
           }
           
         })
-        
-        for(let j = 0 ; j < realDataSet.length ; j++){
-          // realDataSet[j].userImg , 
+        console.log("@@@@")
+        console.log(realDataSet)
+        console.log("@@@@")
+        for(let j = 0 ; j < realDataSet.length ; j++){          
           generateData(realDataSet[j].curTemp , realDataSet[j].curHumidity , realDataSet[j].userScore, realDataSet[j].ratingID , realDataSet[j].userID)
         }
+
         let commentsList = [];
 
         for ( let i = 0 ; i < realDataSet.length ; i ++){
+          
           commentsList.push({
             label : i + "",
             name : realDataSet[i].userEmail,
@@ -87,56 +99,21 @@ window.initMap = function(){
         
         console.log(commentsList)
     
-        //Will make a for loop with this function.
         commentsList.forEach(({label, name, lat, lng}) => {
-          const marker = new google.maps.Marker({
+          var marker = new google.maps.Marker({
             position: {lat, lng},
             name,
             label,
-            map,
+            // map,
           });
+
+          marker.setMap(map)
         });
       })
     }
     
     getRatings();
     
-    function generateData(temp, humid ,score , id ,userId){
-      const tbody = document.getElementById("tbody");
-      const insertRow = tbody.insertRow();
-      const imgData = insertRow.insertCell();
-      const tempData = insertRow.insertCell()
-      const humidData = insertRow.insertCell();
-      const scoreData = insertRow.insertCell();
-      const likeData = insertRow.insertCell();
-    
-      let imgTag = document.createElement("IMG")
-      var user = db.collection("users").doc(userId)
-            
-      user.get().then(userDoc => {
-        var userImg = userDoc.data().userImg;
-        imgTag.setAttribute("src" , userImg);
-        imgTag.setAttribute("width" , "40px");
-        imgTag.classList.add(id)
-        imgTag.setAttribute("data-toggle" , "modal")
-        imgTag.setAttribute("data-target", "#myModal")
-        imgTag.setAttribute("onclick" , "openModal(this.className);");
-        imgData.appendChild(imgTag);  
-      })
-      
-      let tempDataText = document.createTextNode(temp);
-      tempData.appendChild(tempDataText)
-      let humidDataText = document.createTextNode(humid);
-      humidData.appendChild(humidDataText)
-      let scoreDataText = document.createTextNode(score);
-      scoreData.appendChild(scoreDataText)
-      //Like button logic will be here.
-      let likesDataText = document.createElement("i");
-      likesDataText.classList.add("fa-regular", "fa-thumbs-up")
-      likesDataText.setAttribute("onclick","clickLikes(this.id);")
-      likesDataText.setAttribute("id", id)
-      likeData.appendChild(likesDataText)
-    }
     
 
     if (place.geometry.viewport) {
@@ -146,9 +123,45 @@ window.initMap = function(){
       map.setZoom(15);
     }
   })
-
-  
 };
+
+
+function generateData(temp, humid ,score , id ,userId){
+  const tbody = document.getElementById("tbody");
+  const insertRow = tbody.insertRow();
+  const imgData = insertRow.insertCell();
+  const tempData = insertRow.insertCell()
+  const humidData = insertRow.insertCell();
+  const scoreData = insertRow.insertCell();
+  const likeData = insertRow.insertCell();
+
+  let imgTag = document.createElement("IMG")
+  var user = db.collection("users").doc(userId)
+        
+  user.get().then(userDoc => {
+    var userImg = userDoc.data().userImg;
+    imgTag.setAttribute("src" , userImg);
+    imgTag.setAttribute("width" , "40px");
+    imgTag.classList.add(id)
+    imgTag.setAttribute("data-toggle" , "modal")
+    imgTag.setAttribute("data-target", "#myModal")
+    imgTag.setAttribute("onclick" , "openModal(this.className);");
+    imgData.appendChild(imgTag);  
+  })
+  
+  let tempDataText = document.createTextNode(temp);
+  tempData.appendChild(tempDataText)
+  let humidDataText = document.createTextNode(humid);
+  humidData.appendChild(humidDataText)
+  let scoreDataText = document.createTextNode(score);
+  scoreData.appendChild(scoreDataText)
+  //Like button logic will be here.
+  let likesDataText = document.createElement("i");
+  likesDataText.classList.add("fa-regular", "fa-thumbs-up")
+  likesDataText.setAttribute("onclick","clickLikes(this.id);")
+  likesDataText.setAttribute("id", id)
+  likeData.appendChild(likesDataText)
+}
 
 function degreesToRadians(degrees) {
   return degrees * Math.PI / 180;
@@ -215,8 +228,7 @@ function clickLikes(cliked_id){
   }
 }
 
-// TODO make a logic that if the User click his own comment, 
-// then put the edit or delete or save button.
+
 function openModal(clickedClass){
 
   firebase.auth().onAuthStateChanged(user => {
