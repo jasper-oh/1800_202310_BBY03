@@ -1,70 +1,69 @@
-.wrapper{
-  display: flex;
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+body {
+
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #AACDBE;
+
+  text-align: center;
+}
+
+.custom-rounded {
+    border-radius: 20px;
+  }
+
+
+.wrapper {
   height: 100vh;
-  flex-direction: column;
-}
-#container {
-    display: grid;
-    grid-template-columns:30vw 20vw 20vw 30vw ;
-    grid-template-rows: 30vh 45vh;
-    flex: 1;
-    min-width: 390px;
-}
-
-#welcome {
-    text-align: center;
-    grid-row: 1/ span 1;
-    grid-column: 1/span 4;
-    padding-top: 50px;
-}
-
-#welcomeText1{
-    font-size: 33pt;
 }
 
 
-.welcomeText2 {
-    font-size: 15pt;
+.welcome {
+  text-align: center;
 }
 
-#locationText{
-    font-size: 20pt;
+#welcomeText1 {
+  font-size: 33pt;
+  background-color: #D3E4CD;
+
 }
 
-.divTitle {
-    font-size: 30pt;
-}
+#welcomeText2 {
+  font-size: 15pt;
+} */
 
-#content1 h2{
-    font-size: 17pt;
+/* .divTitle {
+  font-size: 30pt;
+} */
+
+/* #content1 h2 {
+  font-size: 17pt;
 }
 
 #content1 p {
-    font-size: 14pt;
+  font-size: 14pt;
 }
 
 #content1 {
-    /* background-color: blueviolet; */
-    text-align: center;
-    grid-row: 2/ span 1;
-    grid-column: 2/ span 1;
-    padding-top: 20%;
+
+  text-align: center;
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+  padding-top: 20%;
 }
 
-#content2 h2{
-    font-size: 17pt;
+#content2 h2 {
+  font-size: 17pt;
 }
 
-#content2 p{
-    font-size:14pt;
-}
+#content2 p {
+  font-size: 14pt;
+} */
 
-#content2{
-    /* background-color: brown; */
-    text-align: center;
-    grid-row: 2/ span 1;
-    grid-column: 3/ span 1;
-    padding-top: 20%;
-}
+/* #content2 {
 
-
+  text-align: center;
+  grid-row: 2 / span 1;
+  grid-column: 3 / span 1;
+  padding-top: 20%;
+} */

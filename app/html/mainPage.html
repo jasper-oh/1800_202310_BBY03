@@ -29,41 +29,84 @@
 </head>
 
 <body>
+
+
+
   <div class="wrapper">
     <!-- nav bar -->
     <nav id="navbarPlaceholder"></nav>
-    <div id="container">
+    <!--Page Navigation-->
+
+    <div class="container m-5 border border-3 custom-rounded position-relative">
       <!-- welcome message div-->
-      <div id="welcome">
-        <h1 id="welcomeText1"> Howdy, "user"!</h1>
-        <p class="welcomeText2"> Check out user's Howdy Score ratings for this area and see how it compares to the
-          forecast. </p>
-        <img src="../../../images/pin.png" alt="pin icon">
-        <p id="locationText">Your current location: <span id="city"></span></p>
+      <div class="welcome">
+        <h3 class="welcome col-md-6 position-absolute top-0 start-50 translate-middle rounded-pill" id="welcomeText1"> Howdy, <span class="fst-italic" id="animal-identity-goes here">Polar Bear</span>user"!</h1>
+        <p class="welcome mt-4" id="welcomeText2">  </p>
+        <img src="../../../images/location.png" height=30 alt="pin icon"><span id="city"></span>
 
       </div>
+
 
       <!-- forecast info div-->
-      <div id="content1">
-        <h1 class="divTitle"> Forecast </h1> <br /><br />
-        <h2> Temperature</h2>
-        <span id="forecastTemp"> °C </span> <br />
-        <h2> Humidity </h2>
-        <span id="forecastHumidity"> % </span>
-      </div>
+      <div class="row m-5">
+        <div class="forecasted-weather col-sm-6 d-flex align-items-center justify-content-end">
+          <div class="card" style="width: 25rem;">
+            <img src="../../../images/forecast.png" height="300" class="card-img-top" alt="...">
+            <div class="card-header">Forecasted Weather</div>
+            <div class="card-body">
+              <p class="card-text">Forecasted weather from other source.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <h5 class="card-title">Temperature</h5>
+                <span id="forecastTemp"> °C </span>
+              </li>
+              <li class="list-group-item">
+                <h5 class="card-title">Humidity</h5>
+                <span id="forecastHumidity"> % </span>
+              </li>    
+            </ul>
+    
+          </div>
+        </div>
 
-      <!-- howdy score info div-->
-      <div id="content2">
-        <h1 class="divTitle">Howdy Score</h1> <br /><br />
-        <h2>Temperature</h2>
-        <span>%</span> <br />
-        <h2>Humidity</h2>
-        <span>%</span> <br />
+        <div class="howdy-score col-sm-6 d-flex align-items-center justify-content-start">
+          <div class="card" style="width: 25rem;">
+            <img src="../../../images/bear.png" height="300" class="card-img-top" alt="...">
+            <div class="card-header ">Other <span id="animal-identity-goes here">Polar Bear</span>'s Rating</div>
+            <div class="card-body">
+              <p class="card-text">Check out other Polar Bear's rating.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <h5 class="card-title">Temperature Rating</h5>
+                <span id="temp-rating-goes-here"> Exactly how I feel!</span>
+              </li>
+              <li class="list-group-item">
+                <h5 class="card-title">Humidity Rating</h5>
+                <span id="humidity-rating-goes-here"> Feels more humid </span>
+              </li>
+    
+            </ul>
+    
+          </div>
+        </div>
       </div>
-    </div>
+      
+      <button
+      onclick="location.href='/upload'"
+      type="button"
+      class="btn btn-success mx-auto btn-lg fs-4 position-absolute top-100 start-50 translate-middle"
+    >
+      Upload Your Rating
+    </button>
+      
+
+      
+  
 
     <!-- footer -->
-    <nav id="footerPlaceholder"></nav>
+    <!-- <nav id="footerPlaceholder"></nav> -->
   </div>
 
   <!-- Link to scripts of your own -->
