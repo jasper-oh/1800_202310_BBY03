@@ -34,32 +34,32 @@
     <nav id="navbarPlaceholder"></nav>
     <div id="container">
       <!-- welcome message div-->
+
+
       <div id="welcome">
-        <h1 id="welcomeText1"> Howdy, "user"!</h1>
-        <p class="welcomeText2"> Check out user's Howdy Score ratings for this area and see how it compares to the
-          forecast. </p>
-        <img src="../../../images/pin.png" alt="pin icon">
-        <p id="locationText">Your current location: <span id="city"></span></p>
+        <p id="welcomeText1"> Howdy, "user"!</p>
+
+        <!-- <img src="../../../images/pin.png" alt="pin icon">  -->
+
+        <p id="locationText"> img <span id="city"></span></p>
 
       </div>
 
-      <!-- forecast info div-->
+      <div id="middle">
+        <p>See what other "animals" are saying about the weather!</p>
+      </div>
+
+      <!-- content div-->
       <div id="content1">
-        <h1 class="divTitle"> Forecast </h1> <br /><br />
-        <h2> Temperature</h2>
-        <span id="forecastTemp"> °C </span> <br />
-        <h2> Humidity </h2>
+        <span> Temperature</span> <br />
+        <span id="forecastTemp"> °C </span>
+        <span> Humidity </span>
         <span id="forecastHumidity"> % </span>
+        <span id="divider"></span>
+
       </div>
 
-      <!-- howdy score info div-->
-      <div id="content2">
-        <h1 class="divTitle">Howdy Score</h1> <br /><br />
-        <h2>Temperature</h2>
-        <span>%</span> <br />
-        <h2>Humidity</h2>
-        <span>%</span> <br />
-      </div>
+
     </div>
 
     <!-- footer -->
@@ -67,7 +67,7 @@
   </div>
 
   <!-- Link to scripts of your own -->
-  
+
   <script src="./js/apiKey.js"></script>
   <script src="./js/mainPage.js"></script>
   <script src="./js/skeleton.js"></script>

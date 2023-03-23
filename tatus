@@ -1,0 +1,258 @@
+[33mcommit 1ec072040622ee4aa0254a80fd49f0747b875a9f[m[33m ([m[1;36mHEAD -> [m[1;32mangela-design[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 4473f87 b1da392
+Author: Jasper Oh/YJ Oh <63331153+jasper-oh@users.noreply.github.com>
+Date:   Tue Mar 21 18:10:39 2023 -0700
+
+    Merge pull request #1 from jasper-oh/jasper-design
+    
+    modify landing page
+
+[33mcommit b1da39270cfbc0e10f0b0737834f61c70333c54b[m
+Author: Jasper Oh <ohyj0906@gmail.com>
+Date:   Tue Mar 21 17:41:11 2023 -0700
+
+    modify landing page
+
+[33mcommit 4473f87406f7f3a72dc3a8196f1ddfdd843769cd[m
+Author: Jasper Oh <ohyj0906@gmail.com>
+Date:   Tue Mar 21 17:39:43 2023 -0700
+
+    start
+
+[33mcommit 3da7b2ffb36476168cc239fc8fb717d51c10f888[m
+Author: Angela Yu <ayu107@my.bcit.ca>
+Date:   Sun Mar 19 15:15:58 2023 -0700
+
+    disable the save changes button when the default option is selected
+
+[33mcommit 80718eb2a10e4b05a5bbdbce11e0f6d2f401066f[m
+Author: Angela Yu <ayu107@my.bcit.ca>
+Date:   Sun Mar 19 14:52:39 2023 -0700
+
+    add a default animal option
+
+[33mcommit 3f83712175782e9908640082f1f03282c6033b24[m
+Author: Angela Yu <ayu107@my.bcit.ca>
+Date:   Sun Mar 19 14:47:28 2023 -0700
+
+    finally get the weather preference to work and save properly. set the user preference when they change it and display the animal badge based on the preference.
+
+[33mcommit bce200490bde8ee1f4524f793e4599ad4cce4e48[m
+Author: Angela Yu <ayu107@my.bcit.ca>
+Date:   Sun Mar 19 08:51:35 2023 -0700
+
+    made the wording for uploading easier to understand
+
+[33mcommit c24ffdd165abe12cf0d46dab8b110648d35ca3c7[m
+Author: Angela Yu <ayu107@my.bcit.ca>
+Date:   Sun Mar 19 08:31:19 2023 -0700
+
+    finally fixed the logic and display the badges
+
+[33mcommit 1e8ae41a0cc56f45aab7e5b090e47d35f2bdb72f[m
+Author: Ruby Chen <rchen139@bcit.ca>
+Date:   Fri Mar 17 17:29:52 2023 -0700
+
+    delete google img in login page
+
+[33mcommit a11649790a65888eef0d177a79a6f602723fcaf5[m
+Author: Ruby Chen <rchen139@bcit.ca>
+Date:   Fri Mar 17 17:21:48 2023 -0700
+
+    fix notification page logic error
+
+[33mcommit 7eb64cfadd4e3f438721fddf6d559a2cb076bf14[m
+Author: Ruby Chen <rchen139@bcit.ca>
+Date:   Fri Mar 17 16:16:38 2023 -0700
+
+    delete irrelevant testing file
+
+[33mcommit 9a6fea13fa8dbe895231dae402d64f94dd463441[m
+Author: Ruby Chen <rchen139@bcit.ca>
+Date:   Fri Mar 17 16:12:46 2023 -0700
+
+    finish the push function when extreme weather in notification page
+
+[33mcommit 65bde69d506321f0b10751295145e562047cd875[m
+Author: Ruby Chen <rchen139@bcit.ca>
+Date:   Fri Mar 17 10:28:43 2023 -0700
+
+    change the wording on upload page
+
+[33mcommit 04da78ed61ee8352e8503d06bf2ffe0c7def6794[m
+Author: Ruby Chen <rchen139@bcit.ca>
+Date:   Fri Mar 17 10:19:37 2023 -0700
+
+    Tweet the style of the footer and some pages
+
+[33mcommit c1c9c5e88f434bd7bf127fcd11a4e3f8b69facd0[m
+Author: Ruby Chen <rchen139@bcit.ca>
+Date:   Thu Mar 16 23:20:34 2023 -0700
+
+    Finish the submit function in uploadPage
+
+[33mcommit 4c8c20f5753284cfdb1d6077fd0b235069349a9b[m
+Author: Ruby Chen <rchen139@bcit.ca>
+Date:   Thu Mar 16 18:02:26 2023 -0700
+
+    adjust the structure and functions on uploadPage
+
+[33mcommit 031fa7b548529ed30f7cf7f56d57d70b8f33bbf8[m
+Author: Angela Yu <ayu107@my.bcit.ca>
+Date:   Thu Mar 16 04:25:57 2023 -0700
+
+    check for submission streaks (in profilePage.js), and show the acheivement badges, add css for badge size
+
+[33mcommit 39a52ee37d627f9a955ad0f284a4488dc587f22b[m
+Author: Jasper Oh <ohyj0906@gmail.com>
+Date:   Wed Mar 15 20:10:49 2023 -0700
+
+    Solve the corner case to save the userProfileImg in search page
+
+[33mcommit 6bb8918d1e78411a23b75807704004ccc8d83ac6[m
+Author: Jasper Oh <ohyj0906@gmail.com>
+Date:   Wed Mar 15 18:52:23 2023 -0700
+
+    profile img change function implement
+
+[33mcommit 38ee26a6e31828c6d1bab9fce9d8cb8998161ef7[m
+Author: Jasper Oh <ohyj0906@gmail.com>
+Date:   Wed Mar 15 17:21:06 2023 -0700
+
+    Search Page design
+
+[33mcommit 57c0913c8b6c3d4f64ea32f613957abb6ccf81c9[m
+Author: Jasper Oh <ohyj0906@gmail.com>
+Date:   Tue Mar 14 14:58:43 2023 -0700
+
+    Click the img and user can see the modal to get more specific data
+
+[33mcommit 86fba207f7b3b3ea614c903b6e1f5e9c82b800fc[m
+Author: Jasper Oh <ohyj0906@gmail.com>
+Date:   Tue Mar 14 01:22:41 2023 -0700
+
+    dione?
+
+[33mcommit 3bc2e90cef74ecb0266370397aeb6396a473530b[m
+Author: Jasper Oh <ohyj0906@gmail.com>
+Date:   Tue Mar 14 01:18:05 2023 -0700
+
+    pin work god dang it
+
+[33mcommit a5dc7d0377467e420956f593027cb8eee484e573[m
+Author: Jasper Oh <ohyj0906@gmail.com>
+Date:   Tue Mar 14 01:00:32 2023 -0700
+
+    search Location and list login and upload the score logic modify and update
+
+[33mcommit a05ece300f7ec882b432b93171bad45fe476fcc4[m
+Author: Angela Yu <ayu107@my.bcit.ca>
+Date:   Wed Mar 8 14:08:57 2023 -0800
+
+    mainPage, added extracted weather information and location from openweather API into webpage
+
+[33mcommit 448fe325642dd6df260baf942b2c604cb0ffb21a[m
+Author: Angela Yu <ayu107@my.bcit.ca>
+Date:   Tue Mar 7 21:28:13 2023 -0800
+
+    added avatars, animal logos, and badges icons
+
+[33mcommit f9ec35477ced1246507724e9ef61cb466935f9f3[m
+Merge: 91673ae 0b55fee
+Author: Ruby Chen <rchen139@bcit.ca>
+Date:   Tue Mar 7 15:57:54 2023 -0800
+
+    Merge branch 'main' of https://github.com/jasper-oh/1800_202310_BBY03
+
+[33mcommit 91673aec75bea3d28a4496b4c5604b75deddae19[m
+Author: Ruby Chen <rchen139@bcit.ca>
+Date:   Tue Mar 7 15:57:19 2023 -0800
+
+    fix one link on the homePage
+
+[33mcommit 0b55fee8e475118bea9cb5226968e555bec360a7[m
+Merge: 1b44f92 4b9bf9e
+Author: Angela Yu <ayu107@my.bcit.ca>
+Date:   Tue Mar 7 15:48:58 2023 -0800
+
+    Merge branch 'main' of https://github.com/jasper-oh/1800_202310_BBY03
+
+[33mcommit 1b44f9248d489023160c8835f1e727fce7252590[m
+Author: Angela Yu <ayu107@my.bcit.ca>
+Date:   Tue Mar 7 15:48:38 2023 -0800
+
+    added open weather api and some other changes made in lab
+
+[33mcommit 4b9bf9e69482d7d3689b05c3a2e10221505d448f[m
+Author: Jasper Oh <ohyj0906@gmail.com>
+Date:   Tue Mar 7 14:07:59 2023 -0800
+
+    Fully function setbutton and weather preference
+
+[33mcommit 614ec9d0cad581679cd37503387457262092ae60[m
+Author: Jasper Oh <ohyj0906@gmail.com>
+Date:   Tue Mar 7 13:47:18 2023 -0800
+
+    Add function in set button in profile page
+
+[33mcommit 2a66b6f88034ba2d78aad7b6faace5333e602ddb[m
+Author: Jasper Oh <ohyj0906@gmail.com>
+Date:   Tue Mar 7 03:47:05 2023 -0800
+
+    map page send a coords info to backend
+
+[33mcommit be3994f09fae54a8a322559db805562b4ba14c15[m
+Author: Jasper Oh <ohyj0906@gmail.com>
+Date:   Tue Mar 7 01:06:02 2023 -0800
+
+    Search Page and listPage merge & implement search box
+
+[33mcommit 74f3ffc9a54c2eadba66f74ccd70e020073ce845[m
+Author: Jasper Oh <ohyj0906@gmail.com>
+Date:   Mon Mar 6 21:43:26 2023 -0800
+
+    gitignore update
+
+[33mcommit 83461321efb4708d5a00a7004121cdb30b7ef68f[m
+Author: Jasper Oh/YJ Oh <63331153+jasper-oh@users.noreply.github.com>
+Date:   Mon Mar 6 21:37:55 2023 -0800
+
+    Delete apiKey.js
+
+[33mcommit 5efcc07cb6737ce5e45eae7c9a5d3a99a323d36f[m
+Author: Jasper Oh/YJ Oh <63331153+jasper-oh@users.noreply.github.com>
+Date:   Mon Mar 6 21:35:21 2023 -0800
+
+    Delete firebase_API_TEAM03.js
+
+[33mcommit 47cf1bb7e42f4eceb7e2b7070c827e1301e158f4[m
+Author: Jasper Oh/YJ Oh <63331153+jasper-oh@users.noreply.github.com>
+Date:   Mon Mar 6 21:35:13 2023 -0800
+
+    Delete firebaseAPI.js
+
+[33mcommit e1edfdab904c3cd3af344bfedb42496c185be434[m
+Author: Jasper Oh <ohyj0906@gmail.com>
+Date:   Mon Mar 6 21:28:42 2023 -0800
+
+    Change the file hierarchy and change the path with using node express
+
+[33mcommit 40fbbde88bcf46dab91338abf28f03a1128f99cb[m
+Author: Ruby Chen <rchen139@bcit.ca>
+Date:   Mon Mar 6 16:09:29 2023 -0800
+
+    add firebase_APT
+
+[33mcommit ed33a3add6e69ee8658bd2acff0314072d57d0c9[m
+Author: Angela Yu <ayu107@my.bcit.ca>
+Date:   Sun Mar 5 22:24:17 2023 -0800
+
+    fixed wording
+
+[33mcommit 5b213ddc3fcdd6aedad85a5e4ee300b8837936fd[m
+Author: Ruby Chen <rchen139@bcit.ca>
+Date:   Sun Mar 5 17:54:51 2023 -0800
+
+    add submit functionality for users ratings and comments into firestore users collection"
+
+[33mcom

@@ -1,70 +1,68 @@
-.wrapper{
-  display: flex;
-  height: 100vh;
-  flex-direction: column;
+.wrapper {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
 }
+
 #container {
     display: grid;
-    grid-template-columns:30vw 20vw 20vw 30vw ;
-    grid-template-rows: 30vh 45vh;
+    grid-template-columns: 3% 94% 3%;
+    grid-template-rows: 3% 20% 15% 55%;
     flex: 1;
-    min-width: 390px;
+    min-width: 100vw;
+
 }
+
+
 
 #welcome {
-    text-align: center;
-    grid-row: 1/ span 1;
-    grid-column: 1/span 4;
-    padding-top: 50px;
+    background-color: rgb(173, 204, 204);
+    border-radius: 15px;
+    grid-row: 2/ span 1;
+    grid-column: 2/ span 1;
+   
+   
+    padding-left: 2%;
+
+    background-image: url("/images/cloud.png");
+    overflow: hidden;
+    background-repeat: repeat-x;
+    background-size: contain;
 }
 
-#welcomeText1{
-    font-size: 33pt;
-}
-
-
-.welcomeText2 {
-    font-size: 15pt;
-}
-
-#locationText{
-    font-size: 20pt;
-}
-
-.divTitle {
-    font-size: 30pt;
-}
-
-#content1 h2{
-    font-size: 17pt;
-}
-
-#content1 p {
-    font-size: 14pt;
+#middle{
+    grid-row: 3/ span 1;
+    grid-column: 2/ span 1;
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #content1 {
-    /* background-color: blueviolet; */
-    text-align: center;
-    grid-row: 2/ span 1;
+    /* background-color: rgb(192, 162, 221); */
+    grid-row: 4/ span 1;
     grid-column: 2/ span 1;
-    padding-top: 20%;
+    border-radius: 15px;
+    transition: box-shadow 300ms;
+    
+    border: 2px rgb(209, 206, 206) solid;
+
+
 }
 
-#content2 h2{
-    font-size: 17pt;
+#content1:hover {
+
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-#content2 p{
-    font-size:14pt;
-}
+#divider {
 
-#content2{
-    /* background-color: brown; */
-    text-align: center;
-    grid-row: 2/ span 1;
-    grid-column: 3/ span 1;
-    padding-top: 20%;
-}
+  position: absolute;
+    left: 50%;
+    top: 47%;
+    bottom: 16%;
+    border-left: 2px solid rgb(184, 183, 183);
 
+}
 

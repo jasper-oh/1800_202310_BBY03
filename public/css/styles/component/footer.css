@@ -23,7 +23,8 @@
 
 footer {
     display: flex;
-    background-color: #AACDBE;  
+    /* background-color: #aacdbe;   */
+    background-color: #d8dfdb;
     height: 8vh;
     align-items: center;
     min-width: 390px;
