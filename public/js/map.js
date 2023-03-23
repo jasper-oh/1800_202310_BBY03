@@ -45,8 +45,11 @@ window.initMap = function(){
 
     // Give the search location value 
     document.getElementById("scoreList-location").innerHTML = place.name;
+
     let lat = place.geometry.viewport.Va.lo;
-    let long = place.geometry.viewport.Ja.lo;
+    
+    let long = place.geometry.viewport.Ga.lo;
+    
 
     const center = new firebase.firestore.GeoPoint(lat, long); //search location
   
@@ -54,9 +57,10 @@ window.initMap = function(){
       let realDataSet = []
 
       let today = new Date();
-      today.setHours(today.getUTCHours()+7,0,0,0);
+      today.setHours(0,0,0,0);
+      console.log(today)
 
-      db.collection("ratings").where("uploadTime", "<=" , today ).get()
+      db.collection("ratings").where("uploadTime", ">=" , today ).get()
       .then( ratings => {
         ratings.forEach(doc => {    
           const point = doc.data().coords;
