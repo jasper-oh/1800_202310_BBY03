@@ -18,6 +18,8 @@
 
   <!-- Other libraries go here -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/07ca69b752.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 
 
@@ -25,7 +27,6 @@
   <link rel="stylesheet" href="./css/styles/component/header.css" />
   <link rel="stylesheet" href="./css/styles/component/footer.css" />
   <link rel="stylesheet" href="./css/styles/mainPage/mainPage.css" />
-
 </head>
 
 <body>
@@ -38,27 +39,34 @@
         <h1 id="welcomeText1"> Howdy, "user"!</h1>
         <p class="welcomeText2"> Check out user's Howdy Score ratings for this area and see how it compares to the
           forecast. </p>
-        <img src="../../../images/pin.png" alt="pin icon">
-        <p id="locationText">Your current location: <span id="city"></span></p>
-
+        <img src="/images/pin.png" alt="pin icon">
+        <p id="locationText"><span id="city"></span></p>
       </div>
+        <div class="info-contents">
+        <!-- forecast info div-->
+        <div id="content1">
+          <h1 class="divTitle"> Forecast </h1> <br />
+          <div class="data-show">
+            <span class="material-symbols-outlined icon">
+              device_thermostat
+              </span>
+            <span id="forecastTemp" class="mainpage-data"> °C </span>
+          </div>
+          <div class="data-show">
+            <span class="material-symbols-outlined icon">
+              humidity_percentage
+            </span>
+            <span id="forecastHumidity" class="mainpage-data"> % </span>
+          </div>
+        </div>
 
-      <!-- forecast info div-->
-      <div id="content1">
-        <h1 class="divTitle"> Forecast </h1> <br /><br />
-        <h2> Temperature</h2>
-        <span id="forecastTemp"> °C </span> <br />
-        <h2> Humidity </h2>
-        <span id="forecastHumidity"> % </span>
-      </div>
+        
 
-      <!-- howdy score info div-->
-      <div id="content2">
-        <h1 class="divTitle">Howdy Score</h1> <br /><br />
-        <h2>Temperature</h2>
-        <span>%</span> <br />
-        <h2>Humidity</h2>
-        <span>%</span> <br />
+        <!-- howdy score info div-->
+        <div id="content2">
+          <h1 class="divTitle">Howdy Score</h1> <br /><br />
+          
+        </div>
       </div>
     </div>
 
