@@ -52,3 +52,53 @@ ratingsRef.get().then((querySnapshot) => {
     }
   });
 });
+
+window.onload = function () {
+  $("#div_load_image").hide();
+}
+
+// Ask the clothes recommendation
+$("#gen-ans").click(() => {
+  ready(function(){
+    function ajaxGet(url, callback){
+      const xhr = new XMLHttpRequest();
+      xhr.onload = function(){
+        if(this.readyState == XMLHttpRequest.DONE && this.status == 200){
+          callback(this.responseText)
+        }else{
+          console.log(this.status)
+        }
+      }
+      xhr.open("GET", url)
+      xhr.send();
+    }
+
+
+    ajaxGet("/notificationrecommend?city=Burnarby&temperature=8", (data) => {
+      
+      
+      const parseData = JSON.parse(data)
+      const avgTemp = parseData.temperature
+      const avgHumidity = parseData.humidity
+      const recommendClothes = parseData.clothesRecommendation
+
+      $("#temperature-gpt").text(avgTemp)
+      $("#humidity-gpt").text(avgHumidity)
+      $("#clothes-gpt").text(recommendClothes)
+      $("#div_load_image").hide();
+    })
+  }
+  
+  
+  )
+})
+
+function ready(callback){
+  if(document.readyState != "loading"){
+    $("#div_load_image").show();
+    callback();
+  }else{
+    console.log("HLLLLOSasdadw")
+    document.addEventListener("DOMContentLoaded", callback);
+  }
+}
