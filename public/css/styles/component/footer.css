@@ -1,31 +1,8 @@
-
-
-.btn-success {
-    background-color: #FBC687;
-    border: 1px solid #F4F7C5 ; 
-    border-radius: 15px;
-    color: white;
-    box-sizing: border-box;
-}
-
-.btn-success:hover {
-    color: white;
-    border: 1px solid white;
-    background-color: #EA907A;
-    transform: translateY(-2px);
-
-  }
-
-.nav-notification {
-    background-color: #FAFAFA;
-}
-
-
 footer {
-    display: flex;
-    background-color: #AACDBE;  
-    height: 8vh;
-    align-items: center;
-    min-width: 390px;
+  display: flex;
+  background-color: #aacdbe;
+  height: 10vh;
+  align-items: center;
+  min-width: 390px;
+  text-align: center;
 }
-
