@@ -130,14 +130,19 @@ window.initMap = function(){
 
 function tempConvertToSentence(score){
   switch(score){
+    case 1:
     case "1":
       return "very cold";
+    case 2:
     case "2":
       return "It feels colder";
+    case 3:
     case "3":
       return "Exactly How it feels";
+    case 4:
     case "4":
       return "It feels warmer";
+    case 5:
     case "5":
       return "Very hot";
   }
@@ -146,14 +151,19 @@ function tempConvertToSentence(score){
 
 function humidityConvertToSentence(score){
   switch(score){
+    case 1:
     case "1":
       return "very dry";
+    case 2:
     case "2":
       return "It feels less humid";
+    case 3:
     case "3":
       return "Exactly how it feels";
+    case 4:
     case "4":
       return "It feels more humid";
+    case 5:
     case "5":
       return "Very damp";
   }
@@ -169,7 +179,7 @@ function generateData(temp, humid , id ,userId){
 
   let imgTag = document.createElement("IMG")
   var user = db.collection("users").doc(userId)
-        
+  
   user.get().then(userDoc => {
     var userImg = userDoc.data().userImg;
     imgTag.setAttribute("src" , userImg);
@@ -178,10 +188,12 @@ function generateData(temp, humid , id ,userId){
     imgTag.setAttribute("data-toggle" , "modal")
     imgTag.setAttribute("data-target", "#myModal")
     imgTag.setAttribute("onclick" , "openModal(this.className);");
+    imgTag.setAttribute("id" , userId)
     imgData.appendChild(imgTag);  
   })
   
-
+  console.log(temp)
+  console.log(humid)
   let tempDataText = document.createTextNode(tempConvertToSentence(temp));
   tempData.appendChild(tempDataText)
   let humidDataText = document.createTextNode(humidityConvertToSentence(humid));
@@ -262,9 +274,38 @@ function clickLikes(cliked_id){
 
 function openModal(clickedClass){
 
+  let writeUserID = $(".clickedClass").attr('id')
+  console.log(writeUserID)
+
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
       var userID = user.uid
+      
+      var userData = db.collection("users").doc(userID)
+      
+      userData.get()
+      .then(
+        user => {
+          const preferTemp = user.data().preferTemp;
+          
+          switch(preferTemp){
+            case 1:
+            case "1":
+              $("#modal-animal").attr('src',"/images/bear.png" )
+              break;
+            case 2:
+            case "2":
+                $("#modal-animal").attr('src',"/images/squirrel.png")
+                break;
+            case 3:
+            case "3":
+                $("#modal-animal").attr('src', "/images/camel.png")
+                break;
+            }
+                
+        }
+        )
+              
       var getRatings = db.collection("ratings").doc(clickedClass)
       getRatings.get()
       .then(
@@ -276,6 +317,7 @@ function openModal(clickedClass){
             $(".modal-btn-save").css('display','inline-block');
             $(".modal-btn-save").attr('id' , clickedClass);
             $("#modal-title").text(ratingDoc.data().city)
+            // $("#modal-animal").text(user.)
             $("#modal-temp").val(ratingDoc.data().curTemp)
             $("#modal-humid").val(ratingDoc.data().curHumidity)
             $("#modal-comment").text(ratingDoc.data().comment)
@@ -286,6 +328,7 @@ function openModal(clickedClass){
             $(".modal-btn-delete").css('display','none');
             $(".modal-btn-save").css('display','none');
             $("#modal-title").text(ratingDoc.data().city)
+            // $("#modal-animal").text(ratingDoc.data().city)
             $("#modal-temp").val(ratingDoc.data().curTemp)
             $("#modal-humid").val(ratingDoc.data().curHumidity)
             $("#modal-comment").text(ratingDoc.data().comment)
