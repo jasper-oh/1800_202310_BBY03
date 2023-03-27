@@ -1,13 +1,7 @@
-.btn-secondary{
-  background-color: #fbc687;
-  border: 1px solid #f4f7c5;
-  border-radius: 15px;
-  color: white;
-  box-sizing: border-box;
-}
+
 .btn-secondary:hover {
-  background-color: #eb947b;
-  color: white;
+  background-color: #e59595;
+  color: rgb(26, 18, 18);
 }
 
 #save-changes-btn:disabled{
@@ -16,13 +10,20 @@
   border-color: grey;
 }
 
+#save-changes-btn{
+background: #e6d0a8;;
+border-radius: 10px;
+}
+
+
+
 .wrapper {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-#container {
+#container1 {
   display: grid;
   grid-template-columns: 93vw;
 
@@ -35,8 +36,42 @@
 .edit-profile-photo-btn{
   position: absolute;
   z-index: 1;
-  left: 134px;
-  top: 284px;
+  left: 180px;
+  top: 180px;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color:#fafafa;
+  color: white;
+  font-size:10pt;
+
+}
+
+.edit-profile-photo-btn:hover{
+  background-color: #65a5e0;
+  color:black;
+  opacity:100%;
+ 
+}
+
+#change{
+
+  position: absolute;
+  z-index:1;
+  left:215px;
+  top:510px;
+  background-color: #4393dd;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-size: 12pt;
+}
+
+#change:hover{
+  background-color: #a9cae9;
+  color: black;
 }
 
 .range-container {
@@ -76,10 +111,79 @@
 
 /* achievement badge*/
 .badge123{
-  height:120px;
+  height:80px;
 }
 
 
 .animalPic{
-  height:200px;
+  height:100px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display:flex;
+  border-radius: 10px;
+  min-width: 300px;
+  max-width:300px;
+  margin: auto;
+  text-align: center;
+ 
+}
+
+.banner{
+  padding-top: 2%;
+}
+
+#achieve{
+  /* background-color: #eb947b; */
+  min-height: 140px;
+  
+
+}
+.name{
+  font-size: 25pt;
+  font-weight: 400;
+}
+
+#line{
+  border-top:2px solid #aacdbe;
+  margin-left: 8%;
+  margin-right: 8%;
+  padding-top: 5px;
+
+}
+
+.animal-cont{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #ccc; */
+  min-height:120px;
+ 
+}
+
+/*drop down*/
+#animal-names {
+  width: 155px; 
+}
+select:focus{
+  color: black !important;
+}
+
+
+.log-out-btn{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 10px;
+ 
+}
+.log-out-btn a {
+  color: #ffffff; /* Set text color to white */
+  background-color: #e66c6c; /* Set background color to blue */
+  border-color: #000000; /* Set border color to blue */
+  border-radius: 5px; /* Set border radius to 5 pixels */
+  padding: 10px 20px 10px 20px; 
+  font-size: 12pt;
 }

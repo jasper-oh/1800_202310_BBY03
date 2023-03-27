@@ -117,6 +117,7 @@ function displayAnimalImage() {
 
 window.onload = function () {
   displayAnimalImage();
+  handleAnimalSelectionChange();
 };
 
 //disable the "save changes" button if the default option is selected
@@ -180,7 +181,7 @@ function editClick(EditUserId) {
 function saveUserProfileImg(EditUserId) {
   var getCheckedImg = $("input[name=profile]:checked").val();
 
-  var userCheck = confirm("Do you want to save it?");
+  var userCheck = confirm("Do you want to save?");
 
   if (userCheck == true) {
     db.collection("users")
@@ -285,3 +286,33 @@ function checkStreak(user) {
     console.log("User is not logged in.");
   }
 }
+
+// Get a reference to the "Change" button and the dropdown menu
+const changeButton = document.getElementById("change");
+const animalDropdown = document.getElementById("animal-dropdown");
+
+// Hide the dropdown menu initially
+animalDropdown.style.display = "none";
+
+// Add a click event listener to the "Change" button
+changeButton.addEventListener("click", function () {
+  // Toggle the display of the dropdown menu
+  if (animalDropdown.style.display === "none") {
+    animalDropdown.style.display = "block";
+  } else {
+    animalDropdown.style.display = "none";
+  }
+});
+
+// Get a reference to the "Save changes" button
+const saveChangesButton = document.getElementById("save-changes-btn");
+
+// Add a click event listener to the "Save changes" button
+saveChangesButton.addEventListener("click", function () {
+  // Hide the dropdown menu after the user clicks on "Save changes"
+  animalDropdown.style.display = "none";
+});
+
+// Add a title attribute to the "Change" button
+changeButton.title =
+  "Note: Changing your weather animal changes the information you see";

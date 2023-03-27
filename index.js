@@ -65,8 +65,9 @@ app.get("/notification", (req, res) => {
   let doc = fs.readFileSync("./app/html/notificationPage.html", "utf8");
   res.send(doc);
 });
+})
 
-app.get("/notificationrecommend", async (req, res) => {
+app.get("/notificationrecommend" , async (req, res) => {
   res.setHeader("Content-Type", "application/json");
   const prompt = `
   Write Short clothes recommendation based on current temperature and humidity of Burnaby Canada. 
@@ -83,13 +84,17 @@ app.get("/notificationrecommend", async (req, res) => {
     prompt: prompt,
     max_tokens: 2048,
     temperature: 1,
+
   });
 
-  const parseResponse = response.data.choices[0].text;
+  
+  const parseResponse = response.data.choices[0].text
   const parseResponseJson = JSON.parse(parseResponse);
+  
 
   res.send(parseResponse);
-});
+
+})
 
 app.get("/upload", (req, res) => {
   let doc = fs.readFileSync("./app/html/uploadPage.html", "utf8");
