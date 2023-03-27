@@ -1,85 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Main page</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <title> Main page </title>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap Library CSS CDN go here -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
 
-  <!-- Bootstrap Library CSS CDN go here -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <!-- Boostrap Library JS CDN  go here -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- Boostrap Library JS CDN  go here -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+    <!-- Other libraries go here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <script
+      src="https://kit.fontawesome.com/07ca69b752.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
 
-  <!-- Other libraries go here -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://kit.fontawesome.com/07ca69b752.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Link to styles of your own -->
+    <link rel="stylesheet" href="./css/styles/component/banner.css" />
+    <link rel="stylesheet" href="./css/styles/component/header.css" />
+    <link rel="stylesheet" href="./css/styles/component/footer.css" />
+    <link rel="stylesheet" href="./css/styles/mainPage/mainPage.css" />
+  </head>
 
+  <body>
+    <div class="wrapper justify-content-center">
+      <!-- nav bar -->
+      <nav id="navbarPlaceholder"></nav>
+      <!--banner-->
+      <nav id="bannerPlaceholder"></nav>
 
+      <!-- forecast info div-->
+      <!-- <div class="row m-5">
+        <div
+          class="forecasted-weather col-sm-6 d-flex align-items-center justify-content-end"
+        >
+          <div class="card shadow-lg border-none" style="width: 28rem; height: 28rem">
+            <img
+              src="../../../images/forecast.png"
+              height="400"
+              class="card-img-top"
+              alt="..."
+            />
+            <br><br><br>
+            <div class="card-title text-center fs-2">Forecast</div>
 
-  <!-- Link to styles of your own -->
-  <link rel="stylesheet" href="./css/styles/component/header.css" />
-  <link rel="stylesheet" href="./css/styles/component/footer.css" />
-  <link rel="stylesheet" href="./css/styles/mainPage/mainPage.css" />
-</head>
+              <br>
+              <li class="d-flex justify-content-between">
+                <div class="ms-5 temp d-flex align-items-center">
+                  <span class="material-symbols-outlined icon">
+                    device_thermostat
+                  </span>
+                  <h5>Temperature</h5>
+                </div>
+                <div
+                  id="forecastTemp"
+                  class="temp-value fs-5 d-flex align-items-center me-5"
+                >
+                  °C
+                </div>
+              </li>
+              <li class="d-flex justify-content-between">
+                <div class="ms-5 humidity d-flex align-items-center">
+                  <span class="material-symbols-outlined icon">
+                    humidity_percentage
+                  </span>
+                  <h5>Humidity</h5>
+                </div>
+                <div
+                  id="forecastHumidity"
+                  class="humidity-value fs-5 d-flex align-items-center me-5"
+                >
+                  %
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-<body>
-  <div class="wrapper">
-    <!-- nav bar -->
-    <nav id="navbarPlaceholder"></nav>
-    <div id="container">
-      <!-- welcome message div-->
-      <div id="welcome">
-        <h1 id="welcomeText1"> Howdy, "user"!</h1>
-        <p class="welcomeText2"> Check out user's Howdy Score ratings for this area and see how it compares to the
-          forecast. </p>
-        <img src="/images/pin.png" alt="pin icon">
-        <p id="locationText"><span id="city"></span></p>
+        <div
+          class="howdy-score col-sm-6 d-flex align-items-center justify-content-start"
+        >
+          <div
+            class="card shadow border border-1 border-dark"
+            style="width: 25rem"
+          >
+            <img
+              src="../../../images/bear.png"
+              height="400"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-header">
+              Other <span id="animal-identity-goes here">Polar Bear</span>'s
+              Rating
+            </div>
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <h5 class="card-title">Temperature Rating</h5>
+                <span id="temp-rating-goes-here"> Exactly how I feel!</span>
+              </li>
+              <li class="list-group-item">
+                <h5 class="card-title">Humidity Rating</h5>
+                <span id="humidity-rating-goes-here"> Feels more humid </span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
+
+      <button
+        onclick="location.href='/upload'"
+        type="button"
+        class="btn btn-success mx-auto btn-lg fs-4 position-absolute top-100 start-50 translate-middle"
+      >
+        Upload Your Rating
+      </button> -->
+
+      <!--Jasper's code below-->
+      <div
+        class="m-5 border border-3 custom-rounded position-relative"
+        id="container"
+      >
         <div class="info-contents">
-        <!-- forecast info div-->
-        <div id="content1">
-          <h1 class="divTitle"> Forecast </h1> <br />
-          <div class="data-show">
-            <span class="material-symbols-outlined icon">
-              device_thermostat
-              </span>
-            <span id="forecastTemp" class="mainpage-data"> °C </span>
+          <!-- forecast info div-->
+
+          <div class="card" id="content1">
+            <img src="images/forecast.png" height="280" alt="Card Image1" />
+            <div class="card-body">
+              <h1 class="divTitle">Forecast</h1>
+              <br />
+              <div class="data-show">
+                <span class="material-symbols-outlined icon">
+                  device_thermostat
+                </span>
+                <span id="forecastTemp" class="mainpage-data"> °C </span>
+              </div>
+              <div class="data-show">
+                <span class="material-symbols-outlined icon">
+                  humidity_percentage
+                </span>
+                <span id="forecastHumidity" class="mainpage-data"> % </span>
+              </div>
+            </div>
           </div>
-          <div class="data-show">
-            <span class="material-symbols-outlined icon">
-              humidity_percentage
-            </span>
-            <span id="forecastHumidity" class="mainpage-data"> % </span>
+
+          <!-- howdy score info div-->
+
+          <div class="card" id="content2">
+            <img src="" alt="Card Image2" height="280" id="content2Image" />
+            <div class="card-body">
+              <h1 class="divTitle">
+                Rate from <span id="animal-name-goes-here"></span>s
+              </h1>
+              <br />
+              <div class="data-show">
+                <span class="material-symbols-outlined icon">
+                  device_thermostat
+                </span>
+                <span id="temp-rating-goes-here" class="mainpage-data"> </span>
+              </div>
+              <div class="data-show">
+                <span class="material-symbols-outlined icon">
+                  humidity_percentage
+                </span>
+                <span id="humidity-rating-goes-here" class="mainpage-data">
+                </span>
+              </div>
+            </div>
           </div>
         </div>
-
-        
-
-        <!-- howdy score info div-->
-        <div id="content2">
-          <h1 class="divTitle">Howdy Score</h1> <br /><br />
-          
-        </div>
+        <button
+          onclick="location.href='/upload'"
+          type="button"
+          class="btn btn-success mx-auto btn fs-3 position-absolute top-100 start-50 translate-middle"
+        >
+          Upload Your Rating
+        </button>
       </div>
+
+      <!-- footer -->
+      <nav id="footerPlaceholder"></nav>
     </div>
 
-    <!-- footer -->
-    <nav id="footerPlaceholder"></nav>
-  </div>
+    <!-- Link to scripts of your own -->
+    <script type="text/javascript" src="./js/apiKey.js"></script>
+    <script src="./js/firebase_API_TEAM03.js"></script>
+    <script src="./js/authentication.js"></script>
+    <script src="./js/mainPage.js"></script>
+    <script src="./js/skeleton.js"></script>
+    <script src="./js/banner.js"></script>
 
-  <!-- Link to scripts of your own -->
-  
-  <script src="./js/apiKey.js"></script>
-  <script src="./js/mainPage.js"></script>
-  <script src="./js/skeleton.js"></script>
-  <!-- <script src="./js/weather.js"></script> -->
-</body>
-
+    <!-- <script src="./js/weather.js"></script> -->
+  </body>
 </html>
