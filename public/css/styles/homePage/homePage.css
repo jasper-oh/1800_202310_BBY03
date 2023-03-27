@@ -1,15 +1,10 @@
-/* #container {
-  display: grid;
-  grid-template-columns: 35vw 50vw;
-  grid-template-rows: 40vh 15vh 6vh 20vh;
-} */
 
 /*default screen size*/
 #container1 {
 
   display: grid;
   grid-template-columns: 60vw 40vw;
-  grid-template-rows: 50vh;
+  grid-template-rows: 60vh;
   width: 100vw;
 }
 
@@ -38,7 +33,16 @@
   width: 50%;
 }
 
+#tagline{
+  font-size: 20pt;
+  
+}
 
+.quote{
+  font-size: 15pt;
+  font-weight: 500;
+  color: rgb(43, 40, 40);
+}
 
  /* CSS styles for iPhone 12 Pro portrait mode */
 @media only screen and (max-width: 390px) {
@@ -71,6 +75,10 @@
     margin: 5px;
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
   
+  }
+
+  #tagline{
+    font-size:15pt;
   }
   
 
@@ -116,10 +124,29 @@
 .description {
   background-color: #f2f2f2;
   border-top: 4px solid #b1ccbf;
-  margin: 50px 0 0 0;
+  margin: 0px 0 0 0;
   padding: 12px;
   min-height: 200px;
   text-align: center;
+
+}
+
+.description2{
+  background-color: #f2f2f2;
+  border-top: 4px solid #b1ccbf;
+  margin: 0px 0 0 0;
+  padding: 12px;
+  min-height: 200px;
+  text-align: center;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+
+.description2 img{
+  width:20%;
+  height: auto;
 }
 
 
@@ -142,13 +169,14 @@
 
 
 .cardimg {
-  width: 100%;
+  width: 70%;
   height: auto;
-
+  
 }
 
 .container {
-  padding: 10px;
+  padding: 20px;
+  background-color: #e39a52;
 
 }
 

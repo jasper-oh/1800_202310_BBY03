@@ -43,7 +43,7 @@
   <div id="container1">
     <div id="text">
       <h1>Howdy Weather</h1>
-      <span> real time weather reports from others with the same temperature tolerance as you</span>
+      <span id="tagline"> real time weather reports from real people</span>
       <div id="links">
         <a class="button1" href="/login" role="button">Login/Signup</a>
       </div>
@@ -53,45 +53,62 @@
   </div>
 
   <div class="description">
-    <h4> weather</h4>
+    <h1>Choose your weather animal</h1>
+    <h6><i>Which animal do you relate to most?</i></h6>
+    <!-- <h5>See what your animal group is saying about the weather</h5> -->
+    <h5>Join our forum and share your weather opinions</h5>
   </div>
 
   <!--animal cards-->
- 
+
   <div class="card-container">
-  <div class="card" id="camel">
-    <img src="/images/camel.png" class="cardimg">
-    <div class="container">
-      <h4><b>Camel</b></h4>
-      <hr>
-      <img src="/images/dialog.png" class="dialog">
-      <p>Architect & Engineer</p>
+    <div class="card" id="camel">
+      <img src="/images/camel.png" class="cardimg">
+      <div class="container">
+        <h4><b>Camel</b></h4>
+        <hr>
+        <img src="/images/dialog.png" class="dialog">
+        <p class="quote"><i>"Bring on the heat!"</i></p>
+      </div>
+    </div>
+
+    <div class="card" id="squirrel">
+      <img src="/images/squirrel.png" class="cardimg">
+      <div class="container">
+        <h4><b>Squirrel</b></h4>
+        <hr>
+        <img src="/images/dialog.png" class="dialog">
+        <p class="quote"><i>"Not too hot, not too cold"</i></p>
+      </div>
+    </div>
+
+    <div class="card" id="bear">
+      <img src="/images/bear.png" class="cardimg">
+      <div class="container">
+        <h4><b>Polar Bear</b></h4>
+        <hr>
+        <img src="/images/dialog.png" class="dialog">
+        <p class="quote"><i>"An igloo is my home"</i></p>
+      </div>
     </div>
   </div>
-
-  <div class="card" id="squirrel">
-    <img src="/images/squirrel.png" class="cardimg">
-    <div class="container">
-      <h4><b>Squirrel</b></h4>
-      <hr>
-      <img src="/images/dialog.png" class="dialog">
-      <p>Architect & Engineer</p>
-    </div>
+<br/>
+  <div class="description2">
+    <img src="/images/alert.png">
+    <h4>Extreme weather alerts near your area </h4>
   </div>
 
-  <div class="card" id="bear">
-    <img src="/images/bear.png" class="cardimg">
-    <div class="container">
-      <h4><b>Polar Bear</b></h4>
-      <hr>
-      <img src="/images/dialog.png" class="dialog">
-      <p>Architect & Engineer</p>
-    </div>
-  </div>
-</div>
+  <br /><br />
 
- </div>
-  
+  <div class="description2">
+    <img src="/images/robot.png">
+    <h4>Clothing recommendations from HOWDY-BOT </h4>
+  </div>
+
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+  </div>
+
   <script src="./js/homePage.js">
     logout(); //make sure user is logged out
   </script>
