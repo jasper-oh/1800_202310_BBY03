@@ -1,33 +1,28 @@
-.bg-warning {
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+body {
+  font-family: "Josefin Sans", sans-serif;
 }
 
-form {
-  width: 80%;
+content {
+  width: 100%;
 }
 .wrapper {
   display: flex;
-  flex-direction: column;
   height: 100vh;
-}
-
-.container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-.information-section {
-  display: flex;
   flex-direction: column;
-  height: 20%;
-  margin-top: 30pt;
-  font-size: 25pt;
+  background-color: #fafafa;
 }
 
-.information-temperature {
-  margin-bottom: 40pt;
+#container {
+  flex: 1;
+  min-width: 390px;
+  display: flex;
+  background-color: #f2fafa;
+  flex-direction: column;
+  justify-content: center;
 }
+
 .info {
   display: flex;
   flex-direction: column;
@@ -140,10 +135,6 @@ input:checked + .slider:before {
   width: 100%;
 }
 
-.weather-forecast {
-  background: linear-gradient(to bottom right, lightslategrey, #000000);
-}
-
 .howdy-rating {
   background: linear-gradient(to bottom right, #f4f7c5, #aacdbe);
   color: slategrey;
@@ -162,4 +153,59 @@ input:checked + .slider:before {
   color: slategrey;
   box-sizing: border-box;
   border-color: #aacdbe;
+}
+
+.divTitle {
+  font-size: 2.3rem;
+}
+
+.info-contents {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#content1 {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 3%;
+  background-color: White;
+  box-shadow: 5px 5px 10px 0;
+  width: 33%;
+}
+
+#content2 {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 3%;
+  background-color: White;
+  box-shadow: 5px 5px 10px 0;
+  width: 35%;
+}
+
+.data-show {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.data-show i {
+  font-size: 50px;
+}
+
+.icon {
+  font-size: 50px;
+}
+
+#content2 h1 {
+  font-size: 2.5rem;
+}
+
+#content2 p {
+  font-size: 14pt;
+}
+
+.mainpage-data {
+  font-size: 30px;
 }
