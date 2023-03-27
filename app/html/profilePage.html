@@ -40,107 +40,126 @@
     <!--navbar here-->
     <nav id="navbarPlaceholder"></nav>
 
-    <div class="profile-align ms-5" id="container">
 
-      <!--User info content-->
-      <div class="User-info my-5">
-        <img class="user-photo" height="200" src="/images/logoWhite.png" alt="user-photo" />
-        <span class="edit-profile-photo-btn" onclick="editClick(this.id)" style="color:brown"><b>Edit</b></span>
-        <span class="user-name fs-1 border-bottom border-2" id="name-goes-here">User Name</span>
-        <div class="streak fs-3">Achievements
-          <div id="badges">
-            <img id="oneDayStreakBadge" src="/images/badge1.png" class="badge123" style="display: none;">
-            <img id="threeDayStreakBadge" src="/images/badge2.png" class="badge123" style="display: none;">
-            <img id="oneWeekStreakBadge" src="/images/badge3.png" class="badge123" style="display: none;">
-            <img id="twoWeekStreakBadge" src="/images/badge4.png" class="badge123" style="display: none;">
+    <div id="container1">
+      <!-- profile card-->
+      <div class="card">
+        <div class="banner">
+          <img class="user-photo" height="200" src="/images/logoWhite.png" alt="user-photo" />
+          <button class="edit-profile-photo-btn" id="edit-profile-photo-btn" onclick="editClick(this.id)" style="color:rgb(17, 16, 16)">Edit</span>
+        </div>
+        <div class="profile-details">
+          <span id="name-goes-here" class="name">User Name</span>
+          <div id="line"></div>
+          <div id="achieve">
+            <h5>Streaks</h5>
+            <div id="badges">
+              <img id="oneDayStreakBadge" src="/images/badge1.png" class="badge123" style="display: none;">
+              <img id="threeDayStreakBadge" src="/images/badge2.png" class="badge123" style="display: none;">
+              <img id="oneWeekStreakBadge" src="/images/badge3.png" class="badge123" style="display: none;">
+              <img id="twoWeekStreakBadge" src="/images/badge4.png" class="badge123" style="display: none;">
+            </div>
           </div>
+
+          <!--weather preference-->
+          <div id="pref">
+            <h5>Weather Animal</h5>
+            <div class="animal-cont">
+              <img id="animal-goes-here" class="animalPic">
+            </div>
+            <button id="change">Change</button>
+            <div id="animal-dropdown">
+              <label for="weather-pref"></label>
+              <select name="preference" id="animal-names" onchange="handleAnimalSelectionChange()">
+                <option value="" disabled selected>Select your animal</option>
+                <option value="camel">Camel &#40I prefer the summer season, I love hot weather&#41</option>
+                <option value="squirrel">Squirrel &#40I prefer the spring or fall season, I love mild weather&#41
+                </option>
+                <option value="bear">Polar bear &#40I prefer the winter season, I love cold weather&#41</option>
+              </select>
+              <button id="save-changes-btn" onclick="handleWeatherPreferenceSet()">Save changes</button>
+            </div>
+
+          </div>
+
         </div>
       </div>
 
-      <!--Weather preference here-->
-      <div class="weather-preference my-5 col-lg-5">
 
-        <span class="weather-preference-label border-bottom border-2 fs-3">Weather Preference</span>
-        <br />
-
-        <!-- display the weather animal-->
-        <p>Your weather animal identity:</p>
-        <img id="animal-goes-here" class="animalPic">
-
-        <div style="display: flex; align-items: center;">
-          <!--animal drop down menu-->
-          <label for="weather-pref"></label>
-          <select name="preference" id="animal-names" onchange="handleAnimalSelectionChange()">
-            <option value="" disabled selected>Select your animal</option>
-            <option value="camel">Camel &#40My preferred season is summer, I love hot weather&#41</option>
-            <option value="squirrel">Squirrel &#40My preferred season is spring or fall, I love mild weather&#41
-            </option>
-            <option value="bear">Polar bear &#40My preferred season is winder, I love cold weather&#41 </option>
-          </select>
-
-          <!--save changes button-->
-          <button class="btn btn-success mx-2" id="save-changes-btn" onclick="handleWeatherPreferenceSet()" role="button" disabled>Save
-            changes</button>
-        </div>
-
-
-      </div>
-
-
-      <!--Log out buttons here-->
+      <!--Log out button here-->
       <div class="log-out-btn">
         <a class="btn btn-secondary" href="/" role="button">Log out</a>
       </div>
+      
+      <!--Footer here-->
+      <nav id="footerPlaceholder"></nav>
     </div>
 
-    <!--Footer here-->
-    <nav id="footerPlaceholder"></nav>
-  </div>
-  <!-- Modal -->
-  <div class="modal" tabindex="-1" role="dialog" id="profileModal">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Change Your Profile Photo</h5>
-          </button>
-        </div>
-        <div class="modal-body">
-          <label class="profile-label">
-            <input type="radio" name="profile" id="avatar1" value="/images/avatar1.png">
-            <img src="/images/avatar1.png" width="100px" />
-          </label>
+    <!-- Modal -->
+    <div class="modal" tabindex="-1" role="dialog" id="profileModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Change Your Profile Photo</h5>
+            </button>
+          </div>
+          <div class="modal-body">
+            <label class="profile-label">
+              <input type="radio" name="profile" id="avatar1" value="/images/avatar1.png">
+              <img src="/images/avatar1.png" width="100px" />
+            </label>
 
-          <label class="profile-label">
-            <input type="radio" name="profile" id="avatar2" value="/images/avatar2.png">
-            <img src="/images/avatar2.png" width="100px" />
-          </label>
+            <label class="profile-label">
+              <input type="radio" name="profile" id="avatar2" value="/images/avatar2.png">
+              <img src="/images/avatar2.png" width="100px" />
+            </label>
 
-          <label class="profile-label">
-            <input type="radio" name="profile" id="avatar3" value="/images/avatar3.png">
-            <img src="/images/avatar3.png" width="100px" />
-          </label>
+            <label class="profile-label">
+              <input type="radio" name="profile" id="avatar3" value="/images/avatar3.png">
+              <img src="/images/avatar3.png" width="100px" />
+            </label>
 
-          <label class="profile-label">
-            <input type="radio" name="profile" id="logoWhite" value="/images/logoWhite.png">
-            <img src="/images/logoWhite.png" width="100px" />
-          </label>
+      
+            <label class="profile-label">
+              <input type="radio" name="profile" id="guy1" value="/images/guy1.png">
+              <img src="/images/guy1.png" width="100px" />
+            </label>
 
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary save-profile-img-btn" onclick="saveUserProfileImg(this.id)">Save
-            changes</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <label class="profile-label">
+              <input type="radio" name="profile" id="guy2" value="/images/guy2.png">
+              <img src="/images/guy2.png" width="100px" />
+            </label>
+
+            <label class="profile-label">
+              <input type="radio" name="profile" id="guy3" value="/images/guy3.png">
+              <img src="/images/guy3.png" width="100px" />
+            </label>
+
+<!-- 
+            <label class="profile-label">
+              <input type="radio" name="profile" id="logoWhite" value="/images/logoWhite.png">
+              <img src="/images/logoWhite.png" width="100px" />
+            </label> -->
+
+            
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary save-profile-img-btn"
+              onclick="saveUserProfileImg(this.id)">Save
+              changes</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
 
 
-  <!-- Link to scripts of your own -->
-  <script src="./js/firebase_API_TEAM03.js"></script>
-  <script src="./js/skeleton.js"></script>
-  <script src="./js/profilePage.js"></script>
+    <!-- Link to scripts of your own -->
+    <script src="./js/firebase_API_TEAM03.js"></script>
+    <script src="./js/skeleton.js"></script>
+    <script src="./js/profilePage.js"></script>
 </body>
 
 </html>

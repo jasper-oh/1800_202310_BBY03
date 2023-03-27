@@ -12,25 +12,6 @@ function insertAnimalFromFirestore() {
 
         localStorage.setItem("name", userName);
         localStorage.setItem("animal", selectedAnimal);
-
-        $(".edit-profile-photo-btn").attr("id", user.uid);
-        $(".save-profile-img-btn").attr("id", user.uid);
-
-        //get the user Img
-        var userImg = userDoc.data().userImg;
-
-        // //get The user prefer Temp
-        var userPreferTemp = userDoc.data().preferTemp;
-        var userPreferHumid = userDoc.data().preferHumid;
-
-        //$("#name-goes-here").text(userName); //jquery
-        document.getElementById("name-goes-here").innerText = userName;
-        // document.getElementById("slider2").setAttribute("value", userPreferTemp);
-        // document.getElementById("slider1").setAttribute("value", userPreferHumid);
-        // document.getElementById('sliderValueLabel2').innerText = userPreferHumid;
-        // document.getElementById('sliderValueLabel1').innerText = userPreferTemp;
-
-        $(".user-photo").attr("src", userImg);
       });
     }
   });

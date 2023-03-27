@@ -33,7 +33,7 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
 
     <!-- Link to styles of your own -->
-
+    <link rel="stylesheet" href="./css/styles/component/banner.css" />
     <link rel="stylesheet" href="./css/styles/component/footer.css" />
     <link rel="stylesheet" href="./css/styles/component/header.css" />
     <link rel="stylesheet" href="./css//styles/uploadPage/uploadPage.css" />
@@ -44,123 +44,216 @@
     <div class="wrapper">
       <!-- nav bar -->
       <nav id="navbarPlaceholder"></nav>
+      <nav id="bannerPlaceholder"></nav>
 
-      <div class="container">
-        <!-- Code will be here -->
-
-        <!-- <form action="/search">-->
-        <form>
-          <div class="information-section my-3">
-            <p><b><span id="welcomeText1">User, </span>upload your Howdy Score!</b></p>
-            <p>Rate the weather in your area</p>
-            <p id="locationText">Location: <span id="city"></span></p>
-          </div>
-  
-          <div class="content row">
-            <!--Same div as the main page-->
-            <div
-              class="weather-forecast mx-5 col text-white shadow p-3 rounded-3"
-            >
-              <div id="content1">
-                <div><h2 class="divTitle">Forecast</h2></div>
-                <div class="mb-3 card-body">
-                  <p>Temperature</p>
-                  <div id="forecastTemp">°C</div>
-                </div>
-  
-                <div class="mb-3">
-                  <p>Humidity</p>
-                  <div id="forecastHumidity">%</div>
-                </div>
-              </div>
-            </div>
-  
-            <!--Howdy score rating div, side-by-side with the forecast-->
-            <div class="howdy-rating card col shadow p-3 border-white rounded-2">
-              <div class=""><h2>Howdy Score</h2></div>
-              <!---Temperature-->
-              <div class="temp-wrapper card-body mb-3">
-                <span id="temp-rating-label-goes-here"
-                  >Rate the forecasted Temperature
+      <div
+        class="m-5 border border-3 custom-rounded position-relative"
+        id="container"
+      >
+        <div class="info-contents">
+          <!--  info div-->
+          <!--same div as the main page-->
+          <div class="card" id="content1">
+            <img src="images/forecast.png" height="290" alt="Card Image1" />
+            <div class="card-body">
+              <h1 class="divTitle">Forecast</h1>
+              <br />
+              <div class="data-show">
+                <span class="material-symbols-outlined icon">
+                  device_thermostat
                 </span>
-                <div class="temp-rating">
-                  <label class="switch-left" id="switch-left1">
-                    <input type="checkbox" id="mySwitchLeft1"/>
-                    <span class="slider round"></span>
-                    <label>Extreme weather?</label>
-                  </label>
-  
-                  <div class="information-wrapper mx-3">
-                    <input
-                      type="range"
-                      min="1"
-                      max="5"
-                      value="2.5"
-                      class="form-range"
-                      id="my-slider1"
-                    />
-                  </div>
-  
-                  <label class="switch-right" id="switch-right1">
-                    <input type="checkbox" id="mySwitchRight1" />
-                    <span class="slider round"></span>
-                    <label>Extreme weather?</label>
-                  </label>
-                </div>
+                <span id="forecastTemp" class="mainpage-data"> °C </span>
               </div>
-  
-              <!--Humidity-->
-              <div class="humidity-wrapper mb-5">
-                <span id="humidity-rating-label-goes-here"
-                  >Rate the forcasted Humidity</span
-                >
-                <div class="humidity-rating">
-                  <label class="switch-left" id="switch-left2">
-                    <input type="checkbox" id="mySwitchLeft2"/>
-                    <span class="slider round"></span>
-                    <label>Extreme weather?</label>
-                  </label>
-  
-                  <div class="information-wrapper mx-3">
-                    <input
-                      type="range"
-                      min="1"
-                      max="5"
-                      value="2.5"
-                      class="form-range"
-                      id="my-slider2"
-                    />
-                  </div>
-  
-                  <label class="switch-right" id="switch-right2">
-                    <input type="checkbox" id="mySwitchRight2" />
-                    <span class="slider round"></span>
-                    <label>Extreme weather?</label>
-                  </label>
-                </div>
+              <div class="data-show">
+                <span class="material-symbols-outlined icon">
+                  humidity_percentage
+                </span>
+                <span id="forecastHumidity" class="mainpage-data"> % </span>
               </div>
-  
-              <div class="comment card-body mb-3">
-                <label for="commentAreaLable" class="form-label fs-5"
-                  >Leave your tips or comments:</label
-                >
-                <textarea
-                  class="form-control"
-                  id="commentArea"
-                  rows="2"
-                ></textarea>
-              </div>
-              <button
-                type="button"
-                class="btn btn-primary mx-5"
-                id="submit-btn"
-                onclick="submitBtnClicked()"
-              >Submit</button>
             </div>
+          </div>
+
+          <!-- howdy score info div-->
+
+          <div class="card" id="content2">
+            <img src="" alt="Card Image2" height="290" id="content2Image" />
+            <div class="card-body">
+              <h1 class="divTitle">
+                Your rating here, <span id="animal-name-goes-here"></span>
+              </h1>
+
+              <div class="data-show">
+                <span id="temp-rating-label-goes-here"
+                  >Rate the forecasted Temperature</span
+                >
+              </div>
+
+              <div class="temp-rating">
+                <label class="switch-left" id="switch-left1">
+                  <input type="checkbox" id="mySwitchLeft1" />
+                  <span class="slider round"></span>
+                  <label>Extreme weather?</label>
+                </label>
+
+                <div class="information-wrapper mx-3">
+                  <input
+                    type="range"
+                    min="1"
+                    max="5"
+                    value="2.5"
+                    class="form-range"
+                    id="my-slider1"
+                  />
+                </div>
+
+                <label class="switch-right" id="switch-right1">
+                  <input type="checkbox" id="mySwitchRight1" />
+                  <span class="slider round"></span>
+                  <label>Extreme weather?</label>
+                </label>
+              </div>
+            </div>
+
+            <!--Humidity-->
+            <div class="humidity-wrapper mb-5">
+              <span id="humidity-rating-label-goes-here"
+                >Rate the forcasted Humidity</span
+              >
+              <div class="humidity-rating">
+                <label class="switch-left" id="switch-left2">
+                  <input type="checkbox" id="mySwitchLeft2" />
+                  <span class="slider round"></span>
+                  <label>Extreme weather?</label>
+                </label>
+
+                <div class="information-wrapper mx-3">
+                  <input
+                    type="range"
+                    min="1"
+                    max="5"
+                    value="2.5"
+                    class="form-range"
+                    id="my-slider2"
+                  />
+                </div>
+
+                <label class="switch-right" id="switch-right2">
+                  <input type="checkbox" id="mySwitchRight2" />
+                  <span class="slider round"></span>
+                  <label>Extreme weather?</label>
+                </label>
+              </div>
+            </div>
+
+            <div class="comment card-body mb-3">
+              <label for="commentAreaLable" class="form-label fs-5"
+                >Leave your tips or comments:</label
+              >
+              <textarea
+                class="form-control"
+                id="commentArea"
+                rows="2"
+              ></textarea>
+            </div>
+            <button
+              type="button"
+              class="btn btn-primary mx-5"
+              id="submit-btn"
+              onclick="submitBtnClicked()"
+            >
+              Submit
+            </button>
           </div>
         </div>
-        </form>
-        
+      </div>
+
+      <!--Howdy score rating div, side-by-side with the forecast-->
+      <!-- <div class="howdy-rating card col shadow p-3 border-white rounded-2">
+            <div class=""><h2>Howdy Score</h2></div>
+
+            <div class="temp-wrapper card-body mb-3">
+              <span id="temp-rating-label-goes-here"
+                >Rate the forecasted Temperature
+              </span>
+              <div class="temp-rating">
+                <label class="switch-left" id="switch-left1">
+                  <input type="checkbox" id="mySwitchLeft1" />
+                  <span class="slider round"></span>
+                  <label>Extreme weather?</label>
+                </label>
+
+                <div class="information-wrapper mx-3">
+                  <input
+                    type="range"
+                    min="1"
+                    max="5"
+                    value="2.5"
+                    class="form-range"
+                    id="my-slider1"
+                  />
+                </div>
+
+                <label class="switch-right" id="switch-right1">
+                  <input type="checkbox" id="mySwitchRight1" />
+                  <span class="slider round"></span>
+                  <label>Extreme weather?</label>
+                </label>
+              </div>
+            </div>
+
+
+            <div class="humidity-wrapper mb-5">
+              <span id="humidity-rating-label-goes-here"
+                >Rate the forcasted Humidity</span
+              >
+              <div class="humidity-rating">
+                <label class="switch-left" id="switch-left2">
+                  <input type="checkbox" id="mySwitchLeft2" />
+                  <span class="slider round"></span>
+                  <label>Extreme weather?</label>
+                </label>
+
+                <div class="information-wrapper mx-3">
+                  <input
+                    type="range"
+                    min="1"
+                    max="5"
+                    value="2.5"
+                    class="form-range"
+                    id="my-slider2"
+                  />
+                </div>
+
+                <label class="switch-right" id="switch-right2">
+                  <input type="checkbox" id="mySwitchRight2" />
+                  <span class="slider round"></span>
+                  <label>Extreme weather?</label>
+                </label>
+              </div>
+            </div>
+
+            <div class="comment card-body mb-3">
+              <label for="commentAreaLable" class="form-label fs-5"
+                >Leave your tips or comments:</label
+              >
+              <textarea
+                class="form-control"
+                id="commentArea"
+                rows="2"
+              ></textarea>
+            </div>
+            <button
+              type="button"
+              class="btn btn-primary mx-5"
+              id="submit-btn"
+              onclick="submitBtnClicked()"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div> -->
+
       <!-- footer -->
       <nav id="footerPlaceholder"></nav>
     </div>
@@ -170,5 +263,6 @@
     <script type="text/javascript" src="./js/apiKey.js"></script>
     <script src="./js/skeleton.js"></script>
     <script src="./js/uploadPage.js"></script>
+    <script src="./js/banner.js"></script>
   </body>
 </html>
