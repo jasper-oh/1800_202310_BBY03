@@ -82,11 +82,9 @@ window.initMap = function(){
           }
           
         })
-        console.log("@@@@")
-        console.log(realDataSet)
-        console.log("@@@@")
+        
         for(let j = 0 ; j < realDataSet.length ; j++){          
-          generateData(realDataSet[j].curTemp , realDataSet[j].curHumidity , realDataSet[j].userScore, realDataSet[j].ratingID , realDataSet[j].userID)
+          generateData(realDataSet[j].curTemp , realDataSet[j].curHumidity , realDataSet[j].ratingID , realDataSet[j].userID)
         }
 
         let commentsList = [];
@@ -130,13 +128,43 @@ window.initMap = function(){
 };
 
 
-function generateData(temp, humid ,score , id ,userId){
+function tempConvertToSentence(score){
+  switch(score){
+    case "1":
+      return "very cold";
+    case "2":
+      return "It feels colder";
+    case "3":
+      return "Exactly How it feels";
+    case "4":
+      return "It feels warmer";
+    case "5":
+      return "Very hot";
+  }
+}
+
+
+function humidityConvertToSentence(score){
+  switch(score){
+    case "1":
+      return "very dry";
+    case "2":
+      return "It feels less humid";
+    case "3":
+      return "Exactly how it feels";
+    case "4":
+      return "It feels more humid";
+    case "5":
+      return "Very damp";
+  }
+}
+
+function generateData(temp, humid , id ,userId){
   const tbody = document.getElementById("tbody");
   const insertRow = tbody.insertRow();
   const imgData = insertRow.insertCell();
   const tempData = insertRow.insertCell()
   const humidData = insertRow.insertCell();
-  const scoreData = insertRow.insertCell();
   const likeData = insertRow.insertCell();
 
   let imgTag = document.createElement("IMG")
@@ -153,12 +181,12 @@ function generateData(temp, humid ,score , id ,userId){
     imgData.appendChild(imgTag);  
   })
   
-  let tempDataText = document.createTextNode(temp);
+
+  let tempDataText = document.createTextNode(tempConvertToSentence(temp));
   tempData.appendChild(tempDataText)
-  let humidDataText = document.createTextNode(humid);
+  let humidDataText = document.createTextNode(humidityConvertToSentence(humid));
   humidData.appendChild(humidDataText)
-  let scoreDataText = document.createTextNode(score);
-  scoreData.appendChild(scoreDataText)
+
   //Like button logic will be here.
   let likesDataText = document.createElement("i");
   likesDataText.classList.add("fa-regular", "fa-thumbs-up")
@@ -228,7 +256,6 @@ function clickLikes(cliked_id){
         })
       }
     )
-    
   }
 }
 

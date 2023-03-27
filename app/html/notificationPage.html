@@ -47,20 +47,36 @@
     <div class="wrapper">
       <nav id="navbarPlaceholder"></nav>
       <!--Notification page content here-->
-      <div class="container ms-5">
+      <div class="container">
         <div class="notification m-5">
           <div class="m-auto col-lg-20 text-wrap">
-            <label for="today-notification" class="form-label-1">Today</label>
+            <label for="today-notification" class="form-label-1">Extreme Weather Alert</label>
             <textarea
               class="form-control"
               id="notification-goes-here"
               rows="5"
               readonly
-            >
+            >No Extreme Weather Today.
             </textarea>
           </div>
         </div>
       </div>
+
+      <div class="container chat-gpt">
+        <div class="m-auto col-lg-20 text-wrap">
+          <span class="generate-btn" id="gen-ans"><i class="fa-solid fa-robot"></i> Ask the clothes recommendation!</span>
+          <div class="answer-from-gpt">
+            <div id="div_load_image" style="position:absolute; top:50%; left:50%;width:0px;height:0px; z-index:9999; background:#f0f0f0; filter:alpha(opacity=50); opacity:alpha*0.5; margin:auto; padding:0; text-align:center">
+              <img src="./images/loading.gif" style="width:100px; height:100px;">
+            </div>
+            <span>Today's average Temperature : </span><span id="temperature-gpt"></span>
+            <span>Today's average humidity : </span><span id="humidity-gpt"></span>
+            <span>Today's recommendation : </span><br>
+            <span id="clothes-gpt"></span>
+          </div>
+        </div>
+      </div>
+
       <!--Footer here-->
       <nav id="footerPlaceholder"></nav>
     </div>
