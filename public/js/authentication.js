@@ -23,7 +23,6 @@ var uiConfig = {
             name: user.displayName, //"users" collection
             email: user.email, //with authenticated user's ID (user.uid)
             achievement: 0,
-            animal: animal.displayName,
 
             //user preferences
           })
@@ -31,7 +30,6 @@ var uiConfig = {
             console.log("New user added to firestore");
             console.log(user.displayName);
             localStorage.setItem("name", user.displayName);
-            localStorage.setItem("animal", user.displayName);
             location.href = "/profile"; //re-direct to profile.html after signup to check the preference Temp
           })
           .catch(function (error) {

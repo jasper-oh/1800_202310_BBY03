@@ -134,6 +134,7 @@ function handleAnimalSelectionChange() {
 
 function insertNameFromFirestore() {
   // to check if the user is logged in:
+  var selectedAnimal = document.getElementById("animal-names").value;
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       console.log(user.uid); // let me to know who is the user that logged in to get the UID
