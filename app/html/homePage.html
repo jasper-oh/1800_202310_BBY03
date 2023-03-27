@@ -1,83 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Home page</title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Bootstrap Library CSS CDN go here -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
+<head>
+  <title>Home page</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Boostrap Library JS CDN  go here -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
+  <!-- Bootstrap Library CSS CDN go here -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
-    <!-- Other libraries go here -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Boostrap Library JS CDN  go here -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 
-    <!-- Link to styles of your own -->
-    <link rel="stylesheet" href="./css/styles/component/header.css" />
-    <link rel="stylesheet" href="./css/styles/homePage/homePage.css" />
-  </head>
+  <!-- Other libraries go here -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <body>
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
+  <!-- Link to styles of your own -->
+  <link rel="stylesheet" href="./css/styles/component/header.css" />
+  <link rel="stylesheet" href="./css/styles/homePage/homePage.css" />
+</head>
 
-    <!-- nav bar -->
-    <nav id="navbarPlaceholder">
-      <div class="navbar navbar-light navbar-custom">
-        <!--Link to main page-->
-        <a class="navbar-brand fs-4" href="loginPage.html">
-          <!--logo-->
-          <img src="/images/logoClean.png" height="50" />
-          <span id="com-logo">Howdy Weather</span></a
-        >
-      </div>
-    </nav>
+<body>
+  <!------------------------------>
+  <!-- Your HTML Layout go here -->
+  <!------------------------------>
 
-    <!--body content-->
-    <div id="container">
-      <!--feature to welcome the user-->
-      <div id="largeText">
-        <h1 id="appName">Howdy Weather</h1>
-        <br />
-        <!-- <h2><i> your personalized weather app. </i></h2> -->
-      </div>
+  <!-- nav bar -->
+  <nav id="navbarPlaceholder">
+    <div class="navbar navbar-light navbar-custom">
+      <!--Link to main page-->
+      <a class="navbar-brand fs-4" href="loginPage.html">
+        <!--logo-->
+        <img src="/images/logoClean.png" height="50" />
+        <span id="com-logo">Howdy Weather</span></a>
+    </div>
+  </nav>
 
-      <div id="explain">
-        <p>
-          Confused what the weather <i>actually</i> feels like? Join our user
-          forum and view what others are saying about the weather in real-time.
-          Contribute to the forum and share your <i>own</i> weather ratings
-          anywhere within Metro-Vancouver. Our focus is to bring weather
-          information that's relatable to <i>you</i>. By setting your weather
-          preferences, you will receive personalized temperature and humidity
-          ratings that's relevant to you.
-        </p>
-      </div>
-
+  <div id="container1">
+    <div id="text">
+      <h1>Howdy Weather</h1>
+      <span> real time weather reports from others with the same temperature tolerance as you</span>
       <div id="links">
         <a class="button1" href="/login" role="button">Login/Signup</a>
       </div>
-
-      <div id="bigImg">
-        <img src="/images/graphic2.png" height="800" width="auto" />
-      </div>
     </div>
+    <div id="graphic">
+    </div>
+  </div>
 
-    <script src="./js/homePage.js">
-      logout(); //make sure user is logged out
-    </script>
-  </body>
+  <div class="description">
+    <h4> weather</h4>
+  </div>
+
+  <!--animal cards-->
+ 
+  <div class="card-container">
+  <div class="card" id="camel">
+    <img src="/images/camel.png" class="cardimg">
+    <div class="container">
+      <h4><b>Camel</b></h4>
+      <hr>
+      <img src="/images/dialog.png" class="dialog">
+      <p>Architect & Engineer</p>
+    </div>
+  </div>
+
+  <div class="card" id="squirrel">
+    <img src="/images/squirrel.png" class="cardimg">
+    <div class="container">
+      <h4><b>Squirrel</b></h4>
+      <hr>
+      <img src="/images/dialog.png" class="dialog">
+      <p>Architect & Engineer</p>
+    </div>
+  </div>
+
+  <div class="card" id="bear">
+    <img src="/images/bear.png" class="cardimg">
+    <div class="container">
+      <h4><b>Polar Bear</b></h4>
+      <hr>
+      <img src="/images/dialog.png" class="dialog">
+      <p>Architect & Engineer</p>
+    </div>
+  </div>
+</div>
+
+ </div>
+  
+  <script src="./js/homePage.js">
+    logout(); //make sure user is logged out
+  </script>
+</body>
+
 </html>

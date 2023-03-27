@@ -1,40 +1,91 @@
-#container {
+/* #container {
   display: grid;
   grid-template-columns: 35vw 50vw;
   grid-template-rows: 40vh 15vh 6vh 20vh;
+} */
+
+/*default screen size*/
+#container1 {
+
+  display: grid;
+  grid-template-columns: 60vw 40vw;
+  grid-template-rows: 50vh;
+  width: 100vw;
 }
 
-#largeText {
-  /* background-color: rgb(209, 239, 239); */
-  grid-row: 1 / span 1;
-  grid-column: 1 / span 1;
-  text-align: left;
-  padding-top: 20%;
-  padding-left: 10%;
-}
-#largeText > h2 {
-  font-size: 30pt;
+#text {
+  grid-column: 1/ span 1;
+  grid-row: 1;
+  text-align: center;
+  padding-top: 15%;
+  /* background-color: antiquewhite; */
+ 
 }
 
-#appName {
-  font-size: 60pt;
+#graphic {
+  background-image: url("/images/graphic2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+  grid-column: 2/span 1;
+  grid-row: 1;
+  object-fit: contain;
+
 }
 
+#graphic img {
+  height: auto;
+  width: 50%;
+}
+
+
+
+ /* CSS styles for iPhone 12 Pro portrait mode */
+@media only screen and (max-width: 390px) {
+
+  #container1 {
+    grid-template-rows: 25vh 25vh;
+    grid-template-columns: 100vw;
+  }
+
+  #graphic{
+    background-image: url("/images/graphic2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    grid-row: 1/span 1;
+    grid-column: 1;
+    /* background-color: #f3b373; */
+  }
+
+  #text{
+    /* background-color: beige; */
+    grid-row: 2 /span 1;
+    grid-column: 1;
+    text-align: center;
+  
+    padding-top: 20px;
+    display:block;
+    border: 2px solid #b1ccbf;
+    border-radius: 10px;
+    margin: 5px;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+  
+  }
+  
+
+}
+
+/*other styling*/
 #links {
-  /* background-color: rgb(22, 51, 102); */
-  margin-top: 20px;
   padding-top: 5%;
-  grid-row: 3 / span 1;
-  grid-column: 1 / span 1;
   display: flex;
-  justify-content: left;
-  padding-left: 10%;
+  justify-content: center;
 }
 
 .button1 {
   appearance: none;
-  background-color: #fbc687;
-  border: 2px solid rgb(201, 215, 235);
+  background-color: #f3b373;
   border-radius: 15px;
   box-sizing: border-box;
   color: white;
@@ -42,8 +93,8 @@
   font-size: 18px;
   font-weight: 600;
   line-height: normal;
+  min-height:50px;
   margin: 0;
-  min-height: 60px;
   min-width: 0;
   text-align: center;
   text-decoration: none;
@@ -54,25 +105,67 @@
 }
 
 .button1:hover {
-  color: white;
-  background-color: #aacdbe;
+  color: rgb(18, 17, 17);
+  background-color: #f6cca3;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
 
-#explain {
-  /* background-color: rgb(245, 223, 194); */
-  grid-row: 2 / span 1;
-  grid-column: 1 / span 1;
-  display: flex;
-  justify-content: left;
-  padding-left: 10%;
+
+/* description card */
+.description {
+  background-color: #f2f2f2;
+  border-top: 4px solid #b1ccbf;
+  margin: 50px 0 0 0;
+  padding: 12px;
+  min-height: 200px;
+  text-align: center;
 }
 
-#bigImg {
-  /* background-color: blue; */
-  grid-row: 1 / span 1;
-  grid-column: 2 / span 1;
+
+/* animal card */
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  margin-left: 30px;
+  align-items: center;
+}
+
+.card {
+  width: 300px;
+  margin: 20px;
+  border-radius: 5px;
+  position:relative;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+.cardimg {
+  width: 100%;
+  height: auto;
+
+}
+
+.container {
+  padding: 10px;
+
+}
+
+
+#camel{
+  /* box-shadow: 0 6px 10px 0 rgb(228, 179, 123,0.5); */
+}
+
+#squirrel{
+  /* box-shadow: 0 6px 10px 0 rgba(242, 169, 126, 0.5); */
+}
+
+#bear{
+  /* box-shadow: 0 6px 10px 0 rgba(155, 227, 238, 0.5); */
+}
+
+.dialog{
+  width:50px;
+  height: auto;
 }
