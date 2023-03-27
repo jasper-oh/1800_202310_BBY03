@@ -9,3 +9,32 @@
   flex: 1;
 
 }
+
+.chat-gpt{
+  width: 95%;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.generate-btn{
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 5px;
+  margin:10px;
+  box-shadow: 3px 3px 3px black;
+  transition-duration: 0.3s;
+  background-color: #FFDE59;
+}
+
+.generate-btn:active{
+  margin-left:5px;
+  margin-top: 5px;
+  box-shadow: none;
+}
+
+.answer-from-gpt{
+  margin-top: 30px;
+  display: flex;
+  flex-direction:column;
+}

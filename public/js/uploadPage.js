@@ -25,21 +25,23 @@ slider1.addEventListener("input", () => {
 // Auto update slider label1 when drag
 
 var sliderLabel1 = document.getElementById("temp-rating-label-goes-here");
+
 slider1.addEventListener("input", function () {
-  switch (slider1.value) {
-    case "1":
+  let slider1Value = parseInt(slider1.value);
+  switch (slider1Value) {
+    case 1:
       sliderLabel1.innerHTML = "Very cold!";
       break;
-    case "2":
+    case 2:
       sliderLabel1.innerHTML = "It feels colder";
       break;
-    case "3":
+    case 3:
       sliderLabel1.innerHTML = "Exactly how it feels!";
       break;
-    case "4":
+    case 4:
       sliderLabel1.innerHTML = "It feels warmer";
       break;
-    case "5":
+    case 5:
       sliderLabel1.innerHTML = "Very hot!";
       break;
   }
@@ -65,21 +67,23 @@ slider2.addEventListener("input", () => {
 
 // Auto update slider label1 when drag
 var sliderLabel2 = document.getElementById("humidity-rating-label-goes-here");
+
 slider2.addEventListener("input", function () {
-  switch (slider2.value) {
-    case "1":
+  let slider2Value = parseInt(slider2.value);
+  switch (slider2Value) {
+    case 1:
       sliderLabel2.innerHTML = "Very Dry!";
       break;
-    case "2":
+    case 2:
       sliderLabel2.innerHTML = "It feels less humid";
       break;
-    case "3":
+    case 3:
       sliderLabel2.innerHTML = "Exactly how it feels!";
       break;
-    case "4":
+    case 4:
       sliderLabel2.innerHTML = "It feels more humid";
       break;
-    case "5":
+    case 5:
       sliderLabel2.innerHTML = "Very Damp!";
       break;
   }
@@ -132,6 +136,7 @@ function submitBtnClicked() {
             uploadTime: firebase.firestore.FieldValue.serverTimestamp(),
             userID: userID,
             userImg: userImg,
+            animal: localStorage.getItem("animal"),
           })
           .then(() => {
             // create alert window

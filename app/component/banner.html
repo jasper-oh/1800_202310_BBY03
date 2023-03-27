@@ -1,0 +1,33 @@
+<head></head>
+<body>
+  <div
+    class="welcome-banner border border-3 custom-rounded text-center bg-image mx-5 py-4"
+    style="background-image: url('#')"
+  >
+    <div class="welcome fs-1" id="welcomeText1">
+      Howdy,
+      <span id="animal-identity-goes here">Polar Bear</span>user"!
+    </div>
+    <p class="welcome mt-4" id="welcomeText2"></p>
+    <img src="../../../images/location.png" height="30" alt="pin icon" /><span
+      id="city"
+    ></span>
+  </div>
+</body>
+
+<script>
+  //read name into mainPage after Howdy
+  const welcomeText1 = document.getElementById("welcomeText1");
+  welcomeText1.innerText = `Howdy, ${localStorage.getItem(
+    "animal"
+  )} ${localStorage.getItem("name")} `;
+  // Create a new image element
+  let img = document.createElement("img");
+
+  // Set the source attribute of the image
+  img.src = `images/${localStorage.getItem("animal")}.png`;
+  img.height = "40";
+
+  // Append the image to the element
+  welcomeText1.appendChild(img);
+</script>

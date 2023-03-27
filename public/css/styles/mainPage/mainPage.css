@@ -1,142 +1,135 @@
-.wrapper{
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+.wrapper {
   display: flex;
   height: 100vh;
   flex-direction: column;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
+
 #container {
-    flex: 1;
-    min-width: 390px;
-    display: flex;    
-    flex-direction: column;
+  flex: 1;
+  min-width: 390px;
+  display: flex;
+  background-color: #f2fafa;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #welcome {
-    text-align: center;
-    
-    padding-top: 50px;
+  text-align: center;
+  padding-top: 50px;
 }
 
-#welcomeText1{
-    font-size: 33pt;
+#welcomeText1 {
+  font-size: 33pt;
 }
-
 
 .welcomeText2 {
-    font-size: 15pt;
-}
-
-#locationText{
-    font-size: 20pt;
+  font-size: 15pt;
 }
 
 .divTitle {
-    font-size: 30pt;
+  font-size: 2.3rem;
 }
 
-.info-contents{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 60px;
+.info-contents {
+  display: flex;
+  justify-content: space-evenly;
 }
-
-
-#content1 h2{
-    font-size: 17pt;
-    
-}
-
-#content1 p {
-    font-size: 14pt;
-}
-
 
 #content1 {
-    /* background-color: blueviolet; */
-    text-align: center;    
-    border: 1px solid black;
-    border-radius: 6px;
-    padding: 7%;
-    background-color: White;
-    box-shadow : 5px 5px 10px 0;
-    width: 30%;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 3%;
+  background-color: White;
+  box-shadow: 5px 5px 10px 0;
+  width: 30%;
 }
 
-.data-show{
-    margin-top: 20px;
+#content2 {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 3%;
+  background-color: White;
+  box-shadow: 5px 5px 10px 0;
+  width: 30%;
+}
+
+.data-show {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.data-show i {
+  font-size: 50px;
+}
+
+.icon {
+  font-size: 50px;
+}
+
+#content2 h1 {
+  font-size: 2.5rem;
+}
+
+#content2 p {
+  font-size: 14pt;
+}
+
+.mainpage-data {
+  font-size: 30px;
+}
+
+.btn-success {
+  background-color: #fbc687;
+  border: 1px solid #f4f7c5;
+  border-radius: 15px;
+  color: white;
+  box-sizing: border-box;
+}
+
+.btn-success:hover {
+  color: white;
+  border: 1px solid white;
+  background-color: #ea907a;
+  transform: translateY(-2px);
+}
+
+@media screen and (max-width: 500px) {
+  .info-contents {
     display: flex;
-    justify-content: space-between;
-}
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
 
-.data-show i{
-    font-size: 50px;
-}
-
-.icon{
-    font-size: 50px
-}
-
-#content2 h2{
-    font-size: 17pt;
-}
-
-#content2 p{
-    font-size:14pt;
-}
-
-#content2{
-    /* background-color: brown; */
-    text-align: center;    
+  #content1 {
+    /* background-color: blueviolet; */
+    text-align: center;
     border: 1px solid black;
     border-radius: 6px;
-    padding: 5%;
     background-color: White;
-    box-shadow : 5px 5px 10px 0;
-    width: 30%;
-    background-image: url("/images/camel.png");
-    background-size: 50%;
-    background-repeat: no-repeat;
-    background-position: right bottom;
-}
+    box-shadow: 5px 5px 10px 0;
+    width: 80%;
+  }
 
-.mainpage-data{
-    font-size: 30px;
-}
-
-@media screen and (max-width : 500px) {
-    
-    .info-contents{
-        display: flex;        
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 60px;
-    }
-
-    #content1 {
-        /* background-color: blueviolet; */
-        text-align: center;    
-        border: 1px solid black;
-        border-radius: 6px;
-        padding: 7%;
-        background-color: White;
-        box-shadow : 5px 5px 10px 0;
-        width: 80%;
-    }
-
-    #content2{
-        /* background-color: brown; */
-        text-align: center;    
-        border: 1px solid black;
-        border-radius: 6px;
-        padding: 5%;
-        background-color: White;
-        box-shadow : 5px 5px 10px 0;
-        width: 80%;
-        background-image: url("/images/camel.png");
-        background-size: 50%;
-        background-repeat: no-repeat;
-        background-position: right bottom;
-        margin-top: 20px;
-    }
+  #content2 {
+    /* background-color: brown; */
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: White;
+    box-shadow: 5px 5px 10px 0;
+    width: 80%;
+    margin-top: 20px;
+  }
 }
