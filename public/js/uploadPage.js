@@ -1,7 +1,15 @@
 //read name into mainPage after Howdy
-document.getElementById("welcomeText1").innerText = `${localStorage.getItem(
-  "name"
-)}, `;
+document.getElementById(
+  "animal-name-goes-here"
+).innerText = `${localStorage.getItem("animal")}, `;
+
+// insert animal image as card image
+function insertAnimalImage() {
+  let src = `images/${localStorage.getItem("animal")}.png`;
+  const card2 = document.getElementById("content2Image");
+  card2.src = src;
+}
+insertAnimalImage();
 
 // toggle1
 const slider1 = document.getElementById("my-slider1");
