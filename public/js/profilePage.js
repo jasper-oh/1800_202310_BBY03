@@ -30,6 +30,7 @@ function handleWeatherPreferenceSet() {
             .update({
               preferTemp: preferTemp,
               preferHumid: preferHumid,
+              animal: selectedAnimal,
             })
             .then(() => {
               //show alert
@@ -141,6 +142,7 @@ function insertNameFromFirestore() {
         //get the user name
         var userName = userDoc.data().name;
         localStorage.setItem("name", userName);
+        localStorage.setItem("animal", selectedAnimal);
         $(".edit-profile-photo-btn").attr("id", user.uid);
         $(".save-profile-img-btn").attr("id", user.uid);
 
