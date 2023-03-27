@@ -65,7 +65,7 @@ app.get("/notification", (req, res) => {
   let doc = fs.readFileSync("./app/html/notificationPage.html", "utf8");
   res.send(doc);
 });
-})
+
 
 app.get("/notificationrecommend" , async (req, res) => {
   res.setHeader("Content-Type", "application/json");
