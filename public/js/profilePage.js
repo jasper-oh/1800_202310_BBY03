@@ -1,3 +1,12 @@
+//when the new user come in to the profile page, user can see the default animal squirrel
+// let userChooseAnimal = $("#animal-names").find(":selected").val();
+// var animalImage = document.getElementById("animal-goes-here");
+// animalImage.src = getImageUrlForAnimal(userChooseAnimal);
+
+
+
+
+
 function handleWeatherPreferenceSet() {
   var db = firebase.firestore();
   var user = firebase.auth().currentUser;
@@ -88,6 +97,7 @@ function displayAnimalImage() {
           }
           var animalImage = document.getElementById("animal-goes-here");
           animalImage.src = getImageUrlForAnimal(animal);
+          localStorage.setItem("animal" , animal);
         }
       });
   } else {
@@ -109,6 +119,7 @@ function displayAnimalImage() {
               }
               var animalImage = document.getElementById("animal-goes-here");
               animalImage.src = getImageUrlForAnimal(animal);
+              localStorage.setItem("animal" , animal);
             }
           });
       }
@@ -125,6 +136,7 @@ window.onload = function () {
 function handleAnimalSelectionChange() {
   var animalDropdown = document.getElementById("animal-names");
   var saveChangesBtn = document.getElementById("save-changes-btn");
+
   if (animalDropdown.value === "") {
     saveChangesBtn.disabled = true;
   } else {

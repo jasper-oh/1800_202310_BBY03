@@ -24,6 +24,8 @@ var uiConfig = {
             email: user.email, //with authenticated user's ID (user.uid)
             achievement: 0,
 
+            //Make the default img to squirrel
+            preferTemp: 2,
             //user preferences
           })
           .then(function () {
