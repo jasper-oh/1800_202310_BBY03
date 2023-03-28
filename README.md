@@ -101,8 +101,10 @@ It has the following subfolders and files:
 [![Node Badge](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://javascript.info/)
 [![Bootstrap Badge](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://javascript.info/)
 [![Jquery Badge](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)](https://javascript.info/)
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" height="20px" style="border : 1px solid black; padding: 5px">
 [![Firebase Badge](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)](https://javascript.info/)
 [![VScode Badge](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)](https://javascript.info/)
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -123,9 +125,13 @@ It has the following subfolders and files:
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Get a free( OR not free ) API Key at 
+
+- [https://openweathermap.org/api](https://openweathermap.org/api)
+- [https://developers.google.com/maps](https://developers.google.com/maps)
+- [https://openai.com/](https://openai.com/)
+
 2. Clone the repo
    ```sh
    git clone https://github.com/jasper-oh/1800_202310_BBY03.git
