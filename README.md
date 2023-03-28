@@ -167,6 +167,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Re-design Architecture with React JS
 
 
+
 See the [open issues](https://github.com/jasper-oh/1800_202310_BBY03/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
