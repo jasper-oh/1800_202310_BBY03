@@ -18,13 +18,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-![Contributors](https://img.shields.io/github/contributors/jasper-oh/1800_202310_BBY03?style=for-the-badge)
-
-![Stargazers](https://img.shields.io/github/stars/jasper-oh/1800_202310_BBY03?style=for-the-badge)
-
-![Issues]( https://img.shields.io/github/issues/jasper-oh/1800_202310_BBY03?style=for-the-badge)
-
-![MIT License](https://img.shields.io/github/license/jasper-oh/1800_202310_BBY03?style=for-the-badge)
+![Contributors](https://img.shields.io/github/contributors/jasper-oh/1800_202310_BBY03?style=for-the-badge) ![Stargazers](https://img.shields.io/github/stars/jasper-oh/1800_202310_BBY03?style=for-the-badge) ![Issues]( https://img.shields.io/github/issues/jasper-oh/1800_202310_BBY03?style=for-the-badge) ![MIT License](https://img.shields.io/github/license/jasper-oh/1800_202310_BBY03?style=for-the-badge)
 
 ## Contributors
 
