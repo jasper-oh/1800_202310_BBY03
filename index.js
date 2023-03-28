@@ -58,7 +58,7 @@ app.get("/notification", (req, res) => {
 app.get("/notificationrecommend", async (req, res) => {
   res.setHeader("Content-Type", "application/json");
   const prompt = `
-  Write Short clothes recommendation based on current temperature and humidity of Burnaby Canada.
+  Give me clothes recommendation based on current temperature and humidity of Burnaby Canada.
   Return response in the following parsable JSON format:
       {
         "temperature" : "temperature in Burnaby Canada",
