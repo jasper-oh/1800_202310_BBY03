@@ -189,8 +189,8 @@ navigator.geolocation.getCurrentPosition(
         const celsiusTemperature = temperature - 273.15;
 
         //display the location on the webpage
-        const cityElement = document.getElementById("city");
-        cityElement.textContent = cityName;
+        // const cityElement = document.getElementById("city");
+        // cityElement.textContent = cityName;
 
         //display the temp on the webpage
         const forecastTempElement = document.getElementById("forecastTemp");

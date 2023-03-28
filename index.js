@@ -13,20 +13,9 @@ const config = new Configuration({
 
 const openai = new OpenAIApi(config);
 
-const runPrompt = async () => {
-  const prompt = "Short clothes recommendation in weather of Burnarby Canada";
 
-  const response = await openai.createCompletion({
-    model: "text-davinci-003",
-    prompt: prompt,
-    max_tokens: 2048,
-    temperature: 1,
-  });
 
-  console.log(response.data);
-};
 
-runPrompt();
 
 // just like a simple web server like Apache web server
 // we are mapping file system paths to the app's virtual paths

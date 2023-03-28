@@ -47,15 +47,12 @@
       <!-- nav bar -->
       <nav id="navbarPlaceholder"></nav>
 
-      <div
-        class="m-5 border border-3 custom-rounded position-relative"
-        id="container"
-      >
+      <div id="container">
         <div class="info-contents">
           <!--  info div-->
           <!--same div as the main page-->
           <div class="card" id="content1">
-            <img src="images/forecast.png" height="290" alt="Card Image1" />
+            <img src="images/forecast.png" alt="Card Image1" />
             <div class="card-body">
               <h1 class="divTitle">Forecast</h1>
               <br />
@@ -77,91 +74,92 @@
           <!-- howdy score info div-->
 
           <div class="card" id="content2">
-            <img src="" alt="Card Image2" height="290" id="content2Image" />
-            <div class="card-body">
+            <div class="left-card-body">
+              <img src="" alt="Card Image2"  id="content2Image" />
               <h1 class="divTitle">
                 Rate here <span id="animal-name-goes-here"></span>
               </h1>
-
+            </div>
+            
+            <div class="card-body">
               <div class="temp-wrapper">
                 <span id="temp-rating-label-goes-here"
                   >Rate the forecasted Temperature</span
                 >
-              </div>
+              
+                <div class="temp-rating">
+                  <label class="switch-left" id="switch-left1">
+                    <input type="checkbox" id="mySwitchLeft1" />
+                    <span class="slider round"></span>
+                    <label>Snow storm?</label>
+                  </label>
 
-              <div class="temp-rating">
-                <label class="switch-left" id="switch-left1">
-                  <input type="checkbox" id="mySwitchLeft1" />
-                  <span class="slider round"></span>
-                  <label>Snow storm?</label>
-                </label>
+                  <div class="information-wrapper">
+                    <input
+                      type="range"
+                      min="1"
+                      max="5"
+                      value="2.5"
+                      class="form-range"
+                      id="my-slider1"
+                    />
+                  </div>
 
-                <div class="information-wrapper mx-3">
-                  <input
-                    type="range"
-                    min="1"
-                    max="5"
-                    value="2.5"
-                    class="form-range"
-                    id="my-slider1"
-                  />
+                  <label class="switch-right" id="switch-right1">
+                    <input type="checkbox" id="mySwitchRight1" />
+                    <span class="slider round"></span>
+                    <label>Heat Wave?</label>
+                  </label>
                 </div>
-
-                <label class="switch-right" id="switch-right1">
-                  <input type="checkbox" id="mySwitchRight1" />
-                  <span class="slider round"></span>
-                  <label>Heat Wave?</label>
-                </label>
               </div>
-            </div>
-
-            <!--Humidity-->
-            <div class="humidity-wrapper mb-5">
-              <span id="humidity-rating-label-goes-here"
+              <!--Humidity-->
+              <div class="humidity-wrapper">
+                <span id="humidity-rating-label-goes-here"
                 >Rate the forcasted Humidity</span
-              >
-              <div class="humidity-rating">
-                <label class="switch-left" id="switch-left2">
-                  <input type="checkbox" id="mySwitchLeft2" />
-                  <span class="slider round"></span>
-                  <label>Drought?</label>
-                </label>
-
-                <div class="information-wrapper mx-3">
-                  <input
+                >
+                <div class="humidity-rating">
+                  <label class="switch-left" id="switch-left2">
+                    <input type="checkbox" id="mySwitchLeft2" />
+                    <span class="slider round"></span>
+                    <label>Drought?</label>
+                  </label>
+                  
+                  <div class="information-wrapper">
+                    <input
                     type="range"
                     min="1"
                     max="5"
                     value="2.5"
                     class="form-range"
                     id="my-slider2"
-                  />
+                    />
+                  </div>
+                  
+                  <label class="switch-right" id="switch-right2">
+                    <input type="checkbox" id="mySwitchRight2" />
+                    <span class="slider round"></span>
+                    <label>Flood?</label>
+                  </label>
                 </div>
-
-                <label class="switch-right" id="switch-right2">
-                  <input type="checkbox" id="mySwitchRight2" />
-                  <span class="slider round"></span>
-                  <label>Flood?</label>
-                </label>
               </div>
-            </div>
-
-            <div class="comment card-body mb-3">
-              <label for="commentAreaLable" class="form-label fs-5"
+              
+              <div class="comment">
+                <label for="commentAreaLable" class="form-label"
                 >Leave your tips or comments:</label
-              >
-              <textarea
+                >
+                <textarea
                 class="form-control"
                 id="commentArea"
                 rows="2"
-              ></textarea>
-            </div>
+                ></textarea>
+              </div>
+                           
             <button
               type="button"
-              class="btn btn-primary mx-5"
+              class="btn btn-primary"
               id="submit-btn"
               onclick="submitBtnClicked()"
-            >
+              >
               Submit
             </button>
           </div>
