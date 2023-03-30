@@ -41,16 +41,7 @@ body {
   justify-content: space-evenly;
 }
 
-#content1 {
-  text-align: center;
-  border: 1px solid black;
-  border-radius: 6px;
-  padding: 3%;
-  background-color: White;
-  box-shadow: 5px 5px 10px 0;
-  width: 20%;
-  height: 90%;
-}
+
 
 #content2 {
   text-align: center;
@@ -60,7 +51,7 @@ body {
   background-color: White;
   box-shadow: 5px 5px 10px 0;
   width: 20%;
-  height: 90%;
+  height: 100%;
 }
 
 .data-show {
@@ -114,15 +105,6 @@ body {
     margin-bottom: 40px;
   }
 
-  #content1 {
-    /* background-color: blueviolet; */
-    text-align: center;
-    border: 1px solid black;
-    border-radius: 6px;
-    background-color: White;
-    box-shadow: 5px 5px 10px 0;
-    width: 80%;
-  }
 
   #content2 {
     /* background-color: brown; */
