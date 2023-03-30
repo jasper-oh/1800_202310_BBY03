@@ -37,6 +37,11 @@
 </body>
 
 <script>
+
+  //put name in the span id="city"
+  var cityName = localStorage.getItem("location");
+  document.getElementById("city").innerHTML = cityName;
+
   //read name into mainPage after Howdy
   const welcomeText1 = document.getElementById("welcomeText1");
   welcomeText1.innerText = `Howdy, ${localStorage.getItem(

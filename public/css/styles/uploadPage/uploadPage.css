@@ -171,7 +171,7 @@ input:checked + .slider:before {
 
 .info-contents {
   display: flex;
-  /* justify-content: space-evenly; */
+  justify-content: center;
   align-items: center;
 }
 /* 
