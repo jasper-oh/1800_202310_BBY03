@@ -11,9 +11,6 @@ function insertAnimalImage() {
 }
 insertAnimalImage();
 
-//show location
-document.getElementById("city").innerText = `${localStorage.getItem("location")}`;
-
 // toggle1
 const slider1 = document.getElementById("my-slider1");
 const toggleLeft1 = document.getElementById("switch-left1");
@@ -213,21 +210,21 @@ navigator.geolocation.getCurrentPosition(
 
 
 //date
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  const now = new Date();
-  const month = months[now.getMonth()];
-  const day = now.getDate();
-  const formattedDate = `${month} ${day}`;
+// const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+//   const now = new Date();
+//   const month = months[now.getMonth()];
+//   const day = now.getDate();
+//   const formattedDate = `${month} ${day}`;
 
-  document.getElementById("current-date").textContent = formattedDate;
+//   document.getElementById("current-date").textContent = formattedDate;
 
   //time
-  function displayTime() {
-    var now = new Date();
-    var hours = now.getHours();
-    var minutes = now.getMinutes();
-    var seconds = now.getSeconds();
-    var timeString = hours + ':' + minutes + ':' + seconds;
-    document.getElementById('time').innerHTML = timeString;
-  }
-  setInterval(displayTime, 1000); // update the time every second
+  // function displayTime() {
+  //   var now = new Date();
+  //   var hours = now.getHours();
+  //   var minutes = now.getMinutes();
+  //   var seconds = now.getSeconds();
+  //   var timeString = hours + ':' + minutes + ':' + seconds;
+  //   document.getElementById('time').innerHTML = timeString;
+  // }
+  // setInterval(displayTime, 1000); // update the time every second
