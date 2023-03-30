@@ -93,6 +93,7 @@ function insertTempUserRatings() {
   firebase.auth().onAuthStateChanged((user) => {
     const selectedAnimal = localStorage.getItem("animal");
     const tempUserRating = document.getElementById("temp-rating-goes-here");
+    const numOfUsers = document.getElementById("user-count-goes-here")
 
     if (user) {
       const usersRef = db.collection("ratings");
@@ -110,6 +111,8 @@ function insertTempUserRatings() {
           });
           console.log(`temp sum is ${sum}`);
           console.log(`temp count is ${count}`);
+          
+          numOfUsers.innerText = count;
 
           const tempAverageNum = count > 0 ? sum / count : 0;
 
