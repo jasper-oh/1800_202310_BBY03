@@ -1,7 +1,7 @@
 //read name into mainPage after Howdy
 document.getElementById(
   "animal-name-goes-here"
-).innerText = `${localStorage.getItem("animal")}, `;
+).innerText = `${localStorage.getItem("animal")} `;
 
 // insert animal image as card image
 function insertAnimalImage() {

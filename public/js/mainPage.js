@@ -125,7 +125,7 @@ function insertTempUserRatings() {
           } else if (tempAverageNum <= 4 && tempAverageNum > 3) {
             tempUserRating.innerText = "It feels warmer";
           } else if (tempAverageNum <= 3 && tempAverageNum > 2) {
-            tempUserRating.innerText = "Exactly how I feel!";
+            tempUserRating.innerText = "Exactly how it feels!";
           } else if (tempAverageNum <= 2 && tempAverageNum > 1) {
             tempUserRating.innerText = "It feels colder!";
           } else if (tempAverageNum <= 1) {
@@ -175,11 +175,11 @@ function insertHumidtyUserRatings() {
           } else if (humidityAverageNum <= 4 && humidityAverageNum > 3) {
             humidityUserRating.innerText = "It feels less humid";
           } else if (humidityAverageNum <= 3 && humidityAverageNum > 2) {
-            humidityUserRating.innerText = "Exactly how I feel!";
+            humidityUserRating.innerText = "Exactly how it feels!";
           } else if (humidityAverageNum <= 2 && humidityAverageNum > 1) {
-            humidityUserRating.innerText = "It feels more humid!";
+            humidityUserRating.innerText = "It feels more humid";
           } else if (humidityAverageNum <= 1) {
-            humidityUserRating.innerText = "Very Damp";
+            humidityUserRating.innerText = "Very Damp!";
           } else {
             humidityUserRating.innerText = "Sorry, no rating yet";
           }

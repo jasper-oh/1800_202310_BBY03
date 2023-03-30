@@ -1,9 +1,4 @@
 
-.btn-secondary:hover {
-  background-color: #e59595;
-  color: rgb(26, 18, 18);
-}
-
 #save-changes-btn:disabled{
   background-color:grey;
   color: #ccc;
@@ -29,6 +24,7 @@ border-radius: 10px;
   flex: 1;
   min-width: 390px;
   overflow:hidden;
+  min-height: 400px;
 }
 
 

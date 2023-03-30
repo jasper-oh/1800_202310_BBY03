@@ -38,7 +38,7 @@ body {
 
 .info-contents {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 
@@ -50,14 +50,14 @@ body {
   padding: 3%;
   background-color: White;
   box-shadow: 5px 5px 10px 0;
-  width: 20%;
-  height: 100%;
+  width: 40%;
+  height: 95%;
 }
 
 .data-show {
   margin-top: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .data-show i {
