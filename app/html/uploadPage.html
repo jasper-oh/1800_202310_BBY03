@@ -1,165 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Bootstrap Library CSS CDN go here -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Boostrap Library JS CDN  go here -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://kit.fontawesome.com/07ca69b752.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
-    <!-- Other libraries go here -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <!-- Bootstrap Library CSS CDN go here -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
-    <!-- Link to styles of your own -->
-    <link rel="stylesheet" href="./css/styles/component/footer.css" />
-    <link rel="stylesheet" href="./css/styles/component/header.css" />
-    <link rel="stylesheet" href="./css//styles/uploadPage/uploadPage.css" />
+  <!-- Boostrap Library JS CDN  go here -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/07ca69b752.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- Other libraries go here -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
 
-    <title>Rating Page</title>
-  </head>
-  <body>
-    <div class="wrapper">
-      <!-- nav bar -->
-      <nav id="navbarPlaceholder"></nav>
+  <!-- Link to styles of your own -->
+  <link rel="stylesheet" href="./css/styles/component/footer.css" />
+  <link rel="stylesheet" href="./css/styles/component/header.css" />
+  <link rel="stylesheet" href="./css//styles/uploadPage/uploadPage.css" />
 
-      <div id="container">
-        <div class="info-contents">
-          <!--  info div-->
-          <!--same div as the main page-->
-          <div class="card" id="content1">
-            <img src="images/forecast.png" alt="Card Image1" />
-            <div class="card-body">
-              <h1 class="divTitle">Forecast</h1>
-              <br />
-              <div class="data-show">
-                <span class="material-symbols-outlined icon">
-                  device_thermostat
-                </span>
-                <span id="forecastTemp" class="mainpage-data"> °C </span>
-              </div>
-              <div class="data-show">
-                <span class="material-symbols-outlined icon">
-                  humidity_percentage
-                </span>
-                <span id="forecastHumidity" class="mainpage-data"> % </span>
-              </div>
+  <title>Rating Page</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- nav bar -->
+    <nav id="navbarPlaceholder"></nav>
+
+    <div id="container">
+      <div class="info-contents">
+        <!--  info div-->
+        <!--same div as the main page-->
+        <div class="card" id="content1">
+
+          <div class="card-body" >
+            <p id="current-date"></p><p id="time"></p>
+            <img src="/images/location.png"  alt="pin icon" /><span id="city"></span>
+            <br/>
+            <h1 class="forecast">Official Forecast</h1>
+     
+            <div class="data-show">
+              <span class="material-symbols-outlined icon">
+                device_thermostat
+              </span>
+              <span id="forecastTemp" class="mainpage-data"> °C </span>
+            </div>
+            <div class="data-show">
+              <span class="material-symbols-outlined icon">
+                humidity_percentage
+              </span>
+              <span id="forecastHumidity" class="mainpage-data"> % </span>
             </div>
           </div>
+        </div>
 
-          <!-- howdy score info div-->
+        <!-- howdy score info div-->
 
-          <div class="card" id="content2">
-            <div class="left-card-body">
-              <img src="" alt="Card Image2"  id="content2Image" />
-              <h1 class="divTitle">
-                Rate here <span id="animal-name-goes-here"></span>
-              </h1>
+        <div class="card" id="content2">
+          <div class="left-card-body">
+            <img src="" alt="Card Image2" id="content2Image" />
+            <h1 class="divTitle">
+              Rate here <span id="animal-name-goes-here"></span>
+            </h1>
+          </div>
+
+          <div class="card-body">
+            <div class="temp-wrapper">
+              <span id="temp-rating-label-goes-here">Rate the forecasted Temperature</span>
+
+              <div class="temp-rating">
+                <label class="switch-left" id="switch-left1">
+                  <input type="checkbox" id="mySwitchLeft1" />
+                  <span class="slider round"></span>
+                  <label>Snow storm?</label>
+                </label>
+
+                <div class="information-wrapper">
+                  <input type="range" min="1" max="5" value="2.5" class="form-range" id="my-slider1" />
+                </div>
+
+                <label class="switch-right" id="switch-right1">
+                  <input type="checkbox" id="mySwitchRight1" />
+                  <span class="slider round"></span>
+                  <label>Heat Wave?</label>
+                </label>
+              </div>
             </div>
-            
-            <div class="card-body">
-              <div class="temp-wrapper">
-                <span id="temp-rating-label-goes-here"
-                  >Rate the forecasted Temperature</span
-                >
-              
-                <div class="temp-rating">
-                  <label class="switch-left" id="switch-left1">
-                    <input type="checkbox" id="mySwitchLeft1" />
-                    <span class="slider round"></span>
-                    <label>Snow storm?</label>
-                  </label>
+            <!--Humidity-->
+            <div class="humidity-wrapper">
+              <span id="humidity-rating-label-goes-here">Rate the forcasted Humidity</span>
+              <div class="humidity-rating">
+                <label class="switch-left" id="switch-left2">
+                  <input type="checkbox" id="mySwitchLeft2" />
+                  <span class="slider round"></span>
+                  <label>Drought?</label>
+                </label>
 
-                  <div class="information-wrapper">
-                    <input
-                      type="range"
-                      min="1"
-                      max="5"
-                      value="2.5"
-                      class="form-range"
-                      id="my-slider1"
-                    />
-                  </div>
+                <div class="information-wrapper">
+                  <input type="range" min="1" max="5" value="2.5" class="form-range" id="my-slider2" />
+                </div>
 
-                  <label class="switch-right" id="switch-right1">
-                    <input type="checkbox" id="mySwitchRight1" />
-                    <span class="slider round"></span>
-                    <label>Heat Wave?</label>
-                  </label>
-                </div>
+                <label class="switch-right" id="switch-right2">
+                  <input type="checkbox" id="mySwitchRight2" />
+                  <span class="slider round"></span>
+                  <label>Flood?</label>
+                </label>
               </div>
-              <!--Humidity-->
-              <div class="humidity-wrapper">
-                <span id="humidity-rating-label-goes-here"
-                >Rate the forcasted Humidity</span
-                >
-                <div class="humidity-rating">
-                  <label class="switch-left" id="switch-left2">
-                    <input type="checkbox" id="mySwitchLeft2" />
-                    <span class="slider round"></span>
-                    <label>Drought?</label>
-                  </label>
-                  
-                  <div class="information-wrapper">
-                    <input
-                    type="range"
-                    min="1"
-                    max="5"
-                    value="2.5"
-                    class="form-range"
-                    id="my-slider2"
-                    />
-                  </div>
-                  
-                  <label class="switch-right" id="switch-right2">
-                    <input type="checkbox" id="mySwitchRight2" />
-                    <span class="slider round"></span>
-                    <label>Flood?</label>
-                  </label>
-                </div>
-              </div>
-              
-              <div class="comment">
-                <label for="commentAreaLable" class="form-label"
-                >Leave your tips or comments:</label
-                >
-                <textarea
-                class="form-control"
-                id="commentArea"
-                rows="2"
-                ></textarea>
-              </div>
-                           
-            <button
-              type="button"
-              class="btn btn-primary"
-              id="submit-btn"
-              onclick="submitBtnClicked()"
-              >
+            </div>
+
+            <div class="comment">
+              <label for="commentAreaLable" class="form-label">Leave your tips or comments:</label>
+              <textarea class="form-control" id="commentArea" rows="2"></textarea>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="submit-btn" onclick="submitBtnClicked()">
               Submit
             </button>
           </div>
@@ -175,5 +140,6 @@
     <script type="text/javascript" src="./js/apiKey.js"></script>
     <script src="./js/skeleton.js"></script>
     <script src="./js/uploadPage.js"></script>
-  </body>
+</body>
+
 </html>

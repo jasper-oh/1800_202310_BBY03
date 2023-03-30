@@ -6,6 +6,9 @@
   font-size:20pt;
 }
 
+.forecast {
+  color: rgb(32, 65, 167);
+}
 
 /* #content1 {
 
@@ -23,4 +26,3 @@
   /* width: 20%; */
   /*height: 50%; */
 }
-

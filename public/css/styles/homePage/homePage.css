@@ -1,4 +1,21 @@
 
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+.container-camel{
+ background-color: rgb(242, 172, 172);
+}
+
+.container-squirrel{
+  background-color: rgb(223, 190, 100);
+}
+
+.container-bear{
+  background-color: rgb(196, 240, 240);
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
 /*default screen size*/
 #container1 {
 
@@ -33,6 +50,7 @@
   width: 50%;
 }
 
+
 #tagline{
   font-size: 20pt;
   
@@ -48,14 +66,14 @@
 @media only screen and (max-width: 391px) {
 
   #container1 {
-    grid-template-rows: 25vh 25vh;
+    grid-template-rows: 50vh 25vh;
     grid-template-columns: 100vw;
   }
 
   #graphic{
     background-image: url("/images/graphic2.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    /* background-size: contain; */
     background-position: center center;
     grid-row: 1/span 1;
     grid-column: 1;
@@ -77,8 +95,13 @@
   
   }
 
+  #brand{
+    font-size: 25pt;
+    color: #84b39b;
+  }
   #tagline{
-    font-size:15pt;
+    font-size:13pt;
+    
   }
   
 

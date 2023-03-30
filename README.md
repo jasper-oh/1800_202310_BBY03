@@ -21,7 +21,7 @@
 
 
   <p align="center">
-    Weather insights from like-minded users. 
+    Live weather updates from real people like you.
     <br />
     <a href="https://github.com/jasper-oh/1800_202310_BBY03"><strong>Explore the docs »</strong></a>
     <br />

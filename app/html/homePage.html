@@ -19,6 +19,11 @@
   <!-- Other libraries go here -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+  <script
+      src="https://kit.fontawesome.com/07ca69b752.js"
+      crossorigin="anonymous"
+    ></script>
+
   <!-- Link to styles of your own -->
   <link rel="stylesheet" href="./css/styles/component/header.css" />
   <link rel="stylesheet" href="./css/styles/homePage/homePage.css" />
@@ -42,8 +47,9 @@
 
   <div id="container1">
     <div id="text">
-      <h1>Howdy Weather</h1>
-      <span id="tagline"> weather insights from like-minded people</span>
+      <h1 id="brand">Howdy Weather</h1>
+      <span id="tagline"> live weather updates from real people like you
+      </span>
       <div id="links">
         <a class="button1" href="/login" role="button">Login/Signup</a>
       </div>
@@ -57,11 +63,35 @@
     <h6><i>Which animal do you relate to most?</i></h6>
     <!-- <h5>See what your animal group is saying about the weather</h5> -->
     <h5>Join our forum and share your weather opinions</h5>
+
+    <img src="/images/choose.png" width="70%">
+    <div class="container-camel">
+      <h4 style="display: inline-block;"><b>Camel</b></h4>
+      
+      <img src="/images/dialog.png" class="dialog" style="display: inline-block;">
+      <p class="quote"><i>"Bring on the heat!"</i></p>
+      
+    </div>
+
+    <div class="container-squirrel">
+      <h4 style="display: inline-block;"><b>Squirrel</b></h4>
+    
+      <img src="/images/dialog.png" class="dialog" style="display: inline-block;">
+      <p class="quote"><i>"Not too hot, not too cold"</i></p>
+     
+    </div>
+    <div class="container-bear">
+      <h4 style="display: inline-block;"><b>Polar Bear</b></h4>
+    
+      <img src="/images/dialog.png" class="dialog" style="display: inline-block;">
+      <p class="quote"><i>"The cold never bothered me anyway"</i></p>
+    </div>
+
   </div>
 
   <!--animal cards-->
 
-  <div class="card-container">
+  <!-- <div class="card-container">
     <div class="card" id="camel">
       <img src="/images/camel.png" class="cardimg">
       <div class="container">
@@ -80,9 +110,9 @@
         <img src="/images/dialog.png" class="dialog">
         <p class="quote"><i>"Not too hot, not too cold"</i></p>
       </div>
-    </div>
+    </div> -->
 
-    <div class="card" id="bear">
+    <!-- <div class="card" id="bear">
       <img src="/images/bear.png" class="cardimg">
       <div class="container">
         <h4><b>Polar Bear</b></h4>
@@ -91,7 +121,7 @@
         <p class="quote"><i>"The cold never bothered me anyway"</i></p>
       </div>
     </div>
-  </div>
+  </div> -->
 <br/>
   <div class="description2">
     <img src="/images/alert.png">

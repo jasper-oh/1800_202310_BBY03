@@ -4,6 +4,9 @@ body {
   font-family: "Josefin Sans", sans-serif;
 }
 
+#city{
+  font-size: 20pt;
+}
 content {
   width: 100%;
 }
@@ -31,10 +34,23 @@ content {
   font-size: 20pt;
 }
 
+#current-date{
+font-size: 20pt;
+}
+
+#time{
+  font-size: 15pt;
+}
 #infomation-wrapper {
   width: 150%;
 }
 
+.forecast{
+  color: rgb(32, 65, 167);
+}
+.data-show{
+  color: rgb(32, 65, 167);
+}
 /* The switch - the box around the slider */
 .switch-left {
   display: none;
@@ -164,10 +180,17 @@ input:checked + .slider:before {
   border: 1px solid black;
   border-radius: 6px;
   padding: 3%;
-  background-color: White;
-  box-shadow: 5px 5px 10px 0;
-  width: 20%;
-  height: 60%
+  /* background-color: White; */
+  /* box-shadow: 5px 5px 10px 0; */
+  width: 40%;
+  height: 55%;
+
+}
+
+#content1 img{
+  height:auto;
+  width:10%;
+
 }
 
 #content2 {
@@ -263,17 +286,17 @@ input:checked + .slider:before {
     align-items: center;
     border: 1px solid black;
     border-radius: 6px;
-    padding: 3%;
-    background-color: White;
+    padding: 8%;
+    /* background-color: White; */
     box-shadow: 5px 5px 10px 0;
     width: 90%;
     height: 40%;
   }
   #content1 img{
-    width: 60%;
-    height: 40%;
+    width: 20%;
+    height: auto;
   }
-  
+
   #content2 {
     border: 1px solid black;
     border-radius: 6px;
