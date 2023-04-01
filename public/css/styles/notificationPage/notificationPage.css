@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;

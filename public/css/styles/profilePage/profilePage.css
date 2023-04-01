@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
 
 #save-changes-btn:disabled{
   background-color:grey;
@@ -25,6 +30,11 @@ border-radius: 10px;
   min-width: 390px;
   overflow:hidden;
   min-height: 400px;
+
+  /* Display the logout btn when the web size */
+
+  display: flex;
+
 }
 
 
@@ -164,7 +174,10 @@ select:focus{
 
 
 .log-out-btn{
-  align-items: center;
+  
+  /* Display the logout btn when the web size */
+
+  align-items: end;
   display: flex;
   justify-content: center;
   padding-top: 30px;
@@ -178,4 +191,24 @@ select:focus{
   border-radius: 5px; /* Set border radius to 5 pixels */
   padding: 10px 20px 10px 20px; 
   font-size: 12pt;
+}
+
+@media screen and (max-width: 500px) {
+
+  #container1 {    
+    flex: 1;
+    min-width: 390px;
+    overflow:hidden;
+    min-height: 400px;
+    display: block;    
+  }
+
+
+  .log-out-btn{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
 }
