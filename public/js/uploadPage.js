@@ -109,8 +109,9 @@ var coords = new firebase.firestore.GeoPoint(lat, long);
 function submitBtnClicked() {
   //Get the data from user input
   const city = localStorage.getItem("location");
-  const curTemp = document.getElementById("my-slider1").value;
-  const curHumidity = document.getElementById("my-slider2").value;
+  const curTemp = parseInt(document.getElementById("my-slider1").value);
+  const curHumidity = parseInt(document.getElementById("my-slider2").value);
+
   const comment = document.getElementById("commentArea").value;
 
   // Get the toggle data

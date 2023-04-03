@@ -108,6 +108,7 @@ function insertTempUserRatings() {
             const data = doc.data();
             sum += data.curTemp;
             count++;
+            console.log(sum);
           });
           console.log(`temp sum is ${sum}`);
           console.log(`temp count is ${count}`);
