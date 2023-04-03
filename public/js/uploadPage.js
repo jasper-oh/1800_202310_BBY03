@@ -148,7 +148,7 @@ function submitBtnClicked() {
           })
           .then(() => {
             // create alert window
-            alert("Your Howdy Score submitted!");
+            alert("Weather Rating submitted!");
             //Save Done logic!
             console.log("save done");
           });
