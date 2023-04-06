@@ -1,11 +1,3 @@
-//when the new user come in to the profile page, user can see the default animal squirrel
-// let userChooseAnimal = $("#animal-names").find(":selected").val();
-// var animalImage = document.getElementById("animal-goes-here");
-// animalImage.src = getImageUrlForAnimal(userChooseAnimal);
-
-
-
-
 
 function handleWeatherPreferenceSet() {
   var db = firebase.firestore();

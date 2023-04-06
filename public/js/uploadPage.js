@@ -189,9 +189,6 @@ navigator.geolocation.getCurrentPosition(
         // Convert temperature from Kelvin to Celsius
         const celsiusTemperature = temperature - 273.15;
 
-        //display the location on the webpage
-        // const cityElement = document.getElementById("city");
-        // cityElement.textContent = cityName;
 
         //display the temp on the webpage
         const forecastTempElement = document.getElementById("forecastTemp");
@@ -208,24 +205,3 @@ navigator.geolocation.getCurrentPosition(
     console.error(error);
   }
 );
-
-
-//date
-// const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-//   const now = new Date();
-//   const month = months[now.getMonth()];
-//   const day = now.getDate();
-//   const formattedDate = `${month} ${day}`;
-
-//   document.getElementById("current-date").textContent = formattedDate;
-
-  //time
-  // function displayTime() {
-  //   var now = new Date();
-  //   var hours = now.getHours();
-  //   var minutes = now.getMinutes();
-  //   var seconds = now.getSeconds();
-  //   var timeString = hours + ':' + minutes + ':' + seconds;
-  //   document.getElementById('time').innerHTML = timeString;
-  // }
-  // setInterval(displayTime, 1000); // update the time every second

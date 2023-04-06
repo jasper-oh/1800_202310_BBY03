@@ -174,24 +174,6 @@ input:checked + .slider:before {
   justify-content: center;
   align-items: center;
 }
-/* 
-#content1 {
-  text-align: center;
-  border: 1px solid black;
-  border-radius: 6px;
-  padding: 3%;
-  background-color: White;
-  box-shadow: 5px 5px 10px 0;
-  width: 40%;
-  height: 55%;
-
-} */
-
-/* #content1 img{
-  height:auto;
-  width:10%;
-
-} */
 
 #content2 {
   border: 1px solid black;
