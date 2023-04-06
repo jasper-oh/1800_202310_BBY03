@@ -1,62 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Bootstrap Library CSS CDN go here -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Boostrap Library JS CDN  go here -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
+  <!-- Bootstrap Library CSS CDN go here -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
-    <!-- Other libraries go here -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
-    />
+  <!-- Boostrap Library JS CDN  go here -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 
-    <!-- Link to styles of your own -->
+  <!-- Other libraries go here -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-    <link rel="stylesheet" href="./css/styles/component/footer.css" />
-    <link rel="stylesheet" href="./css/styles/component/header.css" />
-    <link rel="stylesheet" href="./css/styles/loginPage/loginPage.css" />
+  <!-- Link to styles of your own -->
 
-    <title>Log in</title>
-  </head>
-  <body>
-    <div class="wrapper">
-      <!-- nav bar -->
-      <nav id="navbarPlaceholder"></nav>
-      <div class="container">
-        <!-- Code will be here -->
-        <main class="form-signin w-100 m-auto text-center">
-          <div id="firebaseui-auth-container"></div>
-          <div id="loader">Loading...</div>
-        </main>
-      </div>
-      <!-- footer -->
-      <!-- <nav id="footerPlaceholder"></nav> -->
+  <link rel="stylesheet" href="./css/styles/component/footer.css" />
+  <link rel="stylesheet" href="./css/styles/component/header.css" />
+  <link rel="stylesheet" href="./css/styles/loginPage/loginPage.css" />
+
+  <title>Log in</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- nav bar -->
+    <nav id="navbarPlaceholder"></nav>
+    <div class="container">
+      <!-- Code will be here -->
+      <main class="form-signin w-100 m-auto text-center">
+        <div id="firebaseui-auth-container"></div>
+        <div id="loader">Loading...</div>
+      </main>
     </div>
-    <script src="./js/firebase_API_TEAM03.js"></script>
-    <script src="./js/skeleton.js"></script>
-    <script src="./js/authentication.js"></script>
-  </body>
+  
+  </div>
+  <script src="./js/firebase_API_TEAM03.js"></script>
+  <script src="./js/skeleton.js"></script>
+  <script src="./js/authentication.js"></script>
+</body>
+
 </html>

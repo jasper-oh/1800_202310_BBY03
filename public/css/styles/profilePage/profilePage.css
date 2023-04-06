@@ -4,18 +4,16 @@ body {
   font-family: "Josefin Sans", sans-serif;
 }
 
-#save-changes-btn:disabled{
-  background-color:grey;
+#save-changes-btn:disabled {
+  background-color: grey;
   color: #ccc;
   border-color: grey;
 }
 
-#save-changes-btn{
-background: #e6d0a8;;
-border-radius: 10px;
+#save-changes-btn {
+  background: #e6d0a8;
+  border-radius: 10px;
 }
-
-
 
 .wrapper {
   display: flex;
@@ -24,11 +22,9 @@ border-radius: 10px;
 }
 
 #container1 {
-  /* display: grid; */
-  /* grid-template-columns: 93vw; */
   flex: 1;
   min-width: 390px;
-  overflow:hidden;
+  overflow: hidden;
   min-height: 400px;
 
   /* Display the logout btn when the web size */
@@ -38,7 +34,7 @@ border-radius: 10px;
 }
 
 
-.edit-profile-photo-btn{
+.edit-profile-photo-btn {
   position: absolute;
   z-index: 1;
   left: 180px;
@@ -46,23 +42,23 @@ border-radius: 10px;
   border-radius: 20px;
   padding-left: 10px;
   padding-right: 10px;
-  background-color:#fafafa;
+  background-color: #fafafa;
   color: white;
-  font-size:10pt;
+  font-size: 10pt;
 
 }
 
-.edit-profile-photo-btn:hover{
+.edit-profile-photo-btn:hover {
   background-color: #65a5e0;
-  color:black;
-  opacity:100%;
+  color: black;
+  opacity: 100%;
 }
 
-#change{
+#change {
   position: absolute;
-  z-index:1;
-  left:215px;
-  top:510px;
+  z-index: 1;
+  left: 215px;
+  top: 510px;
   background-color: #4393dd;
   padding-left: 10px;
   padding-right: 10px;
@@ -72,7 +68,7 @@ border-radius: 10px;
   font-size: 12pt;
 }
 
-#change:hover{
+#change:hover {
   background-color: #a9cae9;
   color: black;
 }
@@ -89,12 +85,12 @@ border-radius: 10px;
 
 
 /* Radio Button CSS */
-.profile-label{
+.profile-label {
   margin: 30px;
 }
 
 /* HIDE RADIO */
-[type=radio] { 
+[type=radio] {
   position: absolute;
   opacity: 0;
   width: 0;
@@ -102,79 +98,79 @@ border-radius: 10px;
 }
 
 /* IMAGE STYLES */
-[type=radio] + img {
+[type=radio]+img {
   cursor: pointer;
 }
 
 /* CHECKED STYLES */
-[type=radio]:checked + img {
+[type=radio]:checked+img {
   outline: 2px solid #f00;
 }
 
 
 /* achievement badge*/
-.badge123{
-  height:80px;
+.badge123 {
+  height: 80px;
 }
 
 
-.animalPic{
-  height:100px;
+.animalPic {
+  height: 100px;
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  display:flex;
+  display: flex;
   border-radius: 10px;
   min-width: 300px;
-  max-width:300px;
+  max-width: 300px;
   margin: auto;
   text-align: center;
 }
 
-.banner{
+.banner {
   padding-top: 2%;
 }
 
-#achieve{
-  /* background-color: #eb947b; */
+#achieve {
   min-height: 140px;
-  
 
 }
-.name{
+
+.name {
   font-size: 25pt;
   font-weight: 400;
 }
 
-#line{
-  border-top:2px solid #aacdbe;
+#line {
+  border-top: 2px solid #aacdbe;
   margin-left: 8%;
   margin-right: 8%;
   padding-top: 5px;
 
 }
 
-.animal-cont{
+.animal-cont {
   display: flex;
   align-items: center;
   justify-content: center;
   /* background-color: #ccc; */
-  min-height:120px;
- 
+  min-height: 120px;
+
 }
 
 /*drop down*/
 #animal-names {
-  width: 155px; 
+  width: 155px;
 }
-select:focus{
+
+select:focus {
   color: black !important;
 }
 
 
-.log-out-btn{
-  
+.log-out-btn {
+
   /* Display the logout btn when the web size */
 
   align-items: end;
@@ -182,29 +178,34 @@ select:focus{
   justify-content: center;
   padding-top: 30px;
   padding-bottom: 10px;
- 
+
 }
+
 .log-out-btn a {
-  color: #ffffff; /* Set text color to white */
-  background-color: #e66c6c; /* Set background color to blue */
-  border-color: #000000; /* Set border color to blue */
-  border-radius: 5px; /* Set border radius to 5 pixels */
-  padding: 10px 20px 10px 20px; 
+  color: #ffffff;
+  /* Set text color to white */
+  background-color: #e66c6c;
+  /* Set background color to blue */
+  border-color: #000000;
+  /* Set border color to blue */
+  border-radius: 5px;
+  /* Set border radius to 5 pixels */
+  padding: 10px 20px 10px 20px;
   font-size: 12pt;
 }
 
 @media screen and (max-width: 500px) {
 
-  #container1 {    
+  #container1 {
     flex: 1;
     min-width: 390px;
-    overflow:hidden;
+    overflow: hidden;
     min-height: 400px;
-    display: block;    
+    display: block;
   }
 
 
-  .log-out-btn{
+  .log-out-btn {
     align-items: center;
     display: flex;
     justify-content: center;

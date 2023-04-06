@@ -97,7 +97,7 @@ function displayAnimalImage() {
           }
           var animalImage = document.getElementById("animal-goes-here");
           animalImage.src = getImageUrlForAnimal(animal);
-          localStorage.setItem("animal" , animal);
+          localStorage.setItem("animal", animal);
         }
       });
   } else {
@@ -119,7 +119,7 @@ function displayAnimalImage() {
               }
               var animalImage = document.getElementById("animal-goes-here");
               animalImage.src = getImageUrlForAnimal(animal);
-              localStorage.setItem("animal" , animal);
+              localStorage.setItem("animal", animal);
             }
           });
       }
@@ -243,19 +243,28 @@ function checkStreak(user) {
 
         let streak = 0;
         let currentDate = new Date();
+        let latestRatingDate = null;
+
         //iterate through every rating they posted
         for (let i = 0; i < ratings.length; i++) {
           const ratingDate = ratings[i].uploadTime.toDate();
-          const timeDiff = Math.floor(
-            (currentDate - ratingDate) / (1000 * 60 * 60 * 24)
-          );
-          if (timeDiff <= 1) {
-            streak++;
-            currentDate = ratingDate;
-          } else {
-            break;
+
+          // check if the rating was posted on a different day than the latest rating
+          if (latestRatingDate === null || ratingDate.toDateString() !== latestRatingDate.toDateString()) {
+            const timeDiff = Math.floor(
+              (currentDate - ratingDate) / (1000 * 60 * 60 * 24)
+            );
+            if (timeDiff <= 1) {
+              streak++;
+              currentDate = ratingDate;
+            } else {
+              break;
+            }
           }
+
+          latestRatingDate = ratingDate;
         }
+
 
         const hasOneDayStreak = streak >= 1;
         const hasThreeDayStreak = streak >= 3;

@@ -2,27 +2,16 @@
   border-radius: 20px;
 }
 
-#city{
-  font-size:20pt;
+#city {
+  font-size: 20pt;
 }
 
 .forecast {
   color: rgb(32, 65, 167);
 }
 
-/* #content1 {
-
-  text-align: center;
-  border-radius: 6px;
-  background-color: White;
-  width: 80%;
-} */
 
 #content1 {
   text-align: center;
-  /* border: 1px solid; */
   border-radius: 6px;
-  /* padding: 3%; */
-  /* width: 20%; */
-  /*height: 50%; */
 }

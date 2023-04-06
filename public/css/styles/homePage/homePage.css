@@ -1,21 +1,21 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 
-.container-camel{
- background-color: rgb(242, 172, 172);
+.container-camel {
+  background-color: rgb(242, 172, 172);
 }
 
-.container-squirrel{
+.container-squirrel {
   background-color: rgb(223, 190, 100);
 }
 
-.container-bear{
+.container-bear {
   background-color: rgb(196, 240, 240);
 }
 
 body {
   font-family: "Josefin Sans", sans-serif;
 }
+
 /*default screen size*/
 #container1 {
 
@@ -30,8 +30,6 @@ body {
   grid-row: 1;
   text-align: center;
   padding-top: 15%;
-  /* background-color: antiquewhite; */
- 
 }
 
 #graphic {
@@ -51,18 +49,18 @@ body {
 }
 
 
-#tagline{
+#tagline {
   font-size: 20pt;
-  
+
 }
 
-.quote{
+.quote {
   font-size: 15pt;
   font-weight: 500;
   color: rgb(43, 40, 40);
 }
 
- /* CSS styles for iPhone 12 Pro portrait mode */
+/* CSS styles for iPhone 12 Pro portrait mode */
 @media only screen and (max-width: 391px) {
 
   #container1 {
@@ -70,41 +68,34 @@ body {
     grid-template-columns: 100vw;
   }
 
-  #graphic{
+  #graphic {
     background-image: url("/images/graphic2.png");
     background-repeat: no-repeat;
-    /* background-size: contain; */
     background-position: center center;
     grid-row: 1/span 1;
     grid-column: 1;
-    /* background-color: #f3b373; */
   }
 
-  #text{
-    /* background-color: beige; */
+  #text {
     grid-row: 2 /span 1;
     grid-column: 1;
     text-align: center;
-  
     padding-top: 20px;
-    display:block;
-    /* border: 2px solid #b1ccbf; */
+    display: block;
     border-radius: 10px;
     margin: 5px;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
-  
+
   }
 
-  #brand{
+  #brand {
     font-size: 25pt;
     color: #84b39b;
   }
-  #tagline{
-    font-size:13pt;
-    
-  }
-  
 
+  #tagline {
+    font-size: 13pt;
+
+  }
 }
 
 /*other styling*/
@@ -124,7 +115,7 @@ body {
   font-size: 18px;
   font-weight: 600;
   line-height: normal;
-  min-height:50px;
+  min-height: 50px;
   margin: 0;
   min-width: 0;
   text-align: center;
@@ -154,22 +145,22 @@ body {
 
 }
 
-.description2{
+.description2 {
   background-color: #f2f2f2;
   border-top: 4px solid #b1ccbf;
   margin: 0px 0 0 0;
   padding: 12px;
   min-height: 200px;
   text-align: center;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 
 
-.description2 img{
-  width:35%;
+.description2 img {
+  width: 35%;
   height: auto;
 }
 
@@ -187,15 +178,15 @@ body {
   width: 300px;
   margin: 20px;
   border-radius: 5px;
-  position:relative;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  position: relative;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 
 .cardimg {
   width: 70%;
   height: auto;
-  
+
 }
 
 .container {
@@ -204,20 +195,7 @@ body {
 
 }
 
-
-#camel{
-  /* box-shadow: 0 6px 10px 0 rgb(228, 179, 123,0.5); */
-}
-
-#squirrel{
-  /* box-shadow: 0 6px 10px 0 rgba(242, 169, 126, 0.5); */
-}
-
-#bear{
-  /* box-shadow: 0 6px 10px 0 rgba(155, 227, 238, 0.5); */
-}
-
-.dialog{
-  width:50px;
+.dialog {
+  width: 50px;
   height: auto;
 }
