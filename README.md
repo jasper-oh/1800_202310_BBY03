@@ -8,7 +8,7 @@
 🫠 Jasper | 👿 Angela  | 👹 Ruby
 --- | --- | ---
 *Hi, My name is Jasper, I'm excited about this project! we can do it!* | *Hi my name is Angela, I am also very excited about this project! :)* | *Hi my name is Ruby, i too very excited about this project!*
-`As a house elf dobby, I mainly focus on the code structure and leading overall functions in project.` | `As luna lovegood, I lead the main design of the project and graphics` | `As a headmaster dumbledore, I managed the schedule and boundaries of this app`
+`As house elf dobby, I mainly focussed on the code structure and lead the overall functions in this project` | `As luna lovegood, I lead the main design of the project and graphics` | `As headmaster dumbledore, I managed the schedule and boundaries of this app`
 
 <!-- PROJECT LOGO -->
 <br />
