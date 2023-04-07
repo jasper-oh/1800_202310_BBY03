@@ -1,7 +1,11 @@
 footer {
   display: flex;
+  position: fixed;
+  
   background-color: #aacdbe;
   height: 10vh;
+  left: 0px;
+  right: 0px;
   align-items: center;
   min-width: 390px;
   text-align: center;

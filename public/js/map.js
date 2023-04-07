@@ -1,4 +1,15 @@
+/*
+Map.js included code in searchPage. 
+this js file interact with searchPage.html
+
+Map is showing with window.initMap function.
+
+Written by : Jasper
+*/
+
+// Using script for insert Javascript code.
 var script = document.createElement('script');
+
 const GOOGLE_API = config.apiKey;
 script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API}&callback=initMap&libraries=places`
 script.async = true;
@@ -6,12 +17,14 @@ script.async = true;
 //init the map
 window.initMap = function(){
   
+  // Initialize map setting.
   const map = new google.maps.Map(document.getElementById("map"), {
     center: {lat:49.2460, lng :-123.0018},
     zoom: 15,
     gestureHandling: "greedy",
   });
   
+  // Using google searchbox with custom search input box.
   const input = document.getElementById("location-search");
   const searchBox = new google.maps.places.SearchBox(input);
   
@@ -46,20 +59,25 @@ window.initMap = function(){
     // Give the search location value 
     document.getElementById("scoreList-location").innerHTML = place.name;
 
-    let lat = place.geometry.viewport.Va.lo;
     
+    // Searched location's coordinate
+    let lat = place.geometry.viewport.Wa.lo;
     let long = place.geometry.viewport.Ga.lo;
     
-
+    // take to the searched location.
     const center = new firebase.firestore.GeoPoint(lat, long); //search location
-  
+    
+    // Get the ratings list by the location.
     function getRatings(){
+
+      // Data Structure that contain the rating list.
       let realDataSet = []
 
+      // Get today's date.
       let today = new Date();
-      today.setHours(0,0,0,0);
-      console.log(today)
+      today.setHours(0,0,0,0);      
 
+      // Get the ratings (just for today) in the firebase.
       db.collection("ratings").where("uploadTime", ">=" , today ).get()
       .then( ratings => {
         ratings.forEach(doc => {    
@@ -83,14 +101,16 @@ window.initMap = function(){
           
         })
         
+        // With the function generateData showing the lists.
         for(let j = 0 ; j < realDataSet.length ; j++){          
           generateData(realDataSet[j].curTemp , realDataSet[j].curHumidity , realDataSet[j].ratingID , realDataSet[j].userID)
         }
 
+        // The DataStructure after filtering the realDataSet.
         let commentsList = [];
 
-        for ( let i = 0 ; i < realDataSet.length ; i ++){
-          
+        // Pushing the filtered data in commentsList.
+        for ( let i = 0 ; i < realDataSet.length ; i ++){          
           commentsList.push({
             label : i + "",
             name : realDataSet[i].userEmail,
@@ -98,15 +118,13 @@ window.initMap = function(){
             lng : parseFloat(realDataSet[i].long),
           })
         }
-        
-        console.log(commentsList)
-    
+                
+        // Put the Marker in map.
         commentsList.forEach(({label, name, lat, lng}) => {
           var marker = new google.maps.Marker({
             position: {lat, lng},
             name,
-            label,
-            // map,
+            label,            
           });
 
           marker.setMap(map)
@@ -114,10 +132,11 @@ window.initMap = function(){
       })
     }
     
+    // Run get Ratings.
     getRatings();
     
     
-
+    // After search, map center the location.
     if (place.geometry.viewport) {
       map.fitBounds(place.geometry.viewport);
     } else {
@@ -127,12 +146,12 @@ window.initMap = function(){
   })
 };
 
-
+// Integer data(Temperature) convert to sentence.
 function tempConvertToSentence(score){
   switch(score){
     case 1:
     case "1":
-      return "very cold";
+      return "Very cold";
     case 2:
     case "2":
       return "It feels colder";
@@ -148,12 +167,12 @@ function tempConvertToSentence(score){
   }
 }
 
-
+// Integer data(Humidity) convert to sentence.
 function humidityConvertToSentence(score){
   switch(score){
     case 1:
     case "1":
-      return "very dry";
+      return "Very dry";
     case 2:
     case "2":
       return "It feels less humid";
@@ -169,6 +188,7 @@ function humidityConvertToSentence(score){
   }
 }
 
+// Put the data in the table.
 function generateData(temp, humid , id ,userId){
   const tbody = document.getElementById("tbody");
   const insertRow = tbody.insertRow();
@@ -191,9 +211,7 @@ function generateData(temp, humid , id ,userId){
     imgTag.setAttribute("id" , userId)
     imgData.appendChild(imgTag);  
   })
-  
-  console.log(temp)
-  console.log(humid)
+    
   let tempDataText = document.createTextNode(tempConvertToSentence(temp));
   tempData.appendChild(tempDataText)
   let humidDataText = document.createTextNode(humidityConvertToSentence(humid));
@@ -207,10 +225,12 @@ function generateData(temp, humid , id ,userId){
   likeData.appendChild(likesDataText)
 }
 
+// Logic that need to use in setting range.
 function degreesToRadians(degrees) {
   return degrees * Math.PI / 180;
 }
 
+// Logic that need to use in setting range.
 function distanceBetweenPoints(point1, point2) {
   const earthRadius = 6371; // in kilometers
 
@@ -231,6 +251,7 @@ function distanceBetweenPoints(point1, point2) {
   return distance;
 }
 
+// Clikable likes button logic
 function clickLikes(cliked_id){
   
   let clickedEle = document.getElementById(cliked_id)
@@ -271,7 +292,7 @@ function clickLikes(cliked_id){
   }
 }
 
-
+// Click the avatar and open modal.
 function openModal(clickedClass){
 
   let writeUserID = $(".clickedClass").attr('id')
@@ -344,6 +365,7 @@ function openModal(clickedClass){
     $("#myModal").modal('show')
 }
 
+// Delete the comment logic
 function deleteComment(clickedId){
   var userCheck = confirm("Do you want to delete it?");
   if (userCheck == true){
@@ -355,6 +377,7 @@ function deleteComment(clickedId){
   }
 }
 
+// After edit the comment, save the edited comment logic
 function saveComment(clickedId){
   var userCheck = confirm("Do you want to save it?");
   var modifiedTemp = $("#modal-temp").val()
@@ -375,5 +398,5 @@ function saveComment(clickedId){
 }
 
 
-
+// Put the script in the html file.
 document.head.appendChild(script);

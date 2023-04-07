@@ -74,9 +74,7 @@ $("#gen-ans").click(() => {
     }
 
 
-    ajaxGet("/notificationrecommend?city=Burnarby&temperature=8", (data) => {
-      
-      
+    ajaxGet("/notificationrecommend?city=Burnarby&temperature=8", (data) => {      
       const parseData = JSON.parse(data)
       const avgTemp = parseData.temperature
       const avgHumidity = parseData.humidity
@@ -98,7 +96,6 @@ function ready(callback){
     $("#div_load_image").show();
     callback();
   }else{
-    console.log("HLLLLOSasdadw")
     document.addEventListener("DOMContentLoaded", callback);
   }
 }
